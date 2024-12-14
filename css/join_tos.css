@@ -2,5 +2,141 @@
 *{
     font-family: "Noto Sans KR", sans-serif;
     font-size: 16px;
+    text-decoration: none;
+    color: black;
+    list-style: none;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* 전체구역 */
+#wrap{
+    width: 1200px;   
+    margin: 0 auto;
+}
+
+
+/* 메인 */
+#main{
+    width: 870px;
+    margin: 0 auto;
+}
+
+/* 메인 상단 */
+#top > h3{
+    font-size: 30px;
+    color: #81674e;
+    margin-bottom: 20px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    border-bottom: 1px solid #81674e;
+    height: 50px;
+}
+.menu > div{
+    width: 485px;
+    border: 1px solid #eeeeee;
+    padding-top: 10px;
+}
+.menu > div:nth-child(1){
+    border-bottom: 5px solid #81674e;
+    background-color: #faf9f7;
+}
+
+.hello{
+    text-align: center;
+    margin: 45px 0px;
+}
+
+.hello > h2{
+    font-size: 25px;
+    color: #81674e;
+    margin-bottom: 10px;
+}
+
+.hello > span{
+    color: gray;
+}
+
+
+
+/* 메인 컨텐츠 */
+.tos > h4{
+    height: 40px;
+    font-size: 18px;
+    border-bottom: 3px solid #81674e;
+    margin: 10px 0px;
+}
+.checkAll{
+    margin: 20px 0px 30px 0px;
+}
+.checkAll > span{
+    font-weight: bold;
+}
+.checkAll > p{
+    margin: 10px 0px;
+}
+
+.tosCont{
+    border-bottom: 1px dashed #eeeeee ;
+    margin-bottom: 40px;
+}
+
+.contTit{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.contTit > button{
+    width: 70px;
+    height: 30px;
+    font-size: 14px;
+    background-color: #81674e;
+    color: #ffff;
+    border: 1px solid #eeeeee;
+}
+
+.contTxt{
+    border: 1px solid #eeeeee;
+    background-color: #fbfbfb;
+    padding: 20px;
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 150px;
+}
+.border > td{
+    border: 1px solid #eeeeee;
+    padding: 10px;
+
+
+}
+
+.contTxt > li > table {
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.contBtn{
+    margin: 10px 0px 40px 0px;
+}
+
+.tosBtn{
+    text-align: center;
+}
+.tosBtn > button{
+    width: 90px;
+    height: 45px;
+    margin: 0px 10px;
+    background-color: #81674e;
+    border: 1px solid #eeeeee;
+}
+.tosBtn > button > a{
+    color: #ffff;
 
 }
