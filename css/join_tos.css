@@ -111,16 +111,29 @@
     height: 150px;
 }
 .border > td{
-    border: 1px solid #eeeeee;
+    border: 1px solid darkgray;
     padding: 10px;
-
-
 }
 
 .contTxt > li > table {
     text-align: center;
     border-collapse: collapse;
 }
+
+/* 전체보기 팝업 */
+#popupBox{
+    display: none;
+}
+.popupTxt{
+    overflow: hidden;
+    height: auto;
+}
+
+
+
+
+
+
 
 .contBtn{
     margin: 10px 0px 40px 0px;
@@ -138,5 +151,4 @@
 }
 .tosBtn > button > a{
     color: #ffff;
-
 }
