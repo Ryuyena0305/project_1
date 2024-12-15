@@ -6,73 +6,88 @@
 </head>
 <body>
     <div id="wrap">
-        <div id="top">
-            <h3>회원가입</h3>
-            <!-- 카테고리 -->
-            <div class="menu"> <!-- 버튼 아님. 약관동의 하단 - 다음 버튼 눌러야 이동함 -->
-                <div>약관동의</div>
-                <div>회원정보 입력</div>
+
+        <div id="header">
+            헤더
+        </div> <!-- header end -->
+
+
+
+        <div id="main">
+            <div id="top">
+                <h3>회원가입</h3>
+                <!-- 카테고리 -->
+                <div class="menu"> <!-- 버튼 아님. 약관동의 하단 - 다음 버튼 눌러야 이동함 -->
+                    <div>약관동의</div>
+                    <div>회원정보 입력</div>
+                </div>
             </div>
 
-            <!-- 인사말 -->
-            <div class="hello">
-                <h2>더조은호텔에 오신 것을 환영합니다</h2>
-                <span>※ 회원가입에 필요한 회원정보 입력 부탁드립니다</span>
-            </div>
-        </div> <!-- top end -->
 
-
-
-
-        <div id="content">
-            <div id="mainInfo">
-                <h4>회원정보 입력</h4>
-                <div class="mainInfoCont">
-                    <div class="info">
-                        <h5>기본 정보</h5>
-                        <table>
-                            <tr>
-                                <th>성명</th>
-                                <td><input type="text"/></td>
-                            </tr>
-                            <tr>
-                                <th>생년월일</th>
-                                <td><input type="date"/></td>
-                            </tr>
-                            <tr>
-                                <th>전화번호</th>
-                                <td><input type="text"/></td>
-                            </tr>
-                            <tr>
-                                <th>주소</th>
-                                <td><input type="text"/></td>
-                            </tr>
-                        </table>
-                    </div> <!-- info 기본정보 끝-->
+            <!-- 메인 컨텐츠 -->
+            <div id="content">
+                <div class="info">
+                    <h4>회원정보 입력</h4>
+                    <div class="infoCont">
+                        <h5>기본 정보 입력</h5>
+                        <ul>
+                            <li>
+                                <div>성명</div>
+                                <input type="text">
+                            </li>
+                            <li>
+                                <div>생년월일</div>
+                                <input type="text" placeholder="831205">
+                                <p> 6자리 입력</p>
+                            </li>
+                            <li>
+                                <div>전화번호</div>
+                                <input type="text" placeholder="010-1111-1111">
+                                <p> - 특수문자 포함</p>
+                            </li>
+                            <li>
+                                <div>주소</div>
+                                <input type="text">
+                            </li>
+                        </ul>
+                    </div>
 
                     <div class="login">
-                        <h5>로그인 정보</h5>
-                        <table>
-                            <tr>
-                                <th>아이디</th>
-                                <td><input type="text"/></td>
-                            </tr>
-                            <tr>
-                                <th>비밀번호</th>
-                                <td><input type="password"/></td>
-                            </tr>
-                        </table>
-                    </div> <!-- login 로그인정보 끝-->
+                        <h5>로그인 정보 입력</h5>
+                        <ul>
+                            <li>
+                                <div>아이디</div>
+                                <input type="text">
+                                <button type="button">아이디 중복확인</button>
+                                <p> 6~12자 이내 영문 또는 영문/숫자 조합</p>
+                            </li>
+                            <li>
+                                <div>비밀번호</div>
+                                <input type="password">
+                                <p> 8~20자 이내 영문/숫자 조합(특수문자 입력 가능)</p>
+                            </li>
+                        </ul>
 
-                </div> <!-- mainInfoCont 메인컨텐츠 끝 -->
-                <button type="button">가입신청</button>
-            </div> <!-- mainInfo 회원정보 입력 전체 끝 -->
-        </div>
-            
+                    </div>
+
+                    <div class="infoBtn">
+                        <button type="button"><a href="#">가입하기</a></button>
+                    </div>
+                </div> <!-- info end -->
+            </div>
+                
 
 
 
 
+
+        </div> <!-- main end -->
+
+
+
+        <div id="footer">
+            푸터
+        </div> <!-- id footer end -->
 
 
     </div> <!-- wrap end -->
