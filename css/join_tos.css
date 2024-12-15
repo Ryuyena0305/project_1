@@ -24,7 +24,7 @@
 }
 
 /* 메인 상단 */
-#top > h3{
+.top > h3{
     font-size: 30px;
     color: #81674e;
     margin-bottom: 20px;
