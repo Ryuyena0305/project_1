@@ -170,7 +170,7 @@ margin-bottom: 8px;
 .main_list_detail{
     margin-top: 20px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: flex-end;
     border-top: 1px solid #ededed;
   
@@ -190,6 +190,14 @@ margin-bottom: 8px;
 }
 .roomNight{
     font-size:11px;
+}
+.acodian_btn{
+    width: 150px;
+    height: 50px;
+    background-color: #81674e;
+    color:white;
+    border: none;
+
 }
 
 
