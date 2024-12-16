@@ -43,7 +43,8 @@ li {
     float : left;
     width : 107px;
     height : 81px;
-    background : url(../images/logo.jpg) no-repeat;
+    background : url(../images/logo_white.png) no-repeat;
+    background-size : contain;
     text-indent : -9999px;
 }
 #hBox > #mainMenu >.menuList {
@@ -88,7 +89,7 @@ li {
     width : 1200px;
     height : 55px;
     line-height: 60px;
-    background-color: black;
+    background-color:  #81674e;
     z-index : 5;
 }
 #hBox > #mainMenu > .menuList > .subMenu > li {
@@ -115,7 +116,7 @@ li {
     top : 81px;
     height: 60px;
     border-top : solid 1px #2E2E2E;
-    background-color : black;
+    background-color :  #81674e;
     z-index : 4;
 }
 

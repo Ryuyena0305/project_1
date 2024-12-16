@@ -12,11 +12,18 @@ function onMenu(index) {
     let sBox = document.querySelector("#sBox");
     let menuList = document.querySelectorAll(".menuList");
     let loginButton = document.querySelector("#loginButton");
-    header.style.backgroundColor = "black";
+    let logo = document.querySelector("#logo");
+    console.log(loginButton.style);
+    header.style.backgroundColor = " #81674e";
     sBox.style.display = "block";
-    loginButton.style.backgroundColor = "black";
+    loginButton.style.backgroundColor = " #81674e";
     loginButton.style.color = "white";
     loginButton.style.border = "solid 2px white";
+    logo.style.background = "url(../images/logo_brown.png) no-repeat;";
+    if(logo.style.background == "url(../images/logo_white.png) no-repeat;") {
+        console.log("실행");
+    }
+    console.log(logo.style.backgroundImage);
     for(let i = 0; i < menuList.length; i++) {
         let menu = document.querySelector(`#list${i} > .subMenu`);
         let under = document.querySelector(`#list${i} > .underLine`);
