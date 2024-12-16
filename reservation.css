@@ -161,6 +161,36 @@ margin-bottom: 8px;
     font-weight:500;
 }
 
+/*main_list*/
+#main_list{
+    border-top: 1px solid #ededed;
+    margin-top: 20px;
+    
+}
+.main_list_detail{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    border-top: 1px solid #ededed;
+  
+  
+}
+.roomType{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.roomSize, .bedType{
+    font-size:12px;
+    margin-bottom: 15px;
+
+}
+.roomPrice{
+    font-size : 20px;
+}
+.roomNight{
+    font-size:11px;
+}
 
 
 
