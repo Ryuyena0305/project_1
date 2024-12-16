@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>TJOEUN HOTEL RESERVATION</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='reservation.css'>
+    
+</head>
+<body>
+    <div id = "wrap">
+        <div id = "header">
+
+        </div>
+        <div id ="main1">
+            <div id = "main_top">
+                <div id = "main_top1">
+                    <h2>RESERVATION</h2>
+                </div>
+                <div id = "main_top2">
+                    
+                </div>
+            </div>
+            <div id = "main_box">
+                <div id = "main_box_left">
+                    <div class="main_box_left1">
+                        <button class="btn" onclick="monthChange(-1)"><</button>
+                        <h6>2024.12</h6>
+                       
+                    </div>
+                    <div class = "main_box_left1">
+                        <h6>2025.01</h6>
+                        <button class="btn" onclick="monthChange(1)">></button>
+            
+                    </div>
+            
+
+                </div>
+                <div id = "main_box_right">
+                    <div id = "box_checkin_date">
+                        <div class="date_text">
+                            체크인
+                        </div>
+                        <input type="text" placeholder="2024.12.16 (월)" class="input_date" readonly/>
+
+                    </div>
+                    <div id = "box_checkout_date">
+                        <div class="date_text">
+                            체크아웃
+                        </div>
+                        <input type="text"  placeholder="2024.12.17 (화)" class="input_date" readonly/>
+
+                    </div>
+                    <div id = "box_number_choice">
+                        <div class = "box_number">
+                            <div class="date_text">객실수</div>
+                            <div class="box_number_btn">
+                                <button class="qunti_btn">-</button>
+                                <div class="number_con">1</div>
+                                <button class="qunti_btn">+</button>
+                            </div>
+                        </div>
+                        <div  class = "box_number">
+                            <div class="date_text">성인</div>
+                            <div class="box_number_btn"> 
+                                <button class="qunti_btn">-</button>
+                                <div class="number_con">1</div>
+                                <button class="qunti_btn">+</button>
+                            </div>
+                        </div>
+                        <div  class = "box_number">
+                            <div class="date_text">아동</div>
+                            <div class="box_number_btn">
+                                <button class="qunti_btn">-</button>
+                                <div class="number_con">1</div>
+                                <button class="qunti_btn">+</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div>
+                        <input type="text" class="input_date" placeholder="프로모션코드">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id = "main_list">
+             
+
+            </div>
+            <div id = "time_notice">
+                <div class="time_notice_con">체크인 시간 <span>15:00</span></div>
+                <div class="time_notice_symbol">/</div>
+                <div class="time_notice_con">체크아웃 시간 <span>12:00</span></div>
+
+            </div>
+            <div id = "resev_btn">
+                <button id = "resevation_btn">객실 예약</button>
+            </div>
+
+        </div>
+        <div id ="footer">
+
+        </div>
+
+    </div>
+
+
+    <script src='reservation.js'></script>
+</body>
+</html>
