@@ -43,7 +43,7 @@ li {
     float : left;
     width : 107px;
     height : 81px;
-    background : url(../images/logo_white.png) no-repeat;
+    background : url(../images/logo_opacity.png) no-repeat;
     background-size : contain;
     text-indent : -9999px;
 }
@@ -471,7 +471,8 @@ li {
     margin : 0px auto;
     width : 84px;
     height : 65px;
-    background: url(../images/ft_logo.jpg) no-repeat;
+    background: url(../images/logo_white.png) no-repeat;
+    background-size : contain;
     z-index : 100;
 }#footer > #logoLine > #footerLine {
     position : absolute;
