@@ -41,10 +41,12 @@
     width: 485px;
     border: 1px solid #eeeeee;
     padding-top: 10px;
+    color: #81674e;
 }
 .menu > div:nth-child(2){
     border-bottom: 5px solid #81674e;
     background-color: #faf9f7;
+    font-weight: bold;
 }
 
 
