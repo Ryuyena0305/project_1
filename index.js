@@ -54,9 +54,9 @@ function slide() {
     let html = ``;
     currentIndex++;
     if(currentIndex < 3) {
-        html = `<img id = "imageOut" src = "./images/main_slide_0${currentIndex}.jpg" style = "width : 100%;"/>`;
+        html = `<img src = "./images/main_slide_0${currentIndex}.jpg" style = "width : 100%;"/>`;
     } else {
-        html = `<img id = "imageOut" src = "./images/main_slide_0${currentIndex}.jpg" style = "width : 100%;"/>`;
+        html = `<img src = "./images/main_slide_0${currentIndex}.jpg" style = "width : 100%;"/>`;
         currentIndex = 0;
     }
     console.log(html);
