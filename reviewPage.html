@@ -85,16 +85,33 @@
         </div>
         <div id = "main">
             <div id = "pInformation">
-                <div><p>안녕하세요.</p></div>
-                <div>
-                    <div>
-                        <label>전화번호</label>
-                        <input type = "text" readonly="readonly"/>
+                <div id = "customerName"><p>안녕하세요.</p></div>
+                <div id = "customerInfo">
+                    <div id = "customerBox">
+                        <div id = "customerPhone" class = "customerClass">
+                            <label>전화번호</label>
+                            <input type = "text" disabled/>
+                        </div>
+                        <div id = "customerBirth" class = "customerClass">
+                            <label>생년월일</label>
+                            <input type = "text" disabled/>
+                        </div>
+                        <div id = "customerAddress" class = "customerClass">
+                            <label>주소</label>
+                            <input type = "text" disabled/>
+                        </div>
                     </div>
                 </div>
             </div>
             <div id = "bookingHistory">
-
+                <div id = "bHistory"><p>예약 내역</p></div>
+                <div>
+                    <table>
+                        <thead>
+                            <tr><th>순번</th><th>객실이름</th><th>객실번호</th><th>입실시간</th><th>퇴실시간</th><th></th></tr>
+                        </thead>
+                    </table>
+                </div>
             </div>
         </div>
         <div id = "footer">
