@@ -43,7 +43,7 @@ li {
     float : left;
     width : 107px;
     height : 81px;
-    background : url(./images/logo.jpg) no-repeat;
+    background : url(../images/logo.jpg) no-repeat;
     text-indent : -9999px;
 }
 #hBox > #mainMenu >.menuList {
@@ -181,7 +181,7 @@ li {
     display : table-cell;
     width : 100%;
     height : 600px;
-    background : url(./images/middle_menu_01.jpg) center center no-repeat;
+    background : url(../images/middle_menu_01.jpg) center center no-repeat;
     background-size: cover;
     vertical-align: middle;
     color : white;
@@ -192,7 +192,7 @@ li {
     display : table-cell;
     width : 100%;
     height : 600px;
-    background : url(./images/middle_menu_02.jpg) center center no-repeat;
+    background : url(../images/middle_menu_02.jpg) center center no-repeat;
     background-size: cover;
     vertical-align: middle;
     color : white;
@@ -203,7 +203,7 @@ li {
     display : table-cell;
     width : 100%;
     height : 600px;
-    background : url(./images/middle_menu_03.jpg) center center no-repeat;
+    background : url(../images/middle_menu_03.jpg) center center no-repeat;
     background-size: cover;
     vertical-align: middle;
     color : white;
@@ -235,7 +235,7 @@ li {
     display : inline-block;
     width : 6px;
     height : 11px;
-    background : url(./images/view.png);
+    background : url(../images/view.png);
 }
 
 /* #endregion main > mainInfo */
@@ -276,7 +276,7 @@ li {
 .slideCard > #standardSingle {
     width : 100%;
     height : 360px;
-    background : url(./images/standard_single.jpg);
+    background : url(../images/standard_single.jpg);
 }
 .slideCard > #standardSingle > a {
     display : inline-block;
@@ -286,7 +286,7 @@ li {
 .slideCard > #standardDouble {
     width : 100%;
     height : 360px;
-    background : url(./images/standard_double.jpg);
+    background : url(../images/standard_double.jpg);
 }
 .slideCard > #standardDouble > a {
     display : inline-block;
@@ -296,7 +296,7 @@ li {
 .slideCard > #standardTwin {
     width : 100%;
     height : 360px;
-    background : url(./images/standard_twin.jpg);
+    background : url(../images/standard_twin.jpg);
 }
 .slideCard > #standardTwin > a {
     display : inline-block;
@@ -325,7 +325,7 @@ li {
     display : table;
     width : 100%;
     height : 260px;
-    background : url(./images/main_visual_02.jpg) 50% no-repeat;
+    background : url(../images/main_visual_02.jpg) 50% no-repeat;
     background-attachment : fixed;
 }
 #promotion > a {
@@ -370,7 +370,7 @@ li {
     margin-right : 30px;
     width : 585px;
     height : 100%;
-    background : url(./images/facilities_communication.jpg);
+    background : url(../images/facilities_communication.jpg);
 }
 #facilities > #fBox > #fImage > #commImage > a {
     display : table-cell;
@@ -392,7 +392,7 @@ li {
     display : table;
     width : 585px;
     height : 100%;
-    background : url(./images/facilities_restaurant.jpg);
+    background : url(../images/facilities_restaurant.jpg);
 }
 #facilities > #fBox > #fImage > #restImage > a {
     display : table-cell;
@@ -413,7 +413,7 @@ li {
 #facilities > #leftImage {
     width : 219px;
     height : 381px;
-    background: url(./images/fac_bg_left.jpg) no-repeat;
+    background: url(../images/fac_bg_left.jpg) no-repeat;
     position : absolute;
     top : 50%;
     left : 0px;
@@ -422,7 +422,7 @@ li {
 #facilities > #rightImage {
     width : 219px;
     height : 381px;
-    background: url(./images/fac_bg_right.jpg) no-repeat;
+    background: url(../images/fac_bg_right.jpg) no-repeat;
     position : absolute;
     top : 50%;
     right : 0px;
@@ -470,7 +470,7 @@ li {
     margin : 0px auto;
     width : 84px;
     height : 65px;
-    background: url(./images/ft_logo.jpg) no-repeat;
+    background: url(../images/ft_logo.jpg) no-repeat;
     z-index : 100;
 }#footer > #logoLine > #footerLine {
     position : absolute;

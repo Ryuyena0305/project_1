@@ -59,7 +59,7 @@ function slide() {
         html = `<img src = "./images/main_slide_0${currentIndex}.jpg" style = "width : 100%;"/>`;
         currentIndex = 0;
     }
-    console.log(html);
+    // console.log(html);
     moveImage.innerHTML = html;
 }
 
