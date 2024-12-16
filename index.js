@@ -51,34 +51,36 @@ function closeMenu() {
 function slide() {
     let mainSlide = document.querySelector("#mainSlide");
     let moveImage = document.querySelector("#moveImage");
-    // let slideImage = document.querySelectorAll("#mainSlide > #moveImage > img");
-    // let slideImage = document.querySelectorAll("#mainSlide > #moveImage > .slideImg");
-    // console.log(slideImage);
-    console.log(moveImage);
-    console.log(moveImage.offsetWidth);
-    console.log(mainSlide.offsetWidth);
-    let temp = mainSlide.offsetWidth;
-    currentIndex++;
-    moveImage.style.transition = "all 0.6s";
-    if(currentIndex < 3) {
-        moveImage.style.transform = `translateX(-${temp * currentIndex}px)`;
-    } else {
-        moveImage.style.transform = `translateX(-${0}px)`;
-        currentIndex = 0;
-    }
-}
-
-function test() {
-    let mainSlide = document.querySelector("#mainSlide");
-    let moveImage = document.querySelector("#moveImage");
     let html = ``;
     currentIndex++;
     if(currentIndex < 3) {
-        html = `<img src = "./images/main_slide_0${currentIndex}.jpg" style = "width : 100%;"/>`;
+        html = `<img id = "imageOut" src = "./images/main_slide_0${currentIndex}.jpg" style = "width : 100%;"/>`;
     } else {
-        html = `<img src = "./images/main_slide_0${currentIndex}.jpg" style = "width : 100%;"/>`;
+        html = `<img id = "imageOut" src = "./images/main_slide_0${currentIndex}.jpg" style = "width : 100%;"/>`;
         currentIndex = 0;
     }
     console.log(html);
     moveImage.innerHTML = html;
 }
+
+setInterval(slide, 3000);
+
+// function slide() {
+//     let mainSlide = document.querySelector("#mainSlide");
+//     let moveImage = document.querySelector("#moveImage");
+//     // let slideImage = document.querySelectorAll("#mainSlide > #moveImage > img");
+//     // let slideImage = document.querySelectorAll("#mainSlide > #moveImage > .slideImg");
+//     // console.log(slideImage);
+//     console.log(moveImage);
+//     console.log(moveImage.offsetWidth);
+//     console.log(mainSlide.offsetWidth);
+//     let temp = mainSlide.offsetWidth;
+//     currentIndex++;
+//     moveImage.style.transition = "all 0.6s";
+//     if(currentIndex < 3) {
+//         moveImage.style.transform = `translateX(-${temp * currentIndex}px)`;
+//     } else {
+//         moveImage.style.transform = `translateX(-${0}px)`;
+//         currentIndex = 0;
+//     }
+// }

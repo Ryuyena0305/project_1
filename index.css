@@ -105,6 +105,9 @@ li {
     top : 23.5px;
     border : solid 2px #2E2E2E;
 }
+#hBox > #loginButton > a {
+    font-weight : bold;
+}
 #sBox {
     display : none;
     position : absolute;
@@ -143,6 +146,23 @@ li {
 #main > #mainSlide > #moveImage > img {
     width : 100%;
     height : 100%;
+}
+#main > #mainSlide > #moveimage > #imageOut {
+    animation : fadeIn 3s;
+}
+@keyframes fadeIn {
+    from {
+        opacity : 0;
+    } to {
+        opacity : 1;
+    }
+}
+@keyframes fadeOut {
+    from {
+        opacity : 1;
+    } to {
+        opacity : 0;
+    }
 }
 #main > #mainSlide > #slideBtn {
     position : absolute;
