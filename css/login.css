@@ -79,20 +79,18 @@
 /* 로그인 구역 */
 .login{
     background-color:#fff4ea;
-    height: 200px;
-    padding: 40px 0px;
+    padding: 70px 0px;
     text-align: center;
 }
 .loginBox{
     width: 400px ;
     margin: 0 auto;
+    align-items: center;
 }
 .idSave{
     margin: 10px 0px;
     text-align: left;
 }
-
-
 .loginWrite{
     display: flex;
     justify-content: center;
@@ -135,5 +133,28 @@
     width: 130px;
     height: 35px;
 }
-
-
+.notice{
+    background-color: #fbfbfb;
+    color: gray;
+    font-size: 14px;
+    border: 1px solid #eeeeee;
+    margin: 10px 0px;
+    padding: 10px 0px;
+    text-align: center;
+    align-items: center;
+}
+.on{
+    background-color: #fff4ea;
+    padding: 30px 0px;
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+.on > button{
+    width: 200px;
+    margin-top: 20px;
+    height: 40px;
+    background-color: darkgray;
+    color: #ffff;
+    border: none;
+}
