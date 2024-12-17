@@ -111,10 +111,8 @@
     height: 64px;
     margin-left: 10px;
     background-color: #3a3125;
-    border: none;
-}
-.loginWrite > button > a{
     color: #ffff;
+    border: none;
 }
 .btnBox{
     display: flex;

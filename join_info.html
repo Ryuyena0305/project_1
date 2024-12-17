@@ -33,21 +33,21 @@
                         <ul>
                             <li>
                                 <div>성명</div>
-                                <input type="text">
+                                <input type="text" class="name">
                             </li>
                             <li>
                                 <div>생년월일</div>
-                                <input type="text" placeholder="831205">
+                                <input type="text" placeholder="831205" class="birth">
                                 <p> 6자리 입력</p>
                             </li>
                             <li>
                                 <div>전화번호</div>
-                                <input type="text" placeholder="010-1111-1111">
+                                <input type="text" placeholder="010-1111-1111" class="phone">
                                 <p> - 특수문자 포함</p>
                             </li>
                             <li>
                                 <div>주소</div>
-                                <input type="text">
+                                <input type="text" class="address">
                             </li>
                         </ul>
                     </div>
@@ -57,13 +57,13 @@
                         <ul>
                             <li>
                                 <div>아이디</div>
-                                <input type="text">
+                                <input type="text" class="id">
                                 <button type="button">아이디 중복확인</button>
                                 <p> 6~12자 이내 영문 또는 영문/숫자 조합</p>
                             </li>
                             <li>
                                 <div>비밀번호</div>
-                                <input type="password">
+                                <input type="password" class="pw">
                                 <p> 8~20자 이내 영문/숫자 조합(특수문자 입력 가능)</p>
                             </li>
                         </ul>
@@ -71,7 +71,7 @@
                     </div>
 
                     <div class="infoBtn">
-                        <button type="button"><a href="#">가입하기</a></button>
+                        <button type="button" onclick="join()">가입하기</button>
                     </div>
                 </div> <!-- info end -->
             </div>
