@@ -1,6 +1,7 @@
 customerList = [
     {customerCode : 1, id : "test1", password : "1234", name : "유재석", birth : "831205", phone : "010-1111-1111", address : "인천 부평구", clause : true},
     {customerCode : 2, id : "test2", password : "4567", name : "강호동", birth : "800506", phone : "010-2222-2222", address : "인천 부평구", clause : false},
+    {customerCode : 3, id : "test3", password : "7890", name : "신동엽", birth : "850712", phone : "010-3333-3333", address : "인천 부평구", clause : true},
 ];
 
 bookingList = [
@@ -19,7 +20,18 @@ roomList = [
 ];
 let changeState = true;
 
-printBookingList(1);
+// printBookingList(1);
+checkLogin();
+
+function checkLogin() {
+    let checking = getLocalStorage("login");
+    // console.log(checking[0].customerCode);
+    if(checking[0].customerCode > 0) {
+        printBookingList(checking[0].customerCode);
+    } else {
+        printBookingList(0);
+    }
+}
 
 // 마이페이지 내용 전체를 출력하는 함수
 function printBookingList(code) {
@@ -95,12 +107,12 @@ function printBookingList(code) {
                 
         }
     }
-    customerPhone.value = login.phone;
-    customerBirth.value = login.birth;
-    customerAddress.value = login.address;
     let loginState = getLocalStorage("login");
-    if(login != []) {
+    if(code != 0) {
         customerName.innerHTML = `<p>${login.name}님 반갑습니다.</p>`;
+        customerPhone.value = login.phone;
+        customerBirth.value = login.birth;
+        customerAddress.value = login.address;
     } else {
         customerName.innerHTML = `<p>OOO님 반갑습니다.</p>`;
     }
@@ -118,34 +130,47 @@ function changeInfo() {
     // console.log(btn);
     // console.log("변경 전 : " + btn.innerHTML);
     if(changeState) {
-        customerPhone.innerHTML = `<label>전화번호</label><input type = "text" value = "${phoneValue}"/>`;
-        customerPhone.className = "customerClassOpen";
-        customerBirth.innerHTML = `<label>생년월일</label><input type = "text" value = "${birthValue}"/>`;
-        customerBirth.className = "customerClassOpen";
-        customerAddress.innerHTML = `<label>주소</label><input type = "text" value = "${addressValue}"/>`;
-        customerAddress.className = "customerClassOpen";
-        btn.innerHTML = "수정완료";
-        // console.log("변경 후 : " + btn);
-        changeState = false;
-    } else {
-        customerPhone.innerHTML = `<label>전화번호</label><input type = "text" value = "${phoneValue}" disabled/>`;
-        customerPhone.className = "customerClassClose";
-        customerBirth.innerHTML = `<label>생년월일</label><input type = "text" value = "${birthValue}" disabled/>`;
-        customerBirth.className = "customerClassClose";
-        customerAddress.innerHTML = `<label>주소</label><input type = "text" value = "${addressValue}" disabled/>`;
-        customerAddress.className = "customerClassClose";
-        btn.innerHTML = "회원수정";
-        let getCustomerList = getLocalStorage("customer");
-        let getLoginState = getLocalStorage("login");
-        for(let index = 0; index < getCustomerList.length; index++) {
-            // 이후 작성 : 회원정보수정을 하면 수정한 값을 로컬스토리지에 넣기
+        let state = confirm("회원정보를 수정하시겠습니까?");
+        if(state) {
+            customerPhone.innerHTML = `<label>전화번호</label><input type = "text" value = "${phoneValue}"/>`;
+            customerPhone.className = "customerClassOpen";
+            customerBirth.innerHTML = `<label>생년월일</label><input type = "text" value = "${birthValue}"/>`;
+            customerBirth.className = "customerClassOpen";
+            customerAddress.innerHTML = `<label>주소</label><input type = "text" value = "${addressValue}"/>`;
+            customerAddress.className = "customerClassOpen";
+            btn.innerHTML = "수정완료";
+            // console.log("변경 후 : " + btn);
+            changeState = false;
         }
-        // console.log("변경 후 : " + btn);
-        changeState = true;
+    } else {
+        let state = confirm("수정된 정보를 저장하시겠습니까?");
+        if(state) {
+            customerPhone.innerHTML = `<label>전화번호</label><input type = "text" value = "${phoneValue}" disabled/>`;
+            customerPhone.className = "customerClassClose";
+            customerBirth.innerHTML = `<label>생년월일</label><input type = "text" value = "${birthValue}" disabled/>`;
+            customerBirth.className = "customerClassClose";
+            customerAddress.innerHTML = `<label>주소</label><input type = "text" value = "${addressValue}" disabled/>`;
+            customerAddress.className = "customerClassClose";
+            btn.innerHTML = "회원수정";
+            let getCustomerList = getLocalStorage("customer");
+            let getLoginState = getLocalStorage("login");
+            for(let index = 0; index < getCustomerList.length; index++) {
+                // 이후 작성 : 회원정보수정을 하면 수정한 값을 로컬스토리지에 넣기
+                let customer = getCustomerList[index];
+                if(getLoginState[0].customerCode == customer.customerCode) {
+                    customer.phone = phoneValue;
+                    customer.birth = birthValue;
+                    customer.address = addressValue;
+                    setLocalStorage("customer", getCustomerList);
+                }
+            }
+            // console.log("변경 후 : " + btn);
+            changeState = true;
+        }
     }
 }
 
-// 예약한 날을 삭제하는 함수
+// 예약 을 삭제하는 함수
 function cancelBooking(bookingCode) {
     let state = confirm("정말 취소하시겠습니까?");
     if(state) {
@@ -178,7 +203,7 @@ function deleteCustomer() {
                 getCustomerList.splice(index, 1);
                 console.log(getCustomerList);
                 setLocalStorage("customer", getCustomerList);
-                setLocalStorage("login", []);
+                setLocalStorage("login", [{customerCode : 0, id : "", password : "", name : ""}]);
                 break;
             }
         }
