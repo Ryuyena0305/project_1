@@ -73,7 +73,7 @@ function printBookingList(code) {
         }
         if(bookingTemp.customerCode == code) {
             let temp = bookingTemp.checkOut.split("-");
-            console.log(temp);
+            // console.log(temp);
             html += `<tr>
                 <td style = "text-align : center;">${count}</td>
                 <td style = "text-align : center;">${room.roomName}</td>
@@ -111,8 +111,8 @@ function changeInfo() {
     let birthValue = document.querySelector("#customerBirth > input").value;
     let addressValue = document.querySelector("#customerAddress > input").value;
     let btn = document.querySelector("#changeInfo");
-    console.log(btn);
-    console.log("변경 전 : " + btn.innerHTML);
+    // console.log(btn);
+    // console.log("변경 전 : " + btn.innerHTML);
     if(changeState) {
         customerPhone.innerHTML = `<label>전화번호</label><input type = "text" value = "${phoneValue}"/>`;
         customerPhone.className = "customerClassOpen";
@@ -121,7 +121,7 @@ function changeInfo() {
         customerAddress.innerHTML = `<label>주소</label><input type = "text" value = "${addressValue}"/>`;
         customerAddress.className = "customerClassOpen";
         btn.innerHTML = "수정완료";
-        console.log("변경 후 : " + btn);
+        // console.log("변경 후 : " + btn);
         changeState = false;
     } else {
         customerPhone.innerHTML = `<label>전화번호</label><input type = "text" value = "${phoneValue}" disabled/>`;
@@ -131,7 +131,7 @@ function changeInfo() {
         customerAddress.innerHTML = `<label>주소</label><input type = "text" value = "${addressValue}" disabled/>`;
         customerAddress.className = "customerClassClose";
         btn.innerHTML = "회원수정";
-        console.log("변경 후 : " + btn);
+        // console.log("변경 후 : " + btn);
         changeState = true;
     }
 }
@@ -151,4 +151,23 @@ function cancelBooking(bookingCode) {
         }
     }
     printBookingList(1);
+}
+
+//회원정보를 탈퇴하는 함수
+function deleteCustomer() {
+    let state = confirm("정말 탈퇴하시겠습니까?");
+    if(state) {
+        let getCustomerList = getLocalStorage("customer");
+        let getLoginState = getLocalStorage("login");
+        console.log(getCustomerList);
+        for(let index = 0; index < getCustomerList.length; index++) {
+            let temp = getCustomerList[index];
+            if(temp.customerCode == getLoginState.customerCode) {
+                getCustomerList.splice(index, 1);
+                setLocalStorage("customer", getCustomerList);
+                setLocalStorage("login", {});
+                break;
+            }
+        }
+    }
 }
