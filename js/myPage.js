@@ -20,6 +20,8 @@ roomList = [
 let changeState = true;
 
 printBookingList(1);
+
+// 마이페이지 내용 전체를 출력하는 함수
 function printBookingList(code) {
     let getCustomerList = getLocalStorage("customer");
     let getbookingList = getLocalStorage("booking");
@@ -100,6 +102,7 @@ function printBookingList(code) {
     customerName.innerHTML = `<p>${login.name}님 반갑습니다.</p>`;
 }
 
+// 회원정보를 수정하는 함수
 function changeInfo() {
     let customerPhone = document.querySelector("#customerPhone");
     let customerBirth = document.querySelector("#customerBirth");
@@ -133,6 +136,7 @@ function changeInfo() {
     }
 }
 
+// 예약한 날을 삭제하는 함수
 function cancelBooking(bookingCode) {
     let state = confirm("정말 취소하시겠습니까?");
     if(state) {
