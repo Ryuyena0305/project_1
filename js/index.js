@@ -4,7 +4,7 @@ imageList = [
     "main_slide_02.jpg", 
     "main_slide_03.jpg"
 ];
-currentIndex = 1;
+// currentIndex = 1;
 
 function onMenu(index) {
     // console.log(`실행 : ${index}`)
@@ -12,18 +12,12 @@ function onMenu(index) {
     let sBox = document.querySelector("#sBox");
     let menuList = document.querySelectorAll(".menuList");
     let loginButton = document.querySelector("#loginButton");
-    let logo = document.querySelector("#logo");
-    console.log(loginButton.style);
     header.style.backgroundColor = " #81674e";
     sBox.style.display = "block";
     loginButton.style.backgroundColor = " #81674e";
     loginButton.style.color = "white";
     loginButton.style.border = "solid 2px white";
     logo.style.background = "url(../images/logo_brown.png) no-repeat;";
-    if(logo.style.background == "url(../images/logo_white.png) no-repeat;") {
-        console.log("실행");
-    }
-    console.log(logo.style.backgroundImage);
     for(let i = 0; i < menuList.length; i++) {
         let menu = document.querySelector(`#list${i} > .subMenu`);
         let under = document.querySelector(`#list${i} > .underLine`);
@@ -55,22 +49,22 @@ function closeMenu() {
     }
 }
 
-function slide() {
-    let mainSlide = document.querySelector("#mainSlide");
-    let moveImage = document.querySelector("#moveImage");
-    let html = ``;
-    currentIndex++;
-    if(currentIndex < 3) {
-        html = `<img src = "./images/main_slide_0${currentIndex}.jpg" style = "width : 100%;"/>`;
-    } else {
-        html = `<img src = "./images/main_slide_0${currentIndex}.jpg" style = "width : 100%;"/>`;
-        currentIndex = 0;
-    }
-    // console.log(html);
-    moveImage.innerHTML = html;
-}
+// function slide() {
+//     let mainSlide = document.querySelector("#mainSlide");
+//     let moveImage = document.querySelector("#moveImage");
+//     let html = ``;
+//     currentIndex++;
+//     if(currentIndex < 3) {
+//         html = `<img src = "./images/main_slide_0${currentIndex}.jpg" style = "width : 100%;"/>`;
+//     } else {
+//         html = `<img src = "./images/main_slide_0${currentIndex}.jpg" style = "width : 100%;"/>`;
+//         currentIndex = 0;
+//     }
+//     // console.log(html);
+//     moveImage.innerHTML = html;
+// }
 
-setInterval(slide, 3000);
+// setInterval(slide, 3000);
 
 // function slide() {
 //     let mainSlide = document.querySelector("#mainSlide");

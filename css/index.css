@@ -106,6 +106,14 @@ li {
     top : 23.5px;
     border : solid 2px #2E2E2E;
 }
+#hBox > #loginButton:hover {
+    color : white;
+    background-color : #81674e;
+    border : solid 2px #81674e;
+    box-shadow: 0px 0px 4px #81674e;
+    transition-duration : 0.5s;
+    transition-timing-function: ease;
+}
 #hBox > #loginButton > a {
     font-weight : bold;
 }
