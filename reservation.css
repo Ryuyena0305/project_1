@@ -37,6 +37,9 @@
     margin-top: 100px;
   
 }
+#main_box_flex{
+    display: flex;
+}
 #main_box_left{
     display: flex;
     justify-content: center;
@@ -52,10 +55,10 @@
     border-radius: 5px;
     padding: 20px;
     width: 400px;
-
-   
+    margin-left: 20px;
+    display: block;
+    align-items: end;
 }
-
 
 .box_number{
    
@@ -93,29 +96,48 @@
     border: none;
     color: #bdbdbd;
     background-color: white;
-    font-size: 30px;
+    font-size: 28px;
 }
- .days{
+ .days1{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+.days2{
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
     
 
 }
+.day1{
+    color :blue
+}
+.day2{
+    color :red
+}
 .day{
     margin-right: 10px;
 }
  #calenders{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     font-size: 20px;
-    flex-direction: row;
+    align-content: flex-start;
+    justify-content: space-evenly;
+    width: 770px;
+    height: 458px;
+ }
+ .calender{
+    display: flex;
+    font-size: 20px;
     flex-wrap: wrap;
     align-content: flex-start;
     justify-content: space-evenly;
     width: 770px;
     height: 458px;
  }
+
 
 
 
@@ -147,7 +169,6 @@ margin-bottom: 8px;
     border-radius: 6px;
     color: #666;
     font-size: 13px;
-    
     height: 22px;
     margin-bottom: 20px;
 }
@@ -230,9 +251,6 @@ margin-bottom: 8px;
     width: 260px;
     height: 150px;
 }
-
-
-
 
 /*time notice*/
 #time_notice{
