@@ -26,16 +26,15 @@ function printBookingList(code) {
     let getCustomerList = getLocalStorage("customer");
     let getbookingList = getLocalStorage("booking");
     let getroomList = getLocalStorage("room");
-    let d = getLocalStorage("login");
-    let e;
+    let getLoginState = getLocalStorage("login");
     console.log(getCustomerList);
     console.log(getbookingList);
     console.log(getroomList);
-    console.log(d);
+    console.log(getLoginState);
     // 로컬스토리지에 값을 넣는 부분 시작
-    // setLocalStorage("customer", customerList);
-    // setLocalStorage("booking", bookingList);
-    // setLocalStorage("room", roomList);
+    setLocalStorage("customer", customerList);
+    setLocalStorage("booking", bookingList);
+    setLocalStorage("room", roomList);
     // setLocalStorage("login", d);
     // 로컬스토리지에 값을 넣는 부분 끝
     let now = new Date();
@@ -60,8 +59,8 @@ function printBookingList(code) {
                 customer = customerTemp;
             }
             if(code == customerTemp.customerCode) {
-                e = {customerCode : code, id : customerTemp.id, password : customerTemp.password, name : customerTemp.name};
-                setLocalStorage("login", e);
+                let newLogin = [{customerCode : code, id : customerTemp.id, password : customerTemp.password, name : customerTemp.name}];
+                setLocalStorage("login", newLogin);
                 login = customerTemp;
             }
         }
@@ -99,7 +98,12 @@ function printBookingList(code) {
     customerPhone.value = login.phone;
     customerBirth.value = login.birth;
     customerAddress.value = login.address;
-    customerName.innerHTML = `<p>${login.name}님 반갑습니다.</p>`;
+    let loginState = getLocalStorage("login");
+    if(login != []) {
+        customerName.innerHTML = `<p>${login.name}님 반갑습니다.</p>`;
+    } else {
+        customerName.innerHTML = `<p>OOO님 반갑습니다.</p>`;
+    }
 }
 
 // 회원정보를 수정하는 함수
@@ -131,6 +135,11 @@ function changeInfo() {
         customerAddress.innerHTML = `<label>주소</label><input type = "text" value = "${addressValue}" disabled/>`;
         customerAddress.className = "customerClassClose";
         btn.innerHTML = "회원수정";
+        let getCustomerList = getLocalStorage("customer");
+        let getLoginState = getLocalStorage("login");
+        for(let index = 0; index < getCustomerList.length; index++) {
+            // 이후 작성 : 회원정보수정을 하면 수정한 값을 로컬스토리지에 넣기
+        }
         // console.log("변경 후 : " + btn);
         changeState = true;
     }
@@ -162,12 +171,17 @@ function deleteCustomer() {
         console.log(getCustomerList);
         for(let index = 0; index < getCustomerList.length; index++) {
             let temp = getCustomerList[index];
-            if(temp.customerCode == getLoginState.customerCode) {
+            console.log("temp : " + temp.customerCode);
+            console.log("getLoginState : " + getLoginState[0].customerCode);
+            if(temp.customerCode == getLoginState[0].customerCode) {
+                console.log("실행");
                 getCustomerList.splice(index, 1);
+                console.log(getCustomerList);
                 setLocalStorage("customer", getCustomerList);
-                setLocalStorage("login", {});
+                setLocalStorage("login", []);
                 break;
             }
         }
+        location.href = "./index.html";
     }
 }
