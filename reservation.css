@@ -5,7 +5,6 @@
     margin: 0px;
     padding: 0px;
     font-size:16px;
-    border: 1px red solid;
 }
 
 #main1{
@@ -57,12 +56,10 @@
     width: 400px;
     margin-left: 20px;
     display: block;
-    align-items: end;
-}
-
-.box_number{
+    margin-right: 600px;
    
 }
+
 .box_number_btn{
     display: flex;
 }
@@ -128,13 +125,13 @@
     width: 770px;
     height: 458px;
  }
- .calender{
+ .calender1{
     display: flex;
     font-size: 20px;
     flex-wrap: wrap;
     align-content: flex-start;
     justify-content: space-evenly;
-    width: 770px;
+
     height: 458px;
  }
 
