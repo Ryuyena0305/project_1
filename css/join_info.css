@@ -10,7 +10,7 @@
     padding: 0px;
 }
 /* 전체구역 */
-#wrap{
+#mainBox{
     width: 1200px;   
     margin: 0 auto;
 }
@@ -27,13 +27,13 @@
 #top > h3{
     font-size: 30px;
     color: #81674e;
+    margin-top: 70px;
     margin-bottom: 20px;
 }
 
 .menu {
     display: flex;
     justify-content: space-between;
-    text-align: center;
     border-bottom: 1px solid #81674e;
     height: 50px;
 }
@@ -42,6 +42,7 @@
     border: 1px solid #eeeeee;
     padding-top: 10px;
     color: #81674e;
+    text-align: center;
 }
 .menu > div:nth-child(2){
     border-bottom: 5px solid #81674e;
@@ -98,6 +99,7 @@
     color: #ffff;
     border: 1px solid #eeeeee;
     margin-right: 10px;
+    text-align: center;
 }
 .infoBtn {
     text-align: center;
@@ -109,4 +111,5 @@
     border: 1px solid #eeeeee;
     margin: 30px 0px;
     color: #ffff;
+    text-align: center;
 }

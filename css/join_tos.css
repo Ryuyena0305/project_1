@@ -11,11 +11,10 @@
 }
 
 /* 전체구역 */
-#wrap{
+#mainBox{
     width: 1200px;   
     margin: 0 auto;
 }
-
 
 /* 메인 */
 #main{
@@ -27,6 +26,7 @@
 .top > h3{
     font-size: 30px;
     color: #81674e;
+    margin-top: 70px;
     margin-bottom: 20px;
 }
 .menu {
@@ -38,6 +38,7 @@
 }
 .menu > div{
     width: 485px;
+    text-align: center;
     border: 1px solid #eeeeee;
     padding-top: 10px;
     color: #81674e;
@@ -57,6 +58,7 @@
     font-size: 25px;
     color: #81674e;
     margin-bottom: 10px;
+    text-align: center;
 }
 .hello > span{
     color: gray;
@@ -87,7 +89,6 @@
 .contTit{
     display: flex;
     justify-content: space-between;
-    align-items: center;
     margin-bottom: 10px;
 }
 .contTit > button{
@@ -97,6 +98,7 @@
     background-color: #81674e;
     border: 1px solid #eeeeee;
     color: #ffff;
+    text-align: center;
 }
 .contTxt{
     border: 1px solid #eeeeee;
@@ -114,6 +116,26 @@
     text-align: center;
     border-collapse: collapse;
 }
+.contBtn{
+    margin: 10px 0px 40px 0px;
+}
+.tosBtn{
+    text-align: center;
+}
+.tosBtn > button{
+    width: 90px;
+    height: 45px;
+    margin: 0px 10px;
+    background-color: #81674e;
+    border: 1px solid #eeeeee;
+    color: #ffff;
+    text-align: center;
+}
+.tosBtn > button > a{
+    color: #ffff;
+}
+
+
 
 /* 전체보기 팝업 */
 #popupBox{
@@ -148,22 +170,3 @@
 }
 
 
-
-
-
-.contBtn{
-    margin: 10px 0px 40px 0px;
-}
-.tosBtn{
-    text-align: center;
-}
-.tosBtn > button{
-    width: 90px;
-    height: 45px;
-    margin: 0px 10px;
-    background-color: #81674e;
-    border: 1px solid #eeeeee;
-}
-.tosBtn > button > a{
-    color: #ffff;
-}
