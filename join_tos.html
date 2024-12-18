@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>회원가입 | 약관동의</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='./css/index.css'>
+    <link rel='stylesheet' href='./css/join_tos.css'>
+</head>
+<body>
+
+    <div id="wrap">
+        <div id = "header">
+            <div id = "hBox">
+                <a id = "logo" href = "./index.html">hotel</a>
+                <ul id = "mainMenu">
+                    <li id = "list0" class = "menuList" onmouseover = "onMenu(0)">
+                        <div class = "underLineBox">
+                            <a href = "#">소개</a>
+                            <span class = "underLine"></span>
+                        </div>
+                        <ul class = "subMenu" onmouseout = "closeMenu()">
+                            <li><a href = "#">AMID</a></li>
+                            <li><a href = "#">위치</a></li>
+                        </ul>
+                    </li>
+                    <li id = "list1" class = "menuList" onmouseover = "onMenu(1)">
+                        <a href = "#">객실</a>
+                        <ul class = "subMenu" onmouseout = "closeMenu()">
+                            <li><a href = "#">스탠다드 싱글</a></li>
+                            <li><a href = "#">스탠다드 더블</a></li>
+                            <li><a href = "#">스탠다드 트윈</a></li>
+                            <li><a href = "#">스탠다드 트리플</a></li>
+                            <li><a href = "#">디럭스 더블</a></li>
+                            <li><a href = "#">디럭스 트리플</a></li>
+                            <li><a href = "#">주니어 스위트</a></li>
+                            <li><a href = "#">프리미어 스위트</a></li>
+                            <li><a href = "#">이그제큐티브 스위트</a></li>
+                            <li><a href = "#">아미드 스위트</a></li>
+                        </ul>
+                    </li>
+                    <li id = "list2" class = "menuList" onmouseover = "onMenu(2)">
+                        <a href = "#">미팅/이벤트</a>
+                        <ul class = "subMenu" onmouseout = "closeMenu()">
+                            <li><a href = "#">미팅룸/연회장</a></li>
+                        </ul>
+                    </li>
+                    <li id = "list3" class = "menuList" onmouseover = "onMenu(3)">
+                        <a href = "#">부대시설</a>
+                        <ul class = "subMenu" onmouseout = "closeMenu()">
+                            <li><a href = "#">비즈니스 센터</a></li>
+                            <li><a href = "#">피트니스 센터</a></li>
+                            <li><a href = "#">코인 세탁실</a></li>
+                        </ul>
+                    </li>
+                    <li id = "list4" class = "menuList" onmouseover = "onMenu(4)">
+                        <a href = "#">라이프스타일</a>
+                        <ul class = "subMenu" onmouseout = "closeMenu()">
+                            <li><a href = "#">더 반상</a></li>
+                            <li><a href = "#">더 베이크</a></li>
+                            <li><a href = "#">경복궁</a></li>
+                            <li><a href = "#">삿뽀로</a></li>
+                            <li><a href = "#">하모니 마트</a></li>
+                        </ul>
+                    </li>
+                    <li id = "list5" class = "menuList" onmouseover = "onMenu(5)">
+                        <a href = "#">스페셜 오퍼</a>
+                        <ul class = "subMenu" onmouseout = "closeMenu()">
+                            <li><a href = "#">프로모션</a></li>
+                            <li><a href = "#">제휴처 할인 혜택</a></li>
+                        </ul>
+                    </li>
+                    <li id = "list6" class = "menuList" onmouseover = "onMenu(6)">
+                        <a href = "#">예약</a>
+                        <ul class = "subMenu" onmouseout = "closeMenu()">
+
+                        </ul>
+                    </li>
+                </ul>
+                <div id = "loginButton"><a href = "#">Login</a></div>
+            </div>
+            <div id = "sBox" onmouseout = "closeMenu()">
+
+            </div>
+        </div>
+
+
+
+        <div id="main">
+            <div class="top">
+                <h3>회원가입</h3>
+                <!-- 카테고리 -->
+                <div class="menu"> <!-- 버튼 아님. 약관동의 하단 - 다음 버튼 눌러야 이동함 -->
+                    <div>약관동의</div>
+                    <div>회원정보 입력</div>
+                </div>
+
+                <!-- 인사말 -->
+                <div class="hello">
+                    <h2>더조은호텔에 오신 것을 환영합니다</h2>
+                    <span>※약관 및 개인정보 수집·이용 사항을 확인하시고 동의여부에 체크해주시기 바랍니다</span>
+                </div>
+            </div> <!-- top end -->
+
+
+
+            <!-- 메인 컨텐츠 -->
+            <div id="content">
+                <div class="tos">
+                    <h4>약관동의</h4>
+                    <div class="checkAll">
+                        <input type="checkbox"> <span> 가입 약관 전체 동의</span>
+                        <p>※ 전체동의는 선택사항(동의 내용을 확인한후 개별동의 가능)이며 전체동의 버튼을 체크하면 선택적 수집동의도 동시 진행됩니다.</p>
+                    </div>
+                    <div class="tosCont">
+                        <div class="contTit">
+                            <h5>개인정보 수집, 이용에 대한 동의 (필수)</h5>
+                            <button type="button" class="popupOpen" onclick="popup(clickAll)">전체보기</button>
+                        </div>
+
+
+
+
+
+                        <!-- 전체보기 팝업 -->
+                        <div id="popupBox">
+                            <div class="popupTop">
+                                <h2>개인정보 수집, 이용에 대한 동의</h2>
+                                <button type="button" class="popupClose">X</button>
+                            </div>
+                            <div class="textBox popupCont">
+                                <ul class="contTxt popupTxt">
+                                    <li>
+                                        <h5>1. 수집 이용 항목</h5>
+                                        성명, 생년월일, 주소, 휴대폰번호, 아이디, 비밀번호
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <h5>2. 수집 이용 목적</h5>
+                                        본인 식별, 서비스 제공 및 민원처리
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <h5>3. 보유 이용 기간</h5>
+                                        회원 탈퇴 시 까지
+                                    </li>
+                                    <br>
+                                    <p>※ 관련 법령에서 정한 별도 보유 기한이 있는 경우는 그에 따름. <br>
+                                    ※ 위 사항에 대한 동의를 거부할 수 있으나, 이에 대한 동의가 없을 경우 회원 가입 및 서비스 이용이 불가합니다.</p>
+                                </ul>
+                            </div>
+                        </div>
+
+
+
+                        <div class="textBox">
+                            <ul class="contTxt">
+                                <li>
+                                    <h5>1. 수집 이용 항목</h5>
+                                    성명, 생년월일, 주소, 휴대폰번호, 아이디, 비밀번호
+                                </li>
+                                <br>
+                                <li>
+                                    <h5>2. 수집 이용 목적</h5>
+                                    본인 식별, 서비스 제공 및 민원처리
+                                </li>
+                                <br>
+                                <li>
+                                    <h5>3. 보유 이용 기간</h5>
+                                    회원 탈퇴 시 까지
+                                </li>
+                                <br>
+                                <p>※ 관련 법령에서 정한 별도 보유 기한이 있는 경우는 그에 따름. <br>
+                                ※ 위 사항에 대한 동의를 거부할 수 있으나, 이에 대한 동의가 없을 경우 회원 가입 및 서비스 이용이 불가합니다.</p>
+                            </ul>
+                        </div>
+                        <div class="contBtn">
+                            <input type="radio" name="yn1" class="" value="yes"/> 동의함
+                            <input type="radio" name="yn1" class="yn1" value="no"/> 동의하지 않음
+                        </div>
+                    </div> 
+                    <div class="tosCont">
+                        <div class="contTit">
+                            <h5>개인정보 제3자 제공 및 국외이전 동의 (선택)</h5>
+                            <button type="button" class="popupOpen" onclick="popup(clickAll)">전체보기</button>
+                        </div>
+
+
+                        <!-- 전체보기 팝업 -->
+                        <div id="popupBox">
+                            <div class="popupTop">
+                                <h2>개인정보 제3자 제공 및 국외이전 동의</h2>
+                                <button type="button" class="popupClose">X</button>
+                            </div>
+                            <div class="textBox popupCont">
+                                <ul class="contTxt popupTxt">
+                                    <li>
+                                        <h5>1. 이전되는 개인정보 항목</h5>
+                                        성명, 생년월일, 주소, 휴대폰번호, 아이디, 비밀번호
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <h5>2. 개인정보가 이전되는 국가, 이전일시 및 이전방법</h5>
+                                        성명, 생년월일, 주소, 휴대폰번호, 아이디, 비밀번호
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <h5>3. 개인정보를 이전 받는 자</h5>
+                                        <br>
+                                        <table>
+                                            <tr class="border">
+                                                <td>법인명</td>
+                                                <td>주소</td>
+                                                <td>정보보호관리책임자</td>
+                                            </tr>
+                                            <tr class="border">
+                                                <td>
+                                                    QUEVIET - QUANGNAM CO., LTD[제휴호텔 : SHILLA
+                                                    MONOGRAM QUANG NAM-DANANG(베트남 다낭)]
+                                                </td>
+                                                <td>
+                                                    Lac Long Quan, Dien Ngoc, Dien Ban District, Quang Nam Province, Vietnam
+                                                </td>
+                                                <td>
+                                                    privacy@danang.shillamonogram.com
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <h5>4. 개인정보를 이전 받는 자의 개인정보 이용목적 및 보유·이용기간</h5>
+                                        ① 이용목적: 서비스 제공 <br>
+                                        ② 보유·이용기간: 회원 탈퇴 또는 국외이전 동의 철회 시까지 중 빠른 시점
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <h5>5. 개인정보 이전을 거부하는 방법, 절차 및 거부 효과</h5>
+                                        국외 이전에 관한 동의 거부를 통하여 개인정보의 국외 이전을 거부할 수 있습니다. <br>
+                                        다만, 국외 이전에 관한 동의를 거부하는 경우, SHILLA MONOGRAM QUANG NAM-DANANG(베트남 다낭) 이용 시 포인트 적립 및 혜택 등 서비스를 제공받을 수 없습니다.
+                                    </li>
+                                    <br>
+                                    <p>※ 해외 제휴점 관련 상세내용은 홈페이지에서 확인할 수 있습니다.</p>
+                                </ul>
+                            </div>
+                        </div>
+
+
+
+                        <div class="textBox">
+                            <ul class="contTxt">
+                                <li>
+                                    <h5>1. 이전되는 개인정보 항목</h5>
+                                    성명, 생년월일, 주소, 휴대폰번호, 아이디, 비밀번호
+                                </li>
+                                <br>
+                                <li>
+                                    <h5>2. 개인정보가 이전되는 국가, 이전일시 및 이전방법</h5>
+                                    성명, 생년월일, 주소, 휴대폰번호, 아이디, 비밀번호
+                                </li>
+                                <br>
+                                <li>
+                                    <h5>3. 개인정보를 이전 받는 자</h5>
+                                    <br>
+                                    <table>
+                                        <tr class="border">
+                                            <td>법인명</td>
+                                            <td>주소</td>
+                                            <td>정보보호관리책임자</td>
+                                        </tr>
+                                        <tr class="border">
+                                            <td>
+                                                QUEVIET - QUANGNAM CO., LTD[제휴호텔 : SHILLA
+                                                MONOGRAM QUANG NAM-DANANG(베트남 다낭)]
+                                            </td>
+                                            <td>
+                                                Lac Long Quan, Dien Ngoc, Dien Ban District, Quang Nam Province, Vietnam
+                                            </td>
+                                            <td>
+                                                privacy@danang.shillamonogram.com
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </li>
+                                <br>
+                                <li>
+                                    <h5>4. 개인정보를 이전 받는 자의 개인정보 이용목적 및 보유·이용기간</h5>
+                                    ① 이용목적: 서비스 제공 <br>
+                                    ② 보유·이용기간: 회원 탈퇴 또는 국외이전 동의 철회 시까지 중 빠른 시점
+                                </li>
+                                <br>
+                                <li>
+                                    <h5>5. 개인정보 이전을 거부하는 방법, 절차 및 거부 효과</h5>
+                                    국외 이전에 관한 동의 거부를 통하여 개인정보의 국외 이전을 거부할 수 있습니다. <br>
+                                    다만, 국외 이전에 관한 동의를 거부하는 경우, SHILLA MONOGRAM QUANG NAM-DANANG(베트남 다낭) 이용 시 포인트 적립 및 혜택 등 서비스를 제공받을 수 없습니다.
+                                </li>
+                                <br>
+                                <p>※ 해외 제휴점 관련 상세내용은 홈페이지에서 확인할 수 있습니다.</p>
+                            </ul>
+                        </div>
+                        <div class="contBtn">
+                            <input type="radio" name="yn2"/> 동의함
+                            <input type="radio" name="yn2"/> 동의하지 않음
+                        </div>
+                    </div> <!-- tosCont end -->
+
+                    <div class="tosBtn">
+                        <button type="button" onclick="tos()">다음</button>
+                        <button type="button"><a href="./index.html">취소</a></button>
+                    </div>
+                </div> <!-- tos end -->
+            </div> 
+        </div> <!-- main end -->
+
+
+
+        <div id = "footer">
+            <div id ="logoLine">
+                <div id = "footerLogo"></div>
+                <div id = "footerLine"></div>
+            </div>
+            <ul id = "footerMenu">
+                <li class = "line1"><a href = "#">이용약관</a></li>
+                <li class = "line1"><a href = "#" style = "font-weight : bold;">개인정보처리방침</a></li>
+                <li class = "line1"><a href = "#">영상정보처리방침</a></li>
+                <li><a href = "#">이메일 무단 수집 금지</a></li>
+            </ul>
+            <ul id = "footerInfo">
+                <li class = "line2">03149 서울특별시 종로구 인사동 5길 38</li>
+                <li class = "line2">Tel. +82-2-731-1000</li>
+                <li class = "line2">E-mail. rsvn@amidhotel.com</li>
+                <br/>
+                <li class = "line2">신영자산개발㈜</li>
+                <li>CEO. 신언식</li>
+            </ul>
+            <p>Copyright © 2023 Amid Hotel. All rights reserved.</p>
+        </div> <!-- id footer end -->
+
+    
+    </div> <!-- wrap end -->
+
+
+
+
+
+
+    <script src = "./js/data.js"></script>
+    <script src = "./js/index.js"></script>
+    <script src='./js/join_tos.js'></script>
+</body>
+</html>

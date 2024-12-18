@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+*{
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    color: black;
+    list-style: none;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+/* 전체구역 */
+#wrap{
+    width: 1200px;   
+    margin: 0 auto;
+}
+
+
+/* 메인 */
+#main{
+    width: 870px;
+    margin: 0 auto;
+}
+
+
+/* 메인 상단 */
+#top > h3{
+    font-size: 30px;
+    color: #81674e;
+    margin-bottom: 20px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    border-bottom: 1px solid #81674e;
+    height: 50px;
+}
+.menu > div{
+    width: 485px;
+    border: 1px solid #eeeeee;
+    padding-top: 10px;
+    color: #81674e;
+}
+.menu > div:nth-child(2){
+    border-bottom: 5px solid #81674e;
+    background-color: #faf9f7;
+    font-weight: bold;
+}
+
+
+
+/* 메인 컨텐츠 */
+.info > h4{
+    height: 40px;
+    font-size: 18px;
+    border-bottom: 3px solid #81674e;
+    margin-top: 50px;
+}
+
+.info > div > h5{
+    margin: 30px 0px 10px 0px;
+}
+.info > div > ul{
+    border-top: 1px solid darkgray;
+    border-bottom: 1px solid darkgray;
+
+}
+.info > div  > ul > li{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eeeeee;
+}
+.info > div > ul > li > div{
+    background-color: #faf9f7;
+    width: 200px;
+    padding: 15px 0px 15px 30px;
+    font-weight: bold;
+}
+.info > div > ul > li > input{
+    height: 35px;
+    margin-left: 20px;
+    margin-right: 10px;
+    padding-left: 10px;
+    border: 1px solid darkgray;
+}
+.info > div > ul > li:nth-child(4) > input{
+    width: 500px;
+}
+.info > div > ul > li > p{
+    color: gray;
+}
+.info > div > ul > li > button{
+    width: 130px;
+    height: 40px;
+    background-color: #81674e;
+    color: #ffff;
+    border: 1px solid #eeeeee;
+    margin-right: 10px;
+}
+.infoBtn {
+    text-align: center;
+}
+.infoBtn > button{
+    width: 120px;
+    height: 45px;
+    background-color: #81674e;
+    border: 1px solid #eeeeee;
+    margin: 30px 0px;
+    color: #ffff;
+}
