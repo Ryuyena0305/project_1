@@ -5,18 +5,35 @@ customerList = [
 ];
 
 bookingList = [
-    {bookingCode : 1, customerCode : 1, roomCode : 1, checkIn : "2024-08-02", checkOut : "2024-08-05"},
-    {bookingCode : 2, customerCode : 2, roomCode : 2, checkIn : "2024-11-11", checkOut : "2024-11-12"},
-    {bookingCode : 3, customerCode : 1, roomCode : 3, checkIn : "2024-12-23", checkOut : "2024-12-24"},
-    {bookingCode : 4, customerCode : 1, roomCode : 2, checkIn : "2024-05-23", checkOut : "2024-05-24"},
-    {bookingCode : 5, customerCode : 1, roomCode : 2, checkIn : "2024-06-23", checkOut : "2024-06-24"},
-    {bookingCode : 6, customerCode : 1, roomCode : 3, checkIn : "2024-07-23", checkOut : "2024-07-24"},
+	{bookingCode : 1, customerCode : 1, roomCode : "A-1", checkIn : "2024-02-14", checkOut : "2024-02-16"},
+	{bookingCode : 2, customerCode : 2, roomCode : "A-5", checkIn : "2024-03-15", checkOut : "2024-03-20"},
+	{bookingCode : 3, customerCode : 1, roomCode : "A-2", checkIn : "2024-03-17", checkOut : "2024-03-18"},
+	{bookingCode : 4, customerCode : 2, roomCode : "B-1", checkIn : "2024-03-20", checkOut : "2024-03-22"},
+	{bookingCode : 5, customerCode : 3, roomCode : "A-7", checkIn : "2024-03-25", checkOut : "2024-03-28"},
+	{bookingCode : 6, customerCode : 4, roomCode : "C-4", checkIn : "2024-03-27", checkOut : "2024-04-01"},
+	{bookingCode : 7, customerCode : 2, roomCode : "B-3", checkIn : "2024-05-17", checkOut : "2024-05-20"},
+	{bookingCode : 8, customerCode : 1, roomCode : "C-1", checkIn : "2024-06-06", checkOut : "2024-06-08"},
+	{bookingCode : 9, customerCode : 1, roomCode : "B-1", checkIn : "2024-06-06", checkOut : "2024-06-07"},
+	{bookingCode : 10, customerCode : 3, roomCode : "B-3", checkIn : "2024-10-10", checkOut : "2024-10-25"},
+	{bookingCode : 11, customerCode : 3, roomCode : "C-2", checkIn : "2024-12-01", checkOut : "2024-12-05"},
 ];
 
 roomList = [
-    {roomCode : 1, roomName : "스탠다드 싱글", roomPrice : 250000, headCount : 1, roomNumber : 101},
-    {roomCode : 2, roomName : "스탠다드 더블", roomPrice : 275000, headCount : 2, roomNumber : 202},
-    {roomCode : 3, roomName : "스탠다드 트리플", roomPrice : 319000, headCount : 3, roomNumber : 303},
+	{roomCode : "A-1", roomName : "스탠다드 싱글", roomPrice : 210000, headCount : 1, roomNumber : 101},
+	{roomCode : "A-2", roomName : "스탠다드 싱글", roomPrice : 210000, headCount : 1, roomNumber : 102},
+	{roomCode : "A-3", roomName : "스탠다드 싱글", roomPrice : 210000, headCount : 1, roomNumber : 103},
+	{roomCode : "A-4", roomName : "스탠다드 더블", roomPrice : 231000, headCount : 2, roomNumber : 104},
+	{roomCode : "A-5", roomName : "스탠다드 더블", roomPrice : 231000, headCount : 2, roomNumber : 105},
+	{roomCode : "A-6", roomName : "스탠다드 트윈", roomPrice : 231000, headCount : 2, roomNumber : 106},
+	{roomCode : "A-7", roomName : "스탠다드 트리플", roomPrice : 286000, headCount : 3, roomNumber : 107},
+	{roomCode : "B-1", roomName : "디럭스 더블", roomPrice : 275000, headCount : 2, roomNumber : 201},
+	{roomCode : "B-2", roomName : "디럭스 더블", roomPrice : 275000, headCount : 2, roomNumber : 202},
+	{roomCode : "B-3", roomName : "디럭스 트리플", roomPrice : 330000, headCount : 3, roomNumber : 203},
+	{roomCode : "B-4", roomName : "디럭스 트리플", roomPrice : 330000, headCount : 3, roomNumber : 204},
+	{roomCode : "C-1", roomName : "주니어 스위트", roomPrice : 385000, headCount : 2, roomNumber : 301},
+	{roomCode : "C-2", roomName : "프리미어 스위트", roomPrice : 473000, headCount : 2, roomNumber : 302},
+	{roomCode : "C-3", roomName : "이그제큐티브 스위트", roomPrice : 572000, headCount : 2, roomNumber : 303},
+	{roomCode : "C-4", roomName : "아미드 스위트", roomPrice : 660000, headCount : 2, roomNumber : 304},
 ];
 let changeState = true;
 
@@ -24,21 +41,23 @@ let changeState = true;
 checkLogin();
 
 function checkLogin() {
-    let checking = getLocalStorage("login");
+    let checking = getSessionStorage("login");
     // console.log(checking[0].customerCode);
-    if(checking[0].customerCode > 0) {
-        printBookingList(checking[0].customerCode);
+    if(checking.customerCode > 0) {
+        console.log("로그인");
+        printBookingList(checking.customerCode);
     } else {
+        console.log("비로그인");
         printBookingList(0);
     }
 }
 
 // 마이페이지 내용 전체를 출력하는 함수
-function printBookingList(code) {
+function printBookingList(customerCode) {
     let getCustomerList = getLocalStorage("customer");
     let getbookingList = getLocalStorage("booking");
     let getroomList = getLocalStorage("room");
-    let getLoginState = getLocalStorage("login");
+    let getLoginState = getSessionStorage("login");
     console.log(getCustomerList);
     console.log(getbookingList);
     console.log(getroomList);
@@ -47,7 +66,7 @@ function printBookingList(code) {
     setLocalStorage("customer", customerList);
     setLocalStorage("booking", bookingList);
     setLocalStorage("room", roomList);
-    // setLocalStorage("login", d);
+    //setSessionStorage("login", {customerCode : 1, id : "test1", password : "1234", name : "유재석", birth : "831205", phone : "010-1111-1111", address : "인천 부평구", clause : true});
     // 로컬스토리지에 값을 넣는 부분 끝
     let now = new Date();
     let year = now.getFullYear();
@@ -59,62 +78,60 @@ function printBookingList(code) {
     let customerBirth = document.querySelector("#customerBirth > input");
     let customerAddress = document.querySelector("#customerAddress > input");
     let html = ``;
-    let login;
     let count = 1;
+    if(customerCode != 0) {
+        customerName.innerHTML = `<p>${getLoginState.name}님 반갑습니다.</p>`;
+        customerPhone.value = getLoginState.phone;
+        customerBirth.value = getLoginState.birth;
+        customerAddress.value = getLoginState.address;
+    } else {
+        customerName.innerHTML = `<p>OOO님 반갑습니다.</p>`;
+    }
+    // 예약내역 테이블로 출력하기
     for(let index = 0; index < getbookingList.length; index++) {
         let bookingTemp = getbookingList[index];
         let customer;
         let room;
-        for(let j = 0; j < getCustomerList.length; j++) {
-            let customerTemp = getCustomerList[j];
-            if(bookingTemp.customerCode == customerTemp.customerCode) {
-                customer = customerTemp;
-            }
-            if(code == customerTemp.customerCode) {
-                let newLogin = [{customerCode : code, id : customerTemp.id, password : customerTemp.password, name : customerTemp.name}];
-                setLocalStorage("login", newLogin);
-                login = customerTemp;
+        if(customerCode == bookingTemp.customerCode) {
+            let checkIn = bookingTemp.checkIn.split("-");
+            let checkOut = bookingTemp.checkOut.split("-");
+            for(let j = 0; j < getroomList.length; j++) {
+                if(bookingTemp.roomCode == getroomList[j].roomCode) {
+                    html += `
+                    <tr>
+                        <td style = "text-align : center;">${count}</td>
+                        <td style = "text-align : center;">${getroomList[j].roomName}</td>
+                        <td style = "text-align : center;">${getroomList[j].roomNumber}</td>
+                        <td style = "text-align : center;">${bookingTemp.checkIn}</td>
+                        <td style = "text-align : center;">${bookingTemp.checkOut}</td>
+                    `;
+                    if(checkOut[0] < year || checkOut[1] < month || checkOut[2] < day) {
+                        html += `
+                            <td style = "text-align : center;">
+                                <button class = "cancelBtn">작성</button>
+                            </td>
+                            <td style = "text-align : center;">
+                                <button class = "closeBtn" disabled>취소</button>
+                            </td>
+                        </tr>
+                        `;
+                    } else {
+                        html += `
+                            <td style = "text-align : center;">
+                                <button class = "closeBtn" disabled>작성</button>
+                            </td>
+                            <td style = "text-align : center;">
+                                <button class = "cancelBtn" onclick = "cancelBooking(${bookingTemp.bookingCode})">취소</button>
+                            </td>
+                        </tr>
+                        `;
+                    }
+                }
             }
         }
-        for(let k = 0; k < getroomList.length; k++) {
-            let roomTemp = getroomList[k];
-            if(bookingTemp.roomCode == roomTemp.roomCode) {
-                room = roomTemp;
-            }
-        }
-        if(bookingTemp.customerCode == code) {
-            let temp = bookingTemp.checkOut.split("-");
-            // console.log(temp);
-            html += `<tr>
-                <td style = "text-align : center;">${count}</td>
-                <td style = "text-align : center;">${room.roomName}</td>
-                <td style = "text-align : center;">${room.roomNumber}</td>
-                <td style = "text-align : center;">${bookingTemp.checkIn}</td>
-                <td style = "text-align : center;">${bookingTemp.checkOut}</td>`;
-            if(temp[0] < year || temp[1] < month || temp[2] < day) {
-                html += `<td style = "text-align : center;">
-                    <button class = "CloseBtn" disabled>취소</button>
-                    </td>
-                </tr>`;
-            } else {
-                html += `<td style = "text-align : center;">
-                    <button class = "cancelBtn" onclick = "cancelBooking(${bookingTemp.bookingCode})">취소</button>
-                    </td>
-                </tr>`;
-            }
-            count++;
-            booking.innerHTML = html;
-                
-        }
-    }
-    let loginState = getLocalStorage("login");
-    if(code != 0) {
-        customerName.innerHTML = `<p>${login.name}님 반갑습니다.</p>`;
-        customerPhone.value = login.phone;
-        customerBirth.value = login.birth;
-        customerAddress.value = login.address;
-    } else {
-        customerName.innerHTML = `<p>OOO님 반갑습니다.</p>`;
+        count++;
+        setSessionStorage("login", getLoginState);
+        booking.innerHTML = html;
     }
 }
 
@@ -133,7 +150,7 @@ function changeInfo() {
     let passwordValue = document.querySelector("#customerPassword > input").value;
     let btn = document.querySelector("#changeInfo");
     let getCustomerList = getLocalStorage("customer");
-    let getLoginState = getLocalStorage("login");
+    let getLoginState = getSessionStorage("login");
     // console.log(btn);
     // console.log("변경 전 : " + btn.innerHTML);
     if(changeState) {
@@ -145,7 +162,7 @@ function changeInfo() {
             customerBirth.className = "customerClassOpen";
             customerAddress.innerHTML = `<label>주소</label><input type = "text" value = "${addressValue}"/>`;
             customerAddress.className = "customerClassOpen";
-            customerName.innerHTML = `<label>이름</label><input type = "text" value = "${getLoginState[0].name}"/>`;
+            customerName.innerHTML = `<label>이름</label><input type = "text" value = "${getLoginState.name}"/>`;
             customerName.className = "customerClassAppear";
             customerPassword.innerHTML = `<label>비밀번호</label><input type = "text"/>`;
             customerPassword.className = "customerClassAppear";
@@ -171,20 +188,20 @@ function changeInfo() {
             for(let index = 0; index < getCustomerList.length; index++) {
                 // 이후 작성 : 회원정보수정을 하면 수정한 값을 로컬스토리지에 넣기
                 let customer = getCustomerList[index];
-                if(getLoginState[0].customerCode == customer.customerCode) {
+                if(getLoginState.customerCode == customer.customerCode) {
                     customer.phone = phoneValue;
                     customer.birth = birthValue;
                     customer.address = addressValue;
                     customer.name = nameValue;
-                    getLoginState[0].name = nameValue;
+                    getLoginState.name = nameValue;
                     // 회원수정이 완료되면 로그아웃 시키고 메인페이지로 넘어가기 구현
                     if(passwordValue != "" && passwordValue != customer.password) {
                         customer.password = passwordValue;
-                        setLocalStorage("login", [{customerCode : 0,  id : "", password : "", name : ""}]);
+                        setSessionStorage("login", {customerCode : 0, id : "", password : "", name : "", birth : "", phone : "", address : "", clause : false});
                         setLocalStorage("customer", getCustomerList);
                         location.href = "./index.html";
                     } else {
-                        setLocalStorage("login", getLoginState);
+                        setSessionStorage("login", getLoginState);
                         setLocalStorage("customer", getCustomerList);
                     }
                 }
@@ -195,7 +212,7 @@ function changeInfo() {
     }
 }
 
-// 예약 을 삭제하는 함수
+// 예약을 삭제하는 함수
 function cancelBooking(bookingCode) {
     let state = confirm("정말 취소하시겠습니까?");
     if(state) {
@@ -209,7 +226,8 @@ function cancelBooking(bookingCode) {
             }
         }
     }
-    printBookingList(1);
+    let checking = getSessionStorage("login");
+    printBookingList2(checking.customerCode);
 }
 
 //회원정보를 탈퇴하는 함수
@@ -217,18 +235,18 @@ function deleteCustomer() {
     let state = confirm("정말 탈퇴하시겠습니까?");
     if(state) {
         let getCustomerList = getLocalStorage("customer");
-        let getLoginState = getLocalStorage("login");
+        let getLoginState = getSessionStorage("login");
         console.log(getCustomerList);
         for(let index = 0; index < getCustomerList.length; index++) {
             let temp = getCustomerList[index];
             console.log("temp : " + temp.customerCode);
-            console.log("getLoginState : " + getLoginState[0].customerCode);
-            if(temp.customerCode == getLoginState[0].customerCode) {
+            console.log("getLoginState : " + getLoginState.customerCode);
+            if(temp.customerCode == getLoginState.customerCode) {
                 console.log("실행");
                 getCustomerList.splice(index, 1);
                 console.log(getCustomerList);
                 setLocalStorage("customer", getCustomerList);
-                setLocalStorage("login", [{customerCode : 0, id : "", password : "", name : ""}]);
+                setSessionStorage("login", {customerCode : 0, id : "", password : "", name : "", birth : "", phone : "", address : "", clause : false});
                 break;
             }
         }
