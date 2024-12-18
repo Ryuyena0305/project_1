@@ -1,3 +1,9 @@
+let getCustomerList = getLocalStorage("customer");
+let getbookingList = getLocalStorage("booking");
+let getroomList = getLocalStorage("room");
+let getLoginState = getLocalStorage("login");
+
+
 // 로컬스토리지 값 가져오기
 function getLocalStorage(key) {
     let list = localStorage.getItem(key);
@@ -15,13 +21,14 @@ function setLocalStorage(key, value) {
     localStorage.setItem(key, value);
 }
 
-// key값을 어디에서 지정해야 합니까....
 
 
-function getjoin(customerCode){
+function getjoin(){
     
-    let join = getLocalStorage('join');
-
+    // let join = getLocalStorage();
+    // for(let index = 0; index <= join.length-1; index++){
+    //     if(join[index].id == )
+    // }
 
 
 }
