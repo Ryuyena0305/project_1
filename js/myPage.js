@@ -37,7 +37,6 @@ roomList = [
 ];
 let changeState = true;
 
-// printBookingList(1);
 checkLogin();
 
 function checkLogin() {

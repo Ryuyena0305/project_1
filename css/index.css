@@ -88,11 +88,11 @@ li {
     position : absolute;
     top : 82px;
     left : 0px;
-    display : none;
+    display : none; 
     width : 1200px;
     height : 55px;
     line-height: 60px;
-    background-color:  #81674e;
+    background-color : #81674e;
     z-index : 5;
 }
 #hBox > #mainMenu > .menuList > .subMenu > li {
