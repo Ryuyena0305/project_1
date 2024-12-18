@@ -7,20 +7,7 @@ let customerList = [
     {customerCode : 4, id : "test4", password : "1234", name : "홍길동", birth : "920505", phone : "010-4444-4444", address : "부산 해운대구", clause : false},
  ];
 // 현재 로그인 상태( 0이면 비로그인, 0이상이면 로그인)
-loginState = {customerCode : 0};
-
-
-
-
-// 회원정보리스트 함수
-function infoList(){
-    let getCustomerList = localStorage.getItem('customer');
-    console.log(getCustomerList);
-
-}
-
-
-
+let loginState = {customerCode : 0};
 
 
 
@@ -30,9 +17,26 @@ function login(){
     let loginId = document.querySelector('.id').value
     let loginPw = document.querySelector('.pw').value
 
+    let localInfo = getLocalStorage("customerList");
+    console.log(localInfo);
+    // console.log(localInfo);
+    for(let index = 0; index <= localInfo.length-1; index++){
+        let info = localInfo[index];
+        console.log(info);
+        if(info.id == loginId && info.password == loginPw){
+            alert('로그인 성공');
+            return;
+        }
+    }
+    alert('아이디 또는 비밀번호를 확인해주세요')
+    // location.href = "./index.html";
+
+    if(localInfo.customerCode < 0){
+        sessionStorage.setItem('loginState', JSON.stringify(loginState));
+    }
 
 
 
 
-
+    return;
 }

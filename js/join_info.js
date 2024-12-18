@@ -16,12 +16,12 @@ function join(){
     let phone = document.querySelector('.phone').value
     let address = document.querySelector('.address').value
     let id = document.querySelector('.id').value
-    let pw = document.querySelector('.pw').value
+    let password = document.querySelector('.pw').value
 
     let info = {
         customerCode : customerCode,
         id : id,
-        pw : pw,
+        password : password,
         name : name,
         birth : birth,
         phone : phone,
@@ -29,10 +29,10 @@ function join(){
         clause : true,
     }
     // console.log(info);
-    
+    //let customerList = getLocalStorage();
 
     if(name == "" || birth == "" || phone == "" || address == "" ||
-        id == "" || pw == ""){
+        id == "" || password == ""){
         alert('입력 정보를 확인하세요.')
         document.querySelector('.name').value = ``;
         document.querySelector('.birth').value = ``;
@@ -45,11 +45,13 @@ function join(){
         alert('회원가입이 완료되었습니다.')
         customerCode++;
     }
-
+    
     customerList.push(info);
+        
 
+    console.log(customerList);
     localStorage.setItem('customerList', JSON.stringify(customerList));
-    location.href = "./index.html";
+    //location.href = "./index.html";
     return;
 } // func end
 
