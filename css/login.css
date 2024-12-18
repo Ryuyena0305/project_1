@@ -26,6 +26,11 @@
 
 
 /* 메인 컨텐츠 상단 */
+.top {
+    width: 860px;
+    margin: 0 auto;
+    margin-top: 70px;
+}
 .top > h3{
     font-size: 30px;
     color: #81674e;
@@ -43,6 +48,7 @@
     height: 50px;
 }
 .contTit > div{
+    text-align: center;
     width: 485px;
     border: 1px solid #eeeeee;
     padding-top: 10px;
@@ -68,6 +74,7 @@
     font-size: 30px;
     color: #81674e;
     margin-bottom: 10px;
+    text-align: center;
 }
 .hello > span{
     color: gray;
@@ -114,6 +121,7 @@
     background-color: #3a3125;
     color: #ffff;
     border: none;
+    text-align: center;
 }
 .btnBox{
     display: flex;
@@ -131,6 +139,7 @@
     border: none;
     width: 130px;
     height: 35px;
+    text-align: center;
 }
 .notice{
     background-color: #fbfbfb;
@@ -156,4 +165,5 @@
     background-color: darkgray;
     color: #ffff;
     border: none;
+    text-align: center;
 }
