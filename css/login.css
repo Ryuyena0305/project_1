@@ -11,8 +11,9 @@
 }
 
 /* 전체 구역 */
-#wrap{
-    width: 1200px;   
+
+#main{
+    width: 1200px; 
     margin: 0 auto;
 }
 
