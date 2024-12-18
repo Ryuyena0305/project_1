@@ -1,6 +1,7 @@
+//달력 출력
 let today = new Date();
 let year = today.getFullYear();
-let month = today.getMonth() ;
+let month = today.getMonth()+1;
 let today2 = new Date(year, month + 1, 1);
 let year2 = today2.getFullYear();
 let month2 = today2.getMonth();
@@ -10,8 +11,8 @@ let month2 = today2.getMonth();
 function calPrint() {
     let h6 = document.querySelector('#onemonth1');
     let h5 = document.querySelector('#onemonth2');
-    let html = `${year}. ${month+1}`;
-    let html1 = `${year2}.${month2+1}`;
+    let html = `${year}. ${month}`;
+    let html1 = `${year2}.${month2}`;
     h6.innerHTML = html;
     h5.innerHTML = html1;
 
@@ -67,14 +68,16 @@ function calPrint() {
 
     caldates2.innerHTML = html4;
 }
-calPrint();
-function monthChange(changeMonth) {
-    month += changeMonth;
-    month2 += changeMonth
-    if (month < 1) { year--; month = 12; }
-    if (month2 < 1) { year2--; month2 = 12; }
-    if (month > 12) { year++; month = 1 }
-    if (month2 > 12) { year2++; month2 = 1 }
-    calPrint();
-    return;
-}
+// calPrint();
+// function monthChange(changeMonth) {
+//     month += changeMonth;
+//     month2 += changeMonth
+//     if (month < 1) { year--; month = 12; }
+//     if (month > 12) { year++; month = 1 }
+//     if (month2 < 1) { year2--; month2 = 12; }
+//     if (month2 > 12) { year2++; month2 = 1 }
+//     calPrint();
+//     return;
+// }
+
+//날짜,

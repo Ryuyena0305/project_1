@@ -161,7 +161,7 @@ font-size: 13px;
 color: #666b7b;
 margin-bottom: 8px;
 }
-.input_date{
+#input_date1, #input_date2{
     border: 1px solid #e0e0e0;
     background: #F7F9FB;
     width: 274px;
@@ -190,7 +190,7 @@ margin-bottom: 8px;
 .box_number{
     height: 70px;
 }
-.number_con{
+#number_con1,#number_con2,#number_com3{
     align-items: center;
     display: flex;
     justify-content: center;
@@ -215,14 +215,21 @@ margin-bottom: 8px;
     margin-top: 20px;
     
 }
-.main_list_detail{
+#main_list_detail1,#main_list_detail2,#main_list_detail3,#main_list_detail4,#main_list_detail5
+,#main_list_detail6,#main_list_detail7,#main_list_detail8,#main_list_detail9,#main_list_detail10
+,#main_list_detail11,#main_list_detail12,#main_list_detail13,#main_list_detail14,#main_list_detail15{
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     border-top: 1px solid #ededed;
   
-  
+}
+#main_list_detail1:hover,#main_list_detail2:hover,#main_list_detail3:hover,#main_list_detail4:hover,#main_list_detail5:hover
+,#main_list_detail6:hover,#main_list_detail7:hover,#main_list_detail8:hover,#main_list_detail9:hover,#main_list_detail10:hover
+,#main_list_detail11:hover,#main_list_detail12:hover,#main_list_detail13:hover,#main_list_detail14:hover,#main_list_detail15:hover{
+    box-shadow: 0px 0px 15px #81674e;
+    cursor: pointer;
 }
 .roomType{
     font-size: 18px;
@@ -239,12 +246,15 @@ margin-bottom: 8px;
 .roomNight{
     font-size:11px;
 }
-.acodian_btn{
+.acodian_btn1,.acodian_btn2,.acodian_btn3,.acodian_btn4,.acodian_btn5,
+.acodian_btn6,.acodian_btn7,.acodian_btn8,.acodian_btn9,.acodian_btn10,.acodian_btn11
+,.acodian_btn12,.acodian_btn13,.acodian_btn14,.acodian_btn15{
     width: 150px;
     height: 50px;
     background-color: #81674e;
     color:white;
     border: none;
+    cursor: pointer;
 
 }
 .roomImg{
@@ -280,6 +290,7 @@ margin-bottom: 8px;
     display: flex;
     justify-content: end;
     margin-top: 10px;
+
 }
 #resevation_btn{
     width: 250px;
@@ -288,4 +299,5 @@ margin-bottom: 8px;
     color:white;
     border: none;
     border-radius: 10px;
+    cursor: pointer;
 }
