@@ -54,7 +54,7 @@ function printBookingList(code) {
     let month = now.getMonth() + 1;
     let day = now.getDate();
     let booking = document.querySelector("#HistoryTable > tbody");
-    let customerName = document.querySelector("#customerName");
+    let customerName = document.querySelector("#cName");
     let customerPhone = document.querySelector("#customerPhone > input");
     let customerBirth = document.querySelector("#customerBirth > input");
     let customerAddress = document.querySelector("#customerAddress > input");
@@ -123,10 +123,17 @@ function changeInfo() {
     let customerPhone = document.querySelector("#customerPhone");
     let customerBirth = document.querySelector("#customerBirth");
     let customerAddress = document.querySelector("#customerAddress");
+    let customerName = document.querySelector("#customerName");
+    let customerPassword = document.querySelector("#customerPassword");
+    let cName = document.querySelector("#cName");
     let phoneValue = document.querySelector("#customerPhone > input").value;
     let birthValue = document.querySelector("#customerBirth > input").value;
     let addressValue = document.querySelector("#customerAddress > input").value;
+    let nameValue = document.querySelector("#customerName > input").value;
+    let passwordValue = document.querySelector("#customerPassword > input").value;
     let btn = document.querySelector("#changeInfo");
+    let getCustomerList = getLocalStorage("customer");
+    let getLoginState = getLocalStorage("login");
     // console.log(btn);
     // console.log("변경 전 : " + btn.innerHTML);
     if(changeState) {
@@ -138,6 +145,10 @@ function changeInfo() {
             customerBirth.className = "customerClassOpen";
             customerAddress.innerHTML = `<label>주소</label><input type = "text" value = "${addressValue}"/>`;
             customerAddress.className = "customerClassOpen";
+            customerName.innerHTML = `<label>이름</label><input type = "text" value = "${getLoginState[0].name}"/>`;
+            customerName.className = "customerClassAppear";
+            customerPassword.innerHTML = `<label>비밀번호</label><input type = "text"/>`;
+            customerPassword.className = "customerClassAppear";
             btn.innerHTML = "수정완료";
             // console.log("변경 후 : " + btn);
             changeState = false;
@@ -151,9 +162,12 @@ function changeInfo() {
             customerBirth.className = "customerClassClose";
             customerAddress.innerHTML = `<label>주소</label><input type = "text" value = "${addressValue}" disabled/>`;
             customerAddress.className = "customerClassClose";
+            customerName.innerHTML = `<label>이름</label><input type = "text" value = ""/>`;
+            customerName.className = "customerClassDisappear";
+            customerPassword.innerHTML = `<label>비밀번호</label><input type = "text"/>`;
+            customerPassword.className = "customerClassDisappear";
+            cName.innerHTML = `<p>${nameValue}님 반갑습니다.</p>`;
             btn.innerHTML = "회원수정";
-            let getCustomerList = getLocalStorage("customer");
-            let getLoginState = getLocalStorage("login");
             for(let index = 0; index < getCustomerList.length; index++) {
                 // 이후 작성 : 회원정보수정을 하면 수정한 값을 로컬스토리지에 넣기
                 let customer = getCustomerList[index];
@@ -161,7 +175,18 @@ function changeInfo() {
                     customer.phone = phoneValue;
                     customer.birth = birthValue;
                     customer.address = addressValue;
-                    setLocalStorage("customer", getCustomerList);
+                    customer.name = nameValue;
+                    getLoginState[0].name = nameValue;
+                    // 회원수정이 완료되면 로그아웃 시키고 메인페이지로 넘어가기 구현
+                    if(passwordValue != "" && passwordValue != customer.password) {
+                        customer.password = passwordValue;
+                        setLocalStorage("login", [{customerCode : 0,  id : "", password : "", name : ""}]);
+                        setLocalStorage("customer", getCustomerList);
+                        location.href = "./index.html";
+                    } else {
+                        setLocalStorage("login", getLoginState);
+                        setLocalStorage("customer", getCustomerList);
+                    }
                 }
             }
             // console.log("변경 후 : " + btn);

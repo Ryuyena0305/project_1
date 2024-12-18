@@ -6,16 +6,18 @@
     padding : 20px 40px;
     width : 1200px;
 }
-#pInformation > #customerName {
+#pInformation > #cName {
     margin : 30px 0px;
 }
-#pInformation > #customerName > p {
+#pInformation > #cName > p {
     font-size : 30px;
     font-weight : bold;
 }
 #pInformation > #customerInfo {
     margin-bottom : 50px;
 }
+
+/* #region .customerClassClose */
 #pInformation > #customerInfo > #customerBox > .customerClassClose {
     margin-bottom : 20px;
 }
@@ -32,6 +34,9 @@
     color : black;
     font-size : 24px;
 }
+/* #endregion .customerClassClose */
+
+/* #region .customerClassOpen */
 #pInformation > #customerInfo > #customerBox > .customerClassOpen {
     margin-bottom : 20px;
 }
@@ -45,7 +50,47 @@
     background-color : inherit;
     font-size : 24px;
 }
+/* #endregion .customerClassOpen */
+
+/* #region .customerClassDisappear */
+#pInformation > #customerInfo > #customerBox > .customerClassDisappear {
+    display : none;
+    margin-bottom : 20px;
+}
+#pInformation > #customerInfo > #customerBox > .customerClassDisappear > label {
+    margin-right : 10px;
+    font-size : 24px;
+}
+#pInformation > #customerInfo > #customerBox > .customerClassDisappear > input {
+    padding : 0px 10px;
+    width : 200px;
+    background-color : inherit;
+    font-size : 24px;
+}
+/* #endregion .customerClassDisappear */
+
+/* #region .customerClassAppear */
+#pInformation > #customerInfo > #customerBox > .customerClassAppear {
+    display : block;
+    margin-bottom : 20px;
+}
+#pInformation > #customerInfo > #customerBox > .customerClassAppear > label {
+    margin-right : 10px;
+    font-size : 24px;
+}
+#pInformation > #customerInfo > #customerBox > .customerClassAppear > input {
+    padding : 0px 10px;
+    width : 200px;
+    background-color : inherit;
+    font-size : 24px;
+}
+/* #endregion .customerClassAppear */
+
 #pInformation > #customerInfo > #customerBox > #customerAddress > label {
+    margin : 0px 54px 0px 0px; /* 0px 30px 0px 24px */
+    font-size : 24px;
+}
+#pInformation > #customerInfo > #customerBox > #customerName > label {
     margin : 0px 54px 0px 0px; /* 0px 30px 0px 24px */
     font-size : 24px;
 }
