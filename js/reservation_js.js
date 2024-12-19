@@ -69,7 +69,7 @@ let room = [
     },
 
 ]
-/*roomlist hover */
+/*객실예약 옆 roomlist 출력 */
 let check_roomcode = null;
 
 function check(roomcode) {
@@ -89,9 +89,73 @@ function choose_room(roomcode) {
 return roomcode;
 }
 
+
+
+/* document.querySelector로 숫자 바뀌게 설정*/
+let peopleNum = 1;
+let childNum= 0;
+function peopleNumPrint(){ 
+    let div1 = document.querySelector('#number_con2') ;
+    let div2 = document.querySelector('#number_con3') ;
+    let html1 = `${peopleNum}`;
+    let html2 = `${childNum}`;
+    div1.innerHTML = html1;
+    div2.innerHTML = html2;
+ console.log(typeof html1);
+} 
+peopleNumPrint();
+/*성인 아동 객실별로 총인원수 넘지 않게*/
+
+function peopleNumPlus(changeNum ){ 
+    if( peopleNum==3 ){   peopleNum==3;   }
+    else{
+        peopleNum += changeNum;
+    } 
+    peopleNumPrint();  
+    return; 
+} 
+function peopleNumMinus( changeNum ){ 
+
+    if( peopleNum <=1 ) {    peopleNum=1;   }
+    else{
+        peopleNum -= changeNum;
+    }
+
+    peopleNumPrint();  
+    return; 
+} 
+function childNumPlus( changeNum ){ 
+
+    if( childNum==2 ){   childNum==2;   }
+    else{
+        childNum += changeNum;
+    }
+    peopleNumPrint(); 
+    return; 
+} 
+
+
+function childNumMinus( changeNum ){ 
+    if( childNum <=0 ) {    childNum=0;   }
+    else{
+        childNum -= changeNum;
+    }
+   
+    peopleNumPrint();  
+    return; 
+    
+} 
+function maxNum(){
+    for(let i=0;i<room.length;i++){
+        if(Number(html1)+Number(html2)>room[i].headCount){
+            alert('객실정원을 확인하세요.')
+        }
+} 
+  
+
+}
+
 /*룸코드 선택하기*/
-
-
 
 /* 체크인 날짜,체크아웃 날짜,객실수,성인,아동 수 가져오기*/
 function 정보입력함수() {
