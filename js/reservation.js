@@ -17,24 +17,27 @@
    console.log(document.getElementById('input_date1').min);
    //document.getElementById('input_date2').min = currentDate1;
 
+
    function 날짜선택(){
    let checkinDate =document.getElementById('input_date1').value;
    checkinDate=checkinDate.split('-');
    checkinDate[2]=String(Number(checkinDate[2])+1);
-   checkinDate = `${checkinDate[0]}-${checkinDate[1]}-${checkinDate[2]}`
-   console.log();
-
-   document.getElementById('input_date1').value
+   checkinDate = `${checkinDate[0]}-${checkinDate[1]}-${checkinDate[2]+1}`
+   
    document.getElementById('input_date2').min = document.getElementById('input_date1').value;
   
    }
 
-// function 날짜선택(){
-//    document.getElementById('input_date2').min = document.getElementById(`${input_date1}`).value;
-//    console.log(document.getElementById('#input_date1').value);
-// if(document.getElementById(`${input_date2}`).value<=document.getElementById(`${input_date1}`).value){
-//    alert('날짜 다시선택해');
-// }
-// }
+   // function 날짜선택(){
+   //    let checkinDate =document.getElementById('input_date1').value;
+   //    checkinDate=checkinDate.split('-');
+   //    checkinDate[2]=String(Number(checkinDate[2])+1);
+   //    checkinDate = `${checkinDate[0]}-${checkinDate[1]}-${checkinDate[2]+1}`
+      
+   
+   //    document.getElementById('input_date1').value
+   //    document.getElementById('input_date2').min = document.getElementById('input_date1').value;
+     
+   //    }
 
 
