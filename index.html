@@ -70,13 +70,22 @@
                             </ul>
                         </li>
                         <li id = "list6" class = "menuList" onmouseover = "onMenu(6)">
-                            <a href = "#">예약</a>
+                            <a href = "./reservation.html">예약</a>
+                            <ul class = "subMenu" onmouseout = "closeMenu()">
+
+                            </ul>
+                        </li>
+                        <li id = "list7" class = "menuList" onmouseover = "onMenu(7)">
+                            <a href = "./reviewPage.html">후기</a>
                             <ul class = "subMenu" onmouseout = "closeMenu()">
 
                             </ul>
                         </li>
                     </ul>
-                    <div id = "loginButton"><a href = "./login.html">Login</a></div>
+                    <div id = "loginButton" onmouseover = "" onmouseleave = "">
+                        <a onclick = "logInOut(false)">Login</a>
+                        <div id = "hoverBox1"></div>
+                    </div>
                 </div>
                 <div id = "sBox" onmouseout = "closeMenu()">
 
@@ -183,7 +192,7 @@
                     <span id = "rightImage"></span>
                 </div>
             </div>
-            <a href = "#" id = "floatingButton">
+            <a href = "./reservation.html" id = "floatingButton">
                 <img src = "./images/booking-img2.png"/>
             </a>
             <div id = "footer">
@@ -208,6 +217,7 @@
                 <p>Copyright © 2023 Amid Hotel. All rights reserved.</p>
             </div>
         </div>
+        <script src='./js/data.js'></script>
         <script src='./js/index.js'></script>
         <script src='./js/slide.js'></script>
     </body>

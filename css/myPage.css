@@ -86,6 +86,15 @@
 }
 /* #endregion .customerClassAppear */
 
+#pInformation > #customerInfo > #customerBox > #customerPhone > input {
+    width : 185px;
+}
+#pInformation > #customerInfo > #customerBox > #customerBirth > input {
+    width : 100px;
+}
+#pInformation > #customerInfo > #customerBox > #customerAddress > input {
+    width : 500px;
+}
 #pInformation > #customerInfo > #customerBox > #customerAddress > label {
     margin : 0px 54px 0px 0px; /* 0px 30px 0px 24px */
     font-size : 24px;

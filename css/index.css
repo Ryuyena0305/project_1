@@ -109,6 +109,14 @@ li {
     top : 23.5px;
     border : solid 2px #2E2E2E;
 }
+#hBox > #loginButton::before {
+    position : absolute;
+    top : 30px;
+    left : -11px;
+    content : "";
+    width : 100px;
+    height : 5px;
+}
 #hBox > #loginButton:hover {
     color : white;
     background-color : #81674e;
@@ -116,9 +124,27 @@ li {
     box-shadow: 0px 0px 4px #81674e;
     transition-duration : 0.5s;
     transition-timing-function: ease;
+    cursor : pointer;
 }
 #hBox > #loginButton > a {
     font-weight : bold;
+    cursor : pointer;
+}
+#hoverBox1 {
+    display : none;
+    position :absolute;
+    top : 35px;
+    left : -1px;
+    width : 78.5px;
+    height : 30px;
+    background-color: #81674e;
+    box-shadow: 0px 0px 4px #81674e;
+    z-index : 100;
+}
+#hoverBox1 > a {
+    display : block;
+    padding : 3px 0px;
+    text-align : center;
 }
 #sBox {
     display : none;

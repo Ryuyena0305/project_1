@@ -1,3 +1,4 @@
+// #region data
 customerList = [
     {customerCode : 1, id : "test1", password : "1234", name : "유재석", birth : "831205", phone : "010-1111-1111", address : "인천 부평구", clause : true},
     {customerCode : 2, id : "test2", password : "4567", name : "강호동", birth : "800506", phone : "010-2222-2222", address : "인천 부평구", clause : false},
@@ -46,6 +47,7 @@ reviewList = [
  ];
  
 let changeState = true;
+// #endregion data
 
 checkLogin();
 
@@ -57,7 +59,7 @@ function checkLogin() {
         printBookingList(checking.customerCode);
     } else {
         console.log("비로그인");
-        printBookingList(0);
+        printBookingList(checking.customerCode);
     }
 }
 
@@ -74,10 +76,10 @@ function printBookingList(customerCode) {
     console.log(getreviewList);
     console.log(getLoginState);
     // 로컬스토리지에 값을 넣는 부분 시작
-    setLocalStorage("customer", customerList);
-    setLocalStorage("booking", bookingList);
-    setLocalStorage("room", roomList);
-    setLocalStorage("review", reviewList);
+    // setLocalStorage("customer", customerList);
+    // setLocalStorage("booking", bookingList);
+    // setLocalStorage("room", roomList);
+    // setLocalStorage("review", reviewList);
     //setSessionStorage("login", {customerCode : 1, id : "test1", password : "1234", name : "유재석", birth : "831205", phone : "010-1111-1111", address : "인천 부평구", clause : true});
     // 로컬스토리지에 값을 넣는 부분 끝
     let now = new Date();

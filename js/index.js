@@ -1,3 +1,5 @@
+
+
 paddingLeftList = [16, 5, 35, 35, 50, 58];
 imageList = [
     "main_slide_01.jpg", 
@@ -6,8 +8,29 @@ imageList = [
 ];
 // currentIndex = 1;
 
+// 최초로 index.html파일이 열리면 작동하는 함수(data.js)
+totalStorage();
+// 로그인인지 비로그인인지 확인하는 함수(index.js)
+checkLogin();
+
+function checkLogin() {
+    let getLoginState = getSessionStorage("login");
+    console.log(getLoginState);
+    if(getLoginState.customerCode > 0) {
+        let loginButton = document.querySelector("#loginButton");
+        console.dir(loginButton);
+        loginButton.onmouseover = test;
+        loginButton.onmouseleave = test2;
+        console.dir(loginButton);
+        loginButton.innerHTML = `<a onclick = "logInOut(true)">Logout</a><div id = "hoverBox1" onmouseover = "test()" onmouseleave = "test2()"><a href = "./myPage.html">마이페이지</a></div>`;
+    } else if(getLoginState.customerCode == 0) {
+        loginButton.onmouseover = null;
+        loginButton.onmouseleave = null;
+        loginButton.innerHTML = `<a onclick = "logInOut(false)">Login</a>`;
+    }
+}
+
 function onMenu(index) {
-    // console.log(`실행 : ${index}`)
     let header = document.querySelector("#header");
     let sBox = document.querySelector("#sBox");
     let menuList = document.querySelectorAll(".menuList");
@@ -36,8 +59,8 @@ function closeMenu() {
     let sBox = document.querySelector("#sBox");
     let menuList = document.querySelectorAll(".menuList");
     let subMenu = document.querySelectorAll(".subMenu");
-    // console.log(subMenu);
     let loginButton = document.querySelector("#loginButton");
+    let getLoginState = getSessionStorage("#login");
     header.style.backgroundColor = "white";
     sBox.style.display = "none";
     // loginButton.style.backgroundColor = "white";
@@ -46,48 +69,47 @@ function closeMenu() {
     loginButton.style.backgroundColor = "";
     loginButton.style.color = "";
     loginButton.style.border = "";
-    console.log("실행1");
-    loginButton.innerHTML = `<a href = "./login.html">Login</a>`;
-    console.log("실행2");
+    if(getLoginState.customerCode > 0) {
+        loginButton.innerHTML = `<a onclick = "logInOut(true)">Logout</a><div id = "hoverBox1" onmouseover = "test()" onmouseleave = "test2()"><a href = "./myPage.html">마이페이지</a></div>`;    
+    } else if(getLoginState.customerCode == 0) {
+        loginButton.innerHTML = `<a onclick = "logInOut(false)">Login</a>`;
+    }
     for(let i = 0; i < menuList.length; i++) {
         menuList[i].style.color = "#5f6062";
         subMenu[i].style.display = "none";
     }
 }
 
-// function slide() {
-//     let mainSlide = document.querySelector("#mainSlide");
-//     let moveImage = document.querySelector("#moveImage");
-//     let html = ``;
-//     currentIndex++;
-//     if(currentIndex < 3) {
-//         html = `<img src = "./images/main_slide_0${currentIndex}.jpg" style = "width : 100%;"/>`;
-//     } else {
-//         html = `<img src = "./images/main_slide_0${currentIndex}.jpg" style = "width : 100%;"/>`;
-//         currentIndex = 0;
-//     }
-//     // console.log(html);
-//     moveImage.innerHTML = html;
-// }
+function logInOut(loginState) {
+    if(loginState) {
+        let state = confirm("정말 로그아웃을 하시겠습니까?");
+        if(state) {
+            let getLoginState = getSessionStorage("login");
+            getLoginState = {
+                customerCode : 0, 
+                id : "", 
+                password : "", 
+                name : "", 
+                birth : "", 
+                phone : "", 
+                address : "", 
+                clause : false
+            };
+            setSessionStorage("login", getLoginState);
+            location.href = "./index.html";
+        }
+    } else {
+        location.href = "./login.html";
+    }
+}
 
-// setInterval(slide, 3000);
-
-// function slide() {
-//     let mainSlide = document.querySelector("#mainSlide");
-//     let moveImage = document.querySelector("#moveImage");
-//     // let slideImage = document.querySelectorAll("#mainSlide > #moveImage > img");
-//     // let slideImage = document.querySelectorAll("#mainSlide > #moveImage > .slideImg");
-//     // console.log(slideImage);
-//     console.log(moveImage);
-//     console.log(moveImage.offsetWidth);
-//     console.log(mainSlide.offsetWidth);
-//     let temp = mainSlide.offsetWidth;
-//     currentIndex++;
-//     moveImage.style.transition = "all 0.6s";
-//     if(currentIndex < 3) {
-//         moveImage.style.transform = `translateX(-${temp * currentIndex}px)`;
-//     } else {
-//         moveImage.style.transform = `translateX(-${0}px)`;
-//         currentIndex = 0;
-//     }
-// }
+function test() {
+    console.log("실행1");
+    let hoverBox = document.querySelector("#hoverBox1");
+    hoverBox.style.display = "block";
+}
+function test2() {
+    console.log("실행2");
+    let hoverBox = document.querySelector("#hoverBox1");
+    hoverBox.style.display = "none";
+}
