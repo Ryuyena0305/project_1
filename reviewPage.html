@@ -3,9 +3,10 @@
     <head>
         <meta charset='utf-8'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <title>더조은 호텔</title>
+        <title>후기 게시판</title>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <link rel='stylesheet' type='text/css' media='screen' href='./css/index.css'>
+        <link rel='stylesheet' type='text/css' media='screen' href='./css/reviewPage.css'>
     </head>
     <body>
         <div id = "wrap">
@@ -72,120 +73,66 @@
                         <li id = "list6" class = "menuList" onmouseover = "onMenu(6)">
                             <a href = "#">예약</a>
                             <ul class = "subMenu" onmouseout = "closeMenu()">
-
+    
                             </ul>
                         </li>
                     </ul>
                     <div id = "loginButton"><a href = "./login.html">Login</a></div>
                 </div>
                 <div id = "sBox" onmouseout = "closeMenu()">
-
+    
                 </div>
             </div>
+    
             <div id = "main">
-                <div id = "mainSlide">
-                    <div id = "moveImage">
-                        <img id = "imageOut" src = "./images/main_slide_01.jpg"/>
-                    </div>
-                    <div id = "slideBtn" onclick = "slide()"></div>
-                </div>
-                <div id = "mainInfo">
-                    <div class = infoBox>
-                        <div class = "infoBox1">
-                            <p class = "infoText1">SPECIAL OFFERS</p>
-                            <p class = "infoText2">
-                                당신의 투숙을 더욱 특별하게 만들어줄
-                                <br/>
-                                패키지와 프로모션이 준비되어 있습니다.
-                            </p>
-                            <a class = "infoText3" href = "#">
-                                VIEW MORE
-                                <span></span>
-                            </a>
+                <div id = "mainTitle"><p>후기 게시판</p></div>
+                <div id = "mainBox">
+                    <div id = "sideBar">
+                        <div class = "box">
+                            <div id = "totalArrowBox" onclick = "changeTotalArrow()"><img id = "totalArrow" src = "./images/arrow_drop_down.svg"/></div>
+                            <div id = "treeRoot" class = "customCard" onclick = ""><label>전체</label></div>
                         </div>
-                    </div>
-                    <div class = "infoBox">
-                        <div class = "infoBox2">
-                            <p class = "infoText1">MEETING & EVENTS</p>
-                            <p class = "infoText2">
-                                소중한 날을 더 특별하게 기념할 수 있는 최대 150명 수용 가능한 연회장과
-                                <br/>
-                                다양한 목적의 행사 및 미팅 진행이 가능한 5개의 미팅룸을 보유하고 있습니다.
-                            </p>
-                            <a class = "infoText3" href = "#">
-                                VIEW MORE
-                                <span></span>
-                            </a>
+                        <div class = "box">
+                            <div id = "standardArrowBox" onclick = "changeStandardArrow()"><img id = "standardArrow" src = "./images/arrow_drop_down.svg"/></div>
+                            <div id = "standardRoom" class = "customCard" onclick = ""><label>스탠다드</label></div>
                         </div>
-                    </div>
-                    <div class = "infoBox">
-                        <div class = "infoBox3">
-                            <p class = "infoText1">ACCOMMODATION</p>
-                            <p class = "infoText2">
-                                다양한 크기와 뷰를 가진 일반 객실과 스위트를 포함한
-                                <br/>
-                                250개의 객실이 준비되어 있습니다.
-                            </p>
-                            <a class = "infoText3" href = "#">
-                                VIEW MORE
-                                <span></span>
-                            </a>
+                        <div id = "standardSingle" class= "customCard"><label>스탠다드 싱글</label></div>
+                        <div id = "standardDouble" class= "customCard"><label>스탠다드 더블</label></div>
+                        <div id = "standardTwin" class= "customCard"><label>스탠다드 트윈</label></div>
+                        <div id = "standardTriple" class= "customCard"><label>스탠다드 트리플</label></div>
+                        <div class = "box">
+                            <div id = "deluxeArrowBox" onclick = "changeDeluxeArrow()"><img id = "deluxeArrow" src = "./images/arrow_drop_down.svg"/></div>
+                            <div id = "deluxeRoom" class = "customCard" onclick = ""><label>디럭스</label></div>
                         </div>
-                    </div>
-                </div>
-                <div id = "middleSlide">
-                    <h3>ACCOMMODATION</h3>
-                    <div id = "slideBox">
-                        <div id = "slideList">
-                            <div class = "slideCard">
-                                <div id = "standardSingle"><a href = "#"></a></div>
-                                <div class = "accText"><a href = "#">스탠다드 싱글</a></div>
-                            </div>
-                            <div class = "slideCard">
-                                <div id = "standardDouble"><a href = "#"></a></div>
-                                <div class = "accText"><a href = "#">스탠다드 더블</a></div>
-                            </div>
-                            <div class = "slideCard">
-                                <div id = "standardTwin"><a href = "#"></a></div>
-                                <div class = "accText"><a href = "#">스탠다드 트윈</a></div>
-                            </div>
+                        <div id = "deluxeDouble" class = "customCard"><label>디럭스 더블</label></div>
+                        <div id = "deluxeTriple" class = "customCard"><label>디럭스 트리플</label></div>
+                        <div class = "box">
+                            <div id = "suiteArrowBox" onclick = "changeSuiteArrow()"><img id = "suiteArrow" src = "./images/arrow_drop_down.svg"/></div>
+                            <div id = "suiteRoom" class = "customCard" onclick = ""><label>스위트</label></div>
                         </div>
+                        <div id = "suiteJunior" class = "customCard"><label>주니어 스위트</label></div>
+                        <div id = "suitePremier" class = "customCard"><label>프리미어 스위트</label></div>
+                        <div id = "suiteExecutive" class = "customCard"><label>이그제큐티브 스위트</label></div>
+                        <div id = "suiteTjoeun" class = "customCard"><label>더조은 스위트</label></div>
                     </div>
-                </div>
-                <div id = "promotion">
-                    <a href = "javascript:alert('준비중입니다')">
-                        <p>Discover Seoul</p>
-                    </a>
-                </div>
-                <div id = "facilities">
-                    <div id = "fBox">
-                        <h3>FACILITIES</h3>
-                        <div id = "fImage">
-                            <div id = "commImage">
-                                <a href = "#">
-                                    <h3>COMMUNICATION</h3>
-                                    <P>지금 일어나는 AMID의 소식을 확인해보세요!</P>
-                                </a>
-                            </div>
-                            <div id = "restImage">
-                                <a href = "#">
-                                    <h3>RESTAURANT</h3>
-                                    <p>
-                                        올데이 다이닝으로 조식부페와 다양한 단품메뉴를 즐길 수 있는
-                                        <br/>
-                                        THE VANSANG이 함께합니다.
-                                    </p>
-                                </a>
-                            </div>
-                        </div>
+                    <div id = "content">
+                        <table style = " margin : auto; width : 750px;">
+                            <thead>
+                                <tr>
+                                    <th id = "tableIndex">순번</th>
+                                    <th id = "tableContent">내용</th>
+                                    <th id = "tableDate">작성날짜</th>
+                                    <th id = "tableEstimation">평점</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
                     </div>
-                    <span id = "leftImage"></span>
-                    <span id = "rightImage"></span>
                 </div>
             </div>
-            <a href = "#" id = "floatingButton">
-                <img src = "./images/booking-img2.png"/>
-            </a>
+    
             <div id = "footer">
                 <div id ="logoLine">
                     <div id = "footerLogo"></div>
@@ -208,7 +155,8 @@
                 <p>Copyright © 2023 Amid Hotel. All rights reserved.</p>
             </div>
         </div>
+        <script src = './js/data.js'></script>
         <script src='./js/index.js'></script>
-        <script src='./js/slide.js'></script>
+        <script src='./js/reviewPage.js'></script>
     </body>
 </html>

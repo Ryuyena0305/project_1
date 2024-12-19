@@ -1,0 +1,214 @@
+#mainTitle {
+    margin : 30px auto;
+    width : 1200px;
+}
+#mainTitle > p {
+    font-size : 30px;
+    font-weight : bold;
+}
+#mainBox {
+    display : flex;
+    justify-content : center;
+}
+
+/* #region sideBar */
+#sideBar {
+    display : flex;
+    flex-direction : column;
+    /* justify-content: center; */
+    align-items: end;
+    margin : 50px 50px 50px 0px;
+    padding : 25px;
+    width : 350px;
+    /* height : 900px; */
+    height : 100%;
+    /* background-color : blanchedalmond; */
+    /* box-shadow : 0px 0px 6px blanchedalmond; */
+    border-radius : 10px;
+    box-shadow : 0px 0px 10px #81674e;
+}
+.box {
+    width : 100%; 
+    position : relative; 
+    display : flex; 
+    justify-content: end;
+}
+#totalArrowBox {
+    margin-right : 5px; 
+    width : 30px; 
+    height : 30px; 
+    position : absolute; 
+    top : 5px; 
+    left : -20px; 
+    cursor : pointer;
+}
+#standardArrowBox {
+    margin-right : 5px; 
+    width : 30px; 
+    height : 30px; 
+    position : absolute; 
+    top : 5px; 
+    left : 10px; 
+    cursor : pointer;
+}
+#deluxeArrowBox {
+    margin-right : 5px; 
+    width : 30px; 
+    height : 30px; 
+    position : absolute; 
+    top : 5px; 
+    left : 10px; 
+    cursor : pointer;
+}
+#suiteArrowBox {
+    margin-right : 5px; 
+    width : 30px; 
+    height : 30px; 
+    position : absolute; 
+    top : 5px; 
+    left : 10px; 
+    cursor : pointer;
+}
+
+#treeRoot {
+    padding : 10px 20px;
+    width : calc(100% - 20px);
+    height : 50px;
+    border-radius : 10px;
+    background-color : #ba9a7a;
+    box-shadow : 0px 0px 5px #81674e;
+    position : relative;
+}
+#treeRoot:hover {
+    color : #81674e;
+    background-color: white;
+    transition-duration : 0.5s;
+    transition-timing-function: ease;
+}
+.customCard {
+    margin : 5px 0px;
+    padding : 10px 20px;
+    width : 100%;
+    height : 50px;
+    border-radius : 10px;
+    background-color : #ba9a7a;
+    box-shadow : 0px 0px 5px #81674e;
+    cursor : pointer;
+}
+.customCard:hover {
+    color : #81674e;
+    background-color: white;
+    transition-duration : 0.5s;
+    transition-timing-function: ease;
+}
+.customCard:hover > label {
+    color : #81674e;
+    background-color: white;
+    transition-duration : 1.4s;
+    transition-timing-function: ease;
+}
+
+/* #region customCard */
+:where(
+    #treeRoot > label,
+    #standardRoom > label, #standardSingle > label, #standardDouble > label, #standardTwin > label, #standardTriple > label,
+    #deluxeRoom > label, #deluxeDouble > label, #deluxeTriple > label,
+    #suiteRoom > label, #suiteJunior > label, #suitePremier > label, #suiteExecutive > label, #suiteTjoeun > label,
+    ) {
+    display : block;
+    width : 100%;
+    color : white;
+    /* text-align : center; */
+    font-size : 20px; 
+    font-weight : bold;
+    cursor : pointer;
+
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none
+}
+#standardRoom, #deluxeRoom, #suiteRoom {
+    position : relative;
+    width : calc(90% - 20px);
+}
+/* :where(#deluxeRoom, #suiteRoom)::before {
+    position : absolute;
+    left : -30px;
+    content : "▼";
+    color : #81674e;
+} */
+#standardSingle, #standardDouble, #standardTwin, #standardTriple {
+    width : calc(80% - 20px);
+}
+#deluxeDouble, #deluxeTriple {
+    width : calc(80% - 20px);
+}
+#suiteJunior, #suitePremier, #suiteExecutive, #suiteTjoeun {
+    width : calc(80% - 20px);
+}
+/* #endregion customCard */
+
+/* #endregion SideBar */
+
+
+/* #region content */
+#content {
+    margin : 50px 0px;
+    padding : 25px;
+    width : 800px;
+    /* height : 900px; */
+    height : 100%;
+    /* background-color : #81674e; */
+    border-radius : 10px;
+    box-shadow : 0px 0px 10px #81674e;
+}
+table {
+    width : 100%;
+    /* border-collapse: collapse; */
+    border-spacing : 0px;
+    border : solid 2px black;
+}
+tr:nth-last-child(1) {
+    border : none;
+}
+tr:nth-last-child(1) > td {
+    border-bottom : none;
+}
+th {
+    padding : 10px 0px;
+    border-right : solid 2px black;
+    border-bottom : solid 2px black;
+    text-align : center;
+    font-size : 20px;
+    font-weight : bold;
+}
+th:nth-last-child(1) {
+    border : none;
+    border-bottom : solid 2px black;
+}
+td {
+    padding : 10px 0px;
+    border-right : solid 2px black;
+    border-bottom : solid 2px black;
+    text-align : center;
+    font-size : 20px;
+}
+td:nth-last-child(1) {
+    border : none;
+    border-bottom : solid 2px black;
+}
+/* 750px */
+#tableIndex {
+    width : 75px;
+}
+#tableContent {
+    width : 400px;
+}
+#tableDate {
+    width : 200px;
+}
+#tableEstimation {
+    width : 75px;
+}
+/* #endregion content */

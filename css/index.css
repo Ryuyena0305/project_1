@@ -69,6 +69,9 @@ li {
     display :inline;
     position : relative;
 }
+#hBox > #mainMenu > .menuList > .underLineBox > a:hover {
+    color : white;
+}
 #hBox > #mainMenu > .menuList > .underLineBox > .underLine {
     display : block;
     position : absolute;
@@ -85,11 +88,11 @@ li {
     position : absolute;
     top : 82px;
     left : 0px;
-    display : none;
+    display : none; 
     width : 1200px;
     height : 55px;
     line-height: 60px;
-    background-color:  #81674e;
+    background-color : #81674e;
     z-index : 5;
 }
 #hBox > #mainMenu > .menuList > .subMenu > li {

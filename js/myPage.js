@@ -35,9 +35,18 @@ roomList = [
 	{roomCode : "C-3", roomName : "이그제큐티브 스위트", roomPrice : 572000, headCount : 2, roomNumber : 303},
 	{roomCode : "C-4", roomName : "아미드 스위트", roomPrice : 660000, headCount : 2, roomNumber : 304},
 ];
+
+reviewList = [
+    {reviewCode : 1, roomCode : "A-1", content : "방이 깔끔하고 좋아요", date : "2024-02-17", estimation : "5/5"},
+    {reviewCode : 2, roomCode : "A-5", content : "좋아요. 침대가 푹신합니다.", date : "2024-03-21", estimation : "4/5"},
+    {reviewCode : 3, roomCode : "C-4", content : "가격 대비 시설이 별로네요.", date : "2024-04-02", estimation : "2/5"},
+    {reviewCode : 4, roomCode : "B-3", content : "자식들이 깔끔하고 좋다고 하네요.", date : "2024-05-21", estimation : "4/5"},
+    {reviewCode : 5, roomCode : "B-1", content : "침구류가 깔끔해요.", date : "2024-06-08", estimation : "4/5"},
+    {reviewCode : 6, roomCode : "C-2", content : "가격 대비 서비스가 별로이고 TV가 고장났는지 안켜져요.", date : "2024-12-06", estimation : "1/5"},
+ ];
+ 
 let changeState = true;
 
-// printBookingList(1);
 checkLogin();
 
 function checkLogin() {
@@ -57,15 +66,18 @@ function printBookingList(customerCode) {
     let getCustomerList = getLocalStorage("customer");
     let getbookingList = getLocalStorage("booking");
     let getroomList = getLocalStorage("room");
+    let getreviewList = getLocalStorage("review");
     let getLoginState = getSessionStorage("login");
     console.log(getCustomerList);
     console.log(getbookingList);
     console.log(getroomList);
+    console.log(getreviewList);
     console.log(getLoginState);
     // 로컬스토리지에 값을 넣는 부분 시작
     setLocalStorage("customer", customerList);
     setLocalStorage("booking", bookingList);
     setLocalStorage("room", roomList);
+    setLocalStorage("review", reviewList);
     //setSessionStorage("login", {customerCode : 1, id : "test1", password : "1234", name : "유재석", birth : "831205", phone : "010-1111-1111", address : "인천 부평구", clause : true});
     // 로컬스토리지에 값을 넣는 부분 끝
     let now = new Date();

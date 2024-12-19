@@ -40,9 +40,15 @@ function closeMenu() {
     let loginButton = document.querySelector("#loginButton");
     header.style.backgroundColor = "white";
     sBox.style.display = "none";
-    loginButton.style.backgroundColor = "white";
-    loginButton.style.color = "#2E2E2E";
-    loginButton.style.border = "solid 2px #2E2E2E";
+    // loginButton.style.backgroundColor = "white";
+    // loginButton.style.color = "#2E2E2E";
+    // loginButton.style.border = "solid 2px #2E2E2E";
+    loginButton.style.backgroundColor = "";
+    loginButton.style.color = "";
+    loginButton.style.border = "";
+    console.log("실행1");
+    loginButton.innerHTML = `<a href = "./login.html">Login</a>`;
+    console.log("실행2");
     for(let i = 0; i < menuList.length; i++) {
         menuList[i].style.color = "#5f6062";
         subMenu[i].style.display = "none";
