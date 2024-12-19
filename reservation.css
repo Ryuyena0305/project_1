@@ -28,176 +28,98 @@
     margin: 0px auto;
 }
 
-/*main_box left right*/
+
+/*main_box right*/
 
 
 #main_box{
-    display: flex;
     margin-top: 100px;
   
-}
-#main_box_flex{
-    display: flex;
-}
-#main_box_left{
-    display: flex;
-    justify-content: center;
-    border: 1px solid #dcdcdc;
-    border-radius: 5px;
-    width: 770px;
-    margin-right: 30px;
-    height: 70px;
-
 }
 #main_box_right{
     border: 1px solid #dcdcdc;
     border-radius: 5px;
     padding: 20px;
-    width: 400px;
-    margin-left: 20px;
-    display: block;
-    margin-right: 600px;
-   
+    width: 1200px;
+    padding:50px 0px;
+
 }
 
 .box_number_btn{
     display: flex;
-}
-#box_number_choice{
-    display: flex;
-    justify-content: space-between;
-    
-}
-
-/*캘린더*/
-
-.main_box_left1 , .main_box_left2{
-   
-    display: flex;
-    align-items: center;
-    font-size: 20px;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    justify-content: space-evenly;
-    width: 700px;
-    height: 458px;
-    
-}
-.main_box_left1>h6, .main_box_left2>h6{
-    margin: 30px 10px;
-    font-size: 25px;
-}
-
-.btn{
-    border: none;
-    color: #bdbdbd;
-    background-color: white;
-    font-size: 28px;
-}
- .days1{
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-}
-.days2{
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    
-
-}
-.day1{
-    color :blue
-}
-.day2{
-    color :red
-}
-.day{
-    margin-right: 10px;
-}
- #calenders{
-    display: flex;
-    align-items: flex-start;
-    font-size: 20px;
-    align-content: flex-start;
-    justify-content: space-evenly;
-    width: 770px;
-    height: 458px;
- }
- .calender1{
-    display: flex;
-    font-size: 20px;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    justify-content: space-evenly;
-
-    height: 458px;
- }
-
-
-
-
-
-/*달력 날짜 표시 구역*/
-
-.main_box_left1>div , .main_box_left2>div{
-    width: 14%;/*부모요소의 가로사이즈 100%의 7등분*/
-    height: 60px;
-    border: 1px solid #eeeeee;
-}
-.main_box_left1 >.week, .main_box_left2>.week{
-    height: 25px;
-    text-align: center;
-    background-color: rgb(255, 232, 236);;
+    width: 300px;
+  
 }
 
 /*main_box_right*/
+
 .date_text{
-font-size: 13px;
+font-size: 15px;
 color: #666b7b;
 margin-bottom: 8px;
+margin-left: 90px;
+
 }
-#input_date1, #input_date2{
+.detail_text{
+font-size: 15px;
+color: #666b7b;
+margin-bottom: 8px;
+margin-left: 140px;
+
+}
+
+#input_date1, #input_date2,.input_date{
     border: 1px solid #e0e0e0;
     background: #F7F9FB;
-    width: 274px;
+    width: 1000px;
     padding: 14px 20px 14px 45px;
     border-radius: 6px;
     color: #666;
-    font-size: 13px;
-    height: 22px;
+    font-size: 15px;
+    height: 60px;
     margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 90px;
 }
 #box_number_choice{
-    width: 340px;
-    height: 45px;
+    display: flex;
+    width: 600px;
+    height: 100px;
     margin-bottom: 50px;
+    margin: 0px auto;
    
 }
+
 .box_number_btn{
-    width: 77px;
-    display: flex;
+    width: 150px;
     border-top: 1px solid #eeeeee;
     border-bottom: 1px solid #eeeeee;
     color:#333333;
-  
+    display: flex;
+    justify-content: center;
+    margin-left: 80px;
+
 
 }
 .box_number{
     height: 70px;
+    width: 600px;
 }
-#number_con1,#number_con2,#number_com3{
+#number_con2,#number_con3{
     align-items: center;
     display: flex;
     justify-content: center;
     margin: 10px;
+    width: 100px;
+    font-size: 20px;
 
 }
 .qunti_btn{
     background: #F7F9FB;
     border: 1px solid #e0e0e0;
-    width: 30px;
+    width: 80px;
     text-align: center;
     color: #333;
     font-size: 10px;
@@ -209,6 +131,8 @@ margin-bottom: 8px;
 /*main_list*/
 #main_list{
     border-top: 1px solid #ededed;
+    width: 1200px;
+    margin: 0px auto;
     margin-top: 20px;
     
 }
@@ -220,13 +144,22 @@ margin-bottom: 8px;
     justify-content: space-between;
     align-items: flex-end;
     border-top: 1px solid #ededed;
+    padding-bottom: 10px;
+    margin-top: 5px;
+   
   
 }
 #main_list_detail1:hover,#main_list_detail2:hover,#main_list_detail3:hover,#main_list_detail4:hover,#main_list_detail5:hover
 ,#main_list_detail6:hover,#main_list_detail7:hover,#main_list_detail8:hover,#main_list_detail9:hover,#main_list_detail10:hover
 ,#main_list_detail11:hover,#main_list_detail12:hover,#main_list_detail13:hover,#main_list_detail14:hover,#main_list_detail15:hover{
     box-shadow: 0px 0px 15px #81674e;
+    padding-bottom: 10px;
+    border-radius: 5px;
     cursor: pointer;
+   
+}
+.array_text{
+    width: 200px;
 }
 .roomType{
     font-size: 18px;
@@ -252,11 +185,15 @@ margin-bottom: 8px;
     color:white;
     border: none;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 .roomImg{
     width: 260px;
     height: 150px;
+    margin-top: 10px;
 }
 
 /*time notice*/
@@ -284,17 +221,31 @@ margin-bottom: 8px;
 }
 /*resevation_btn*/
 #resev_btn{
+    width: 1200px;
     display: flex;
     justify-content: end;
+    margin: 0px auto;
     margin-top: 10px;
 
+
 }
+
 #resevation_btn{
     width: 250px;
     height: 50px;
     background-color: #81674e;
     color:white;
     border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 10px;
     cursor: pointer;
+    margin-left: 20px;
+   
+}
+#check_roomcode{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
