@@ -13,6 +13,9 @@
 }
 
 /*main top (reservation)*/
+#main_top{
+    margin-top: 70px;
+}
 #main_top1>h2 {
     text-align: center;
     font-size: 30px;
@@ -67,6 +70,12 @@ margin-bottom: 8px;
 margin-left: 140px;
 
 }
+
+input[type="date"]{
+    appearance:none ;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
 
 #input_date1, #input_date2,.input_date{
     border: 1px solid #e0e0e0;
@@ -130,7 +139,7 @@ margin-left: 140px;
 
 /*main_list*/
 #main_list{
-    border-top: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
     width: 1200px;
     margin: 0px auto;
     margin-top: 20px;
@@ -145,7 +154,9 @@ margin-left: 140px;
     align-items: flex-end;
     border-top: 1px solid #ededed;
     padding-bottom: 10px;
+
     margin-top: 5px;
+  
    
   
 }
