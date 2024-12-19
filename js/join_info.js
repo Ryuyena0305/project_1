@@ -29,7 +29,7 @@ function join(){
         clause : true,
     }
     // console.log(info);
-    //let customerList = getLocalStorage();
+    // let customerList = getLocalStorage();
 
     if(name == "" || birth == "" || phone == "" || address == "" ||
         id == "" || password == ""){
@@ -45,19 +45,13 @@ function join(){
         alert('회원가입이 완료되었습니다.')
         customerCode++;
     }
-    
+
     customerList.push(info);
         
 
-    console.log(customerList);
-    localStorage.setItem('customerList', JSON.stringify(customerList));
-    //location.href = "./index.html";
+    // console.log(customerList);
+    localStorage.setItem('customer', JSON.stringify(customerList));
+    // location.href = "./index.html";
+    // // 인덱스로 돌아가면 로컬에 덮어쓰기 됨
     return;
 } // func end
-
-// 회원정보 저장
-// function customers(){
-//     let customerList = sessionStorage.getItem('customer');
-//     console.log(customerList);
-
-// }

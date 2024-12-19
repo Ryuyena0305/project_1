@@ -6,8 +6,7 @@ let customerList = [
     {customerCode : 3, id : "test3", password : "7890", name : "신동엽", birth : "791125", phone : "010-3333-3333", address : "서울 종로구", clause : true},
     {customerCode : 4, id : "test4", password : "1234", name : "홍길동", birth : "920505", phone : "010-4444-4444", address : "부산 해운대구", clause : false},
  ];
-// 현재 로그인 상태( 0이면 비로그인, 0이상이면 로그인)
-let loginState = {customerCode : 0};
+
 
 
 
@@ -16,27 +15,46 @@ function login(){
     
     let loginId = document.querySelector('.id').value
     let loginPw = document.querySelector('.pw').value
+    let code = ''
+    let state = false
 
-    let localInfo = getLocalStorage("customerList");
-    console.log(localInfo);
+    let localInfo = getLocalStorage("customer");
     // console.log(localInfo);
     for(let index = 0; index <= localInfo.length-1; index++){
         let info = localInfo[index];
-        console.log(info);
+        // console.log(info);
         if(info.id == loginId && info.password == loginPw){
-            alert('로그인 성공');
-            return;
+            code = info.customerCode;
+            state = true;
+            break;
         }
     }
-    alert('아이디 또는 비밀번호를 확인해주세요')
-    // location.href = "./index.html";
+    if(state){
+        alert('로그인 성공');
+    } else{alert('아이디 또는 비밀번호를 확인해주세요')
 
-    if(localInfo.customerCode < 0){
-        sessionStorage.setItem('loginState', JSON.stringify(loginState));
+    }
+    
+
+    console.log(code);
+    // 현재 로그인 상태( 0이면 비로그인, 0이상이면 로그인)
+    let loginState = {customerCode : 0, id : "", password : "", name : "", birth : "", phone : "", address : "", clause : false}
+    for(let index = 0; index <= localInfo.length-1; index++){
+        if(localInfo[index].customerCode == code){
+            loginState = {
+                            customerCode : localInfo[index].customerCode,
+                            id : localInfo[index].id,
+                            password : localInfo[index].password,
+                            name : localInfo[index].name,
+                            birth : localInfo[index].birth,
+                            phone : localInfo[index].phone,
+                            address : localInfo[index].address,
+                            clause : true
+                        };
+        }
     }
 
+    sessionStorage.setItem('login', JSON.stringify(loginState));
 
-
-
-    return;
+    location.href = "./index.html";
 }
