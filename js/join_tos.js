@@ -39,12 +39,21 @@ function tos(){
     console.log("-----------------");
     */
 
+    // 아무것도 체크하지 않으면 리턴
+    if(contBtn1 == null || contBtn2 == null || contBtn3 == null || contBtn4 == null){
+        alert('약관에 동의해주시기 바랍니다');
+        return;
+    }
+
     if(contBtn1 == true && contBtn3 == true){
         console.log('동의');
     }else if(contBtn2 == false && contBtn4 == false){
         alert('약관에 동의해주시기 바랍니다');
         return;
     }
+
+
+
     if(contBtn1 == true && contBtn4 == false){
         alert('약관에 동의해주시기 바랍니다');
         return;
@@ -53,6 +62,7 @@ function tos(){
         alert('약관에 동의해주시기 바랍니다');
         return;
     }
+    
   
 
 
