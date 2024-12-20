@@ -11,21 +11,19 @@ let customerInfo = [];
 let customerCode;
 // 회원가입 함수
 function join(){
-    // 추가한 코드 --> 고객리스트를 불러온다.
-    let getCustomerList = getLocalStorage("customer");
-    //
-    let name = document.querySelector('.name').value;
-    let birth = document.querySelector('.birth').value;
-    let phone = document.querySelector('.phone').value;
-    let address = document.querySelector('.address').value;
-    let id = document.querySelector('.id').value;
-    let password = document.querySelector('.pw').value;
-    // 추가한 코드 --> 최근 가입한 고객의 코드를 가져와서 + 1한 값을 회원가입하는 고객의 코드에 부여한다.
-    customerCode = getCustomerList[getCustomerList.length-1].customerCode + 1;
-    
-    //
+    let customerList = getLocalStorage("customer");
+    // setLocalStorage('customer', customerList);
+    let code = customerList[customerList.length-1].customerCode+1
+
+    let name = document.querySelector('.name').value
+    let birth = document.querySelector('.birth').value
+    let phone = document.querySelector('.phone').value
+    let address = document.querySelector('.address').value
+    let id = document.querySelector('.id').value
+    let password = document.querySelector('.pw').value
+
     let info = {
-        customerCode : customerCode,
+        customerCode : code,
         id : id,
         password : password,
         name : name,
@@ -35,7 +33,7 @@ function join(){
         clause : true,
     }
     // console.log(info);
-    // let customerList = getLocalStorage();
+    
 
     if(name == "" || birth == "" || phone == "" || address == "" ||
         id == "" || password == ""){
@@ -52,7 +50,7 @@ function join(){
         customerCode++;
     }
     // 변경한 코드 --> 위에있는 고객리스트 대신 로컬 스토리지에 있는 고객리스트값을 사용했습니다.
-    getCustomerList.push(info);
+    customerList.push(info);
     //
 
     // console.log(customerList);
