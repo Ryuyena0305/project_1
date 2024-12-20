@@ -1,3 +1,6 @@
+#main {
+    position : relative;
+}
 
 /* #region #pInformation */
 
@@ -132,6 +135,34 @@ th {
 
 /* #endregion bookingHistory */
 
+/* #region #writeReviewBox */
+
+#writeReviewBox {
+    margin : 0px 362px;
+    padding : 18px;
+    width : 534px;
+    border-radius: 10px;
+}
+#checkEstimation {
+    margin : 30px 10px;
+}
+#checkEstimation > select {
+    padding : 0px 10px;
+}
+#writeContent {
+    margin : 30px 10px;
+}
+#writeContent > input{
+    width : 230px;
+}
+#writeButton {
+    /* margin : 0px 175px; */
+    margin-left : calc(100% - 100px);
+    /* margin : 0px 100%; */
+}
+
+/* #endregion #writeReviewBox */
+
 #deleteCustomer, #changeInfo {
     margin-left : 20px;
     padding : 10px 18px;
@@ -140,10 +171,11 @@ th {
     border : none;
     color : white;
     background-color : #81674e;
+    border-radius : 10px;
     box-shadow : 0px 0px 6px #81674e;
     cursor : pointer;
 }
-#deleteCustomer:hover, #changeInfo:hover, .cancelBtn:hover {
+#deleteCustomer:hover, #changeInfo:hover, .cancelBtn:hover, .normalBtn:hover {
     color : #81674e;
     background-color : white;
     transition-duration : 0.5s;
@@ -155,10 +187,24 @@ th {
     border : none;
     color : white;
     background-color : #81674e;
+    border-radius : 5px;
     box-shadow : 0px 0px 6px #81674e;
     cursor : pointer;
 }
 .closeBtn {
     width : 40px;
+    border-radius : 5px;
     text-align : center;
+}
+.normalBtn {
+    padding : 10px 18px;
+    width : 100px;
+    height : 50px;
+    border : none;
+    color : white;
+    background-color : #81674e;
+    border-radius : 10px;
+    box-shadow : 0px 0px 6px #81674e;
+    text-align : center;
+    cursor : pointer;
 }

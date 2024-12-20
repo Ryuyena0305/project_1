@@ -23,6 +23,7 @@ function join(){
     let password = document.querySelector('.pw').value;
     // 추가한 코드 --> 최근 가입한 고객의 코드를 가져와서 + 1한 값을 회원가입하는 고객의 코드에 부여한다.
     customerCode = getCustomerList[getCustomerList.length-1].customerCode + 1;
+    
     //
     let info = {
         customerCode : customerCode,

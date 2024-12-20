@@ -6,17 +6,18 @@ let customerList = [
     {customerCode : 4, id : "test4", password : "1234", name : "홍길동", birth : "920505", phone : "010-4444-4444", address : "부산 해운대구", clause : false},
 ];
 let bookingList = [
-    {bookingCode : 1, customerCode : 1, roomCode : "A-1", checkIn : "2024-02-14", checkOut : "2024-02-16"},
-    {bookingCode : 2, customerCode : 2, roomCode : "A-5", checkIn : "2024-03-15", checkOut : "2024-03-20"},
-    {bookingCode : 3, customerCode : 1, roomCode : "A-2", checkIn : "2024-03-17", checkOut : "2024-03-18"},
-    {bookingCode : 4, customerCode : 2, roomCode : "B-1", checkIn : "2024-03-20", checkOut : "2024-03-22"},
-    {bookingCode : 5, customerCode : 3, roomCode : "A-7", checkIn : "2024-03-25", checkOut : "2024-03-28"},
-    {bookingCode : 6, customerCode : 4, roomCode : "C-4", checkIn : "2024-03-27", checkOut : "2024-04-01"},
-    {bookingCode : 7, customerCode : 2, roomCode : "B-3", checkIn : "2024-05-17", checkOut : "2024-05-20"},
-    {bookingCode : 8, customerCode : 1, roomCode : "C-1", checkIn : "2024-06-06", checkOut : "2024-06-08"},
-    {bookingCode : 9, customerCode : 1, roomCode : "B-1", checkIn : "2024-06-06", checkOut : "2024-06-07"},
-    {bookingCode : 10, customerCode : 3, roomCode : "B-3", checkIn : "2024-10-10", checkOut : "2024-10-25"},
-    {bookingCode : 11, customerCode : 3, roomCode : "C-2", checkIn : "2024-12-01", checkOut : "2024-12-05"},
+    {bookingCode : 1, customerCode : 1, roomCode : "A-1", checkIn : "2024-02-14", checkOut : "2024-02-16", reviewState : true},
+    {bookingCode : 2, customerCode : 2, roomCode : "A-5", checkIn : "2024-03-15", checkOut : "2024-03-20", reviewState : true},
+    {bookingCode : 3, customerCode : 1, roomCode : "A-2", checkIn : "2024-03-17", checkOut : "2024-03-18", reviewState : false},
+    {bookingCode : 4, customerCode : 2, roomCode : "B-1", checkIn : "2024-03-20", checkOut : "2024-03-22", reviewState : false},
+    {bookingCode : 5, customerCode : 3, roomCode : "A-7", checkIn : "2024-03-25", checkOut : "2024-03-28", reviewState : false},
+    {bookingCode : 6, customerCode : 4, roomCode : "C-4", checkIn : "2024-03-27", checkOut : "2024-04-01", reviewState : true},
+    {bookingCode : 7, customerCode : 2, roomCode : "B-3", checkIn : "2024-05-17", checkOut : "2024-05-20", reviewState : true},
+    {bookingCode : 8, customerCode : 1, roomCode : "C-1", checkIn : "2024-06-06", checkOut : "2024-06-08", reviewState : false},
+    {bookingCode : 9, customerCode : 4, roomCode : "B-1", checkIn : "2024-06-06", checkOut : "2024-06-07", reviewState : true},
+    {bookingCode : 10, customerCode : 3, roomCode : "B-3", checkIn : "2024-10-10", checkOut : "2024-10-25", reviewState : false},
+    {bookingCode : 11, customerCode : 3, roomCode : "C-2", checkIn : "2024-12-01", checkOut : "2024-12-05", reviewState : true},
+    {bookingCode : 12, customerCode : 2, roomCode : "B-4", checkIn : "2025-02-05", checkOut : "2025-02-08", reviewState : false}
 ]; 
 let roomList = [
     {roomCode : "A-1", roomName : "스탠다드 싱글", roomPrice : 210000, headCount : 1, roomNumber : 101},
@@ -36,12 +37,12 @@ let roomList = [
     {roomCode : "C-4", roomName : "아미드 스위트", roomPrice : 660000, headCount : 2, roomNumber : 304},
 ];
 let reviewList = [
-    {reviewCode : 1, roomCode : "A-1", content : "방이 깔끔하고 좋아요", date : "2024-02-17", estimation : "5/5"},
-    {reviewCode : 2, roomCode : "A-5", content : "좋아요. 침대가 푹신합니다.", date : "2024-03-21", estimation : "4/5"},
-    {reviewCode : 3, roomCode : "C-4", content : "가격 대비 시설이 별로네요.", date : "2024-04-02", estimation : "2/5"},
-    {reviewCode : 4, roomCode : "B-3", content : "자식들이 깔끔하고 좋다고 하네요.", date : "2024-05-21", estimation : "4/5"},
-    {reviewCode : 5, roomCode : "B-1", content : "침구류가 깔끔해요.", date : "2024-06-08", estimation : "4/5"},
-    {reviewCode : 6, roomCode : "C-2", content : "가격 대비 서비스가 별로이고 TV가 고장났는지 안켜져요.", date : "2024-12-06", estimation : "1/5"},
+    {reviewCode : 1, customerCode : 1, roomCode : "A-1", content : "방이 깔끔하고 좋아요", date : "2024-02-17", estimation : "5/5"},
+    {reviewCode : 2, customerCode : 2, roomCode : "A-5", content : "좋아요. 침대가 푹신합니다.", date : "2024-03-21", estimation : "4/5"},
+    {reviewCode : 3, customerCode : 4, roomCode : "C-4", content : "가격 대비 시설이 별로네요.", date : "2024-04-02", estimation : "2/5"},
+    {reviewCode : 4, customerCode : 2, roomCode : "B-3", content : "자식들이 깔끔하고 좋다고 하네요.", date : "2024-05-21", estimation : "4/5"},
+    {reviewCode : 5, customerCode : 4, roomCode : "B-1", content : "침구류가 깔끔해요.", date : "2024-06-08", estimation : "4/5"},
+    {reviewCode : 6, customerCode : 3, roomCode : "C-2", content : "가격 대비 서비스가 별로이고 TV가 고장났는지 안켜져요.", date : "2024-12-06", estimation : "1/5"},
 ];
 
 let loginState = {customerCode : 0, id : "", password : "", name : "", birth : "", phone : "", address : "", clause : false};
