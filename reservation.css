@@ -71,12 +71,6 @@ margin-left: 140px;
 
 }
 
-input[type="date"]{
-    appearance:none ;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-  }
-
 #input_date1, #input_date2,.input_date{
     border: 1px solid #e0e0e0;
     background: #F7F9FB;
@@ -109,6 +103,7 @@ input[type="date"]{
     display: flex;
     justify-content: center;
     margin-left: 80px;
+   
 
 
 }
@@ -135,6 +130,7 @@ input[type="date"]{
     line-height: 42px;
     font-size:15px;
     font-weight:500;
+    cursor: pointer;
 }
 
 /*main_list*/
@@ -143,6 +139,7 @@ input[type="date"]{
     width: 1200px;
     margin: 0px auto;
     margin-top: 20px;
+    
     
 }
 #main_list_detail1,#main_list_detail2,#main_list_detail3,#main_list_detail4,#main_list_detail5
@@ -153,9 +150,8 @@ input[type="date"]{
     justify-content: space-between;
     align-items: flex-end;
     border-top: 1px solid #ededed;
-    padding-bottom: 10px;
-
-    margin-top: 5px;
+    padding:10px;
+  
   
    
   
@@ -167,16 +163,18 @@ input[type="date"]{
     padding-bottom: 10px;
     border-radius: 5px;
     cursor: pointer;
+
    
 }
 .array_text{
     width: 200px;
+    margin-bottom: 15px;
 }
 .roomType{
     font-size: 18px;
     margin-bottom: 10px;
 }
-.roomSize, .bedType{
+.roomSize, .bedType, .roomlimit{
     font-size:12px;
     margin-bottom: 15px;
 
@@ -203,8 +201,9 @@ input[type="date"]{
 }
 .roomImg{
     width: 260px;
-    height: 150px;
+    height: 160px;
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 /*time notice*/

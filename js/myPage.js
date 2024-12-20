@@ -1,51 +1,5 @@
-customerList = [
-    {customerCode : 1, id : "test1", password : "1234", name : "유재석", birth : "831205", phone : "010-1111-1111", address : "인천 부평구", clause : true},
-    {customerCode : 2, id : "test2", password : "4567", name : "강호동", birth : "800506", phone : "010-2222-2222", address : "인천 부평구", clause : false},
-    {customerCode : 3, id : "test3", password : "7890", name : "신동엽", birth : "850712", phone : "010-3333-3333", address : "인천 부평구", clause : true},
-];
-
-bookingList = [
-	{bookingCode : 1, customerCode : 1, roomCode : "A-1", checkIn : "2024-02-14", checkOut : "2024-02-16"},
-	{bookingCode : 2, customerCode : 2, roomCode : "A-5", checkIn : "2024-03-15", checkOut : "2024-03-20"},
-	{bookingCode : 3, customerCode : 1, roomCode : "A-2", checkIn : "2024-03-17", checkOut : "2024-03-18"},
-	{bookingCode : 4, customerCode : 2, roomCode : "B-1", checkIn : "2024-03-20", checkOut : "2024-03-22"},
-	{bookingCode : 5, customerCode : 3, roomCode : "A-7", checkIn : "2024-03-25", checkOut : "2024-03-28"},
-	{bookingCode : 6, customerCode : 4, roomCode : "C-4", checkIn : "2024-03-27", checkOut : "2024-04-01"},
-	{bookingCode : 7, customerCode : 2, roomCode : "B-3", checkIn : "2024-05-17", checkOut : "2024-05-20"},
-	{bookingCode : 8, customerCode : 1, roomCode : "C-1", checkIn : "2024-06-06", checkOut : "2024-06-08"},
-	{bookingCode : 9, customerCode : 1, roomCode : "B-1", checkIn : "2024-06-06", checkOut : "2024-06-07"},
-	{bookingCode : 10, customerCode : 3, roomCode : "B-3", checkIn : "2024-10-10", checkOut : "2024-10-25"},
-	{bookingCode : 11, customerCode : 3, roomCode : "C-2", checkIn : "2024-12-01", checkOut : "2024-12-05"},
-];
-
-roomList = [
-	{roomCode : "A-1", roomName : "스탠다드 싱글", roomPrice : 210000, headCount : 1, roomNumber : 101},
-	{roomCode : "A-2", roomName : "스탠다드 싱글", roomPrice : 210000, headCount : 1, roomNumber : 102},
-	{roomCode : "A-3", roomName : "스탠다드 싱글", roomPrice : 210000, headCount : 1, roomNumber : 103},
-	{roomCode : "A-4", roomName : "스탠다드 더블", roomPrice : 231000, headCount : 2, roomNumber : 104},
-	{roomCode : "A-5", roomName : "스탠다드 더블", roomPrice : 231000, headCount : 2, roomNumber : 105},
-	{roomCode : "A-6", roomName : "스탠다드 트윈", roomPrice : 231000, headCount : 2, roomNumber : 106},
-	{roomCode : "A-7", roomName : "스탠다드 트리플", roomPrice : 286000, headCount : 3, roomNumber : 107},
-	{roomCode : "B-1", roomName : "디럭스 더블", roomPrice : 275000, headCount : 2, roomNumber : 201},
-	{roomCode : "B-2", roomName : "디럭스 더블", roomPrice : 275000, headCount : 2, roomNumber : 202},
-	{roomCode : "B-3", roomName : "디럭스 트리플", roomPrice : 330000, headCount : 3, roomNumber : 203},
-	{roomCode : "B-4", roomName : "디럭스 트리플", roomPrice : 330000, headCount : 3, roomNumber : 204},
-	{roomCode : "C-1", roomName : "주니어 스위트", roomPrice : 385000, headCount : 2, roomNumber : 301},
-	{roomCode : "C-2", roomName : "프리미어 스위트", roomPrice : 473000, headCount : 2, roomNumber : 302},
-	{roomCode : "C-3", roomName : "이그제큐티브 스위트", roomPrice : 572000, headCount : 2, roomNumber : 303},
-	{roomCode : "C-4", roomName : "아미드 스위트", roomPrice : 660000, headCount : 2, roomNumber : 304},
-];
-
-reviewList = [
-    {reviewCode : 1, roomCode : "A-1", content : "방이 깔끔하고 좋아요", date : "2024-02-17", estimation : "5/5"},
-    {reviewCode : 2, roomCode : "A-5", content : "좋아요. 침대가 푹신합니다.", date : "2024-03-21", estimation : "4/5"},
-    {reviewCode : 3, roomCode : "C-4", content : "가격 대비 시설이 별로네요.", date : "2024-04-02", estimation : "2/5"},
-    {reviewCode : 4, roomCode : "B-3", content : "자식들이 깔끔하고 좋다고 하네요.", date : "2024-05-21", estimation : "4/5"},
-    {reviewCode : 5, roomCode : "B-1", content : "침구류가 깔끔해요.", date : "2024-06-08", estimation : "4/5"},
-    {reviewCode : 6, roomCode : "C-2", content : "가격 대비 서비스가 별로이고 TV가 고장났는지 안켜져요.", date : "2024-12-06", estimation : "1/5"},
- ];
- 
-let changeState = true;
+ let changeState = true;
+ let writeState = false;
 
 checkLogin();
 
@@ -57,29 +11,24 @@ function checkLogin() {
         printBookingList(checking.customerCode);
     } else {
         console.log("비로그인");
-        printBookingList(0);
+        printBookingList(checking.customerCode);
     }
 }
 
 // 마이페이지 내용 전체를 출력하는 함수
 function printBookingList(customerCode) {
     let getCustomerList = getLocalStorage("customer");
-    let getbookingList = getLocalStorage("booking");
-    let getroomList = getLocalStorage("room");
-    let getreviewList = getLocalStorage("review");
+    let getBookingList = getLocalStorage("booking");
+    let getRoomList = getLocalStorage("room");
+    let getReviewList = getLocalStorage("review");
     let getLoginState = getSessionStorage("login");
+    /*
     console.log(getCustomerList);
-    console.log(getbookingList);
-    console.log(getroomList);
-    console.log(getreviewList);
+    console.log(getBookingList);
+    console.log(getRoomList);
+    console.log(getReviewList);
     console.log(getLoginState);
-    // 로컬스토리지에 값을 넣는 부분 시작
-    setLocalStorage("customer", customerList);
-    setLocalStorage("booking", bookingList);
-    setLocalStorage("room", roomList);
-    setLocalStorage("review", reviewList);
-    //setSessionStorage("login", {customerCode : 1, id : "test1", password : "1234", name : "유재석", birth : "831205", phone : "010-1111-1111", address : "인천 부평구", clause : true});
-    // 로컬스토리지에 값을 넣는 부분 끝
+    */
     let now = new Date();
     let year = now.getFullYear();
     let month = now.getMonth() + 1;
@@ -91,6 +40,13 @@ function printBookingList(customerCode) {
     let customerAddress = document.querySelector("#customerAddress > input");
     let html = ``;
     let count = 1;
+    let myReviews = [];
+    for(let index = 0; index < getReviewList.length; index++) {
+        if(getReviewList[index].customerCode == customerCode) {
+            myReviews.push(getReviewList[index]);
+        }
+    }
+    // 개인정보 출력부분
     if(customerCode != 0) {
         customerName.innerHTML = `<p>${getLoginState.name}님 반갑습니다.</p>`;
         customerPhone.value = getLoginState.phone;
@@ -99,49 +55,69 @@ function printBookingList(customerCode) {
     } else {
         customerName.innerHTML = `<p>OOO님 반갑습니다.</p>`;
     }
-    // 예약내역 테이블로 출력하기
-    for(let index = 0; index < getbookingList.length; index++) {
-        let bookingTemp = getbookingList[index];
-        let customer;
-        let room;
+    // 예약내역 테이블로 출력부분
+    for(let index = 0; index < getBookingList.length; index++) {
+        let bookingTemp = getBookingList[index];
         if(customerCode == bookingTemp.customerCode) {
             let checkIn = bookingTemp.checkIn.split("-");
-            let checkOut = bookingTemp.checkOut.split("-");
-            for(let j = 0; j < getroomList.length; j++) {
-                if(bookingTemp.roomCode == getroomList[j].roomCode) {
+            // let checkOut = bookingTemp.checkOut.split("-");
+            let checkOut = new Date(bookingTemp.checkOut).getTime();
+            // console.log("testValue1 : " + testValue1);
+            let nowTime = new Date(`${year}-${month}-${day}`).getTime();
+            // console.log("testValue2 : " + testValue2);
+            let timeValue = nowTime - checkOut;
+            // console.log("testValue3 : " + testValue3);
+            for(let j = 0; j < getRoomList.length; j++) {
+                if(bookingTemp.roomCode == getRoomList[j].roomCode) {
                     html += `
                     <tr>
                         <td style = "text-align : center;">${count}</td>
-                        <td style = "text-align : center;">${getroomList[j].roomName}</td>
-                        <td style = "text-align : center;">${getroomList[j].roomNumber}</td>
+                        <td style = "text-align : center;">${getRoomList[j].roomName}</td>
+                        <td style = "text-align : center;">${getRoomList[j].roomNumber}</td>
                         <td style = "text-align : center;">${bookingTemp.checkIn}</td>
                         <td style = "text-align : center;">${bookingTemp.checkOut}</td>
                     `;
-                    if(checkOut[0] < year || checkOut[1] < month || checkOut[2] < day) {
+                    // if(checkOut[0] <= year && checkOut[1] <= month && checkOut[2] <= day) {      
+                    if(timeValue > 0) {      
                         html += `
-                            <td style = "text-align : center;">
-                                <button class = "cancelBtn">작성</button>
-                            </td>
                             <td style = "text-align : center;">
                                 <button class = "closeBtn" disabled>취소</button>
                             </td>
-                        </tr>
                         `;
+                    //     <td style = "text-align : center;">
+                    //         <button class = "cancelBtn">작성</button>
+                    //     </td>
+                    // </tr>
                     } else {
                         html += `
                             <td style = "text-align : center;">
-                                <button class = "closeBtn" disabled>작성</button>
-                            </td>
-                            <td style = "text-align : center;">
                                 <button class = "cancelBtn" onclick = "cancelBooking(${bookingTemp.bookingCode})">취소</button>
                             </td>
-                        </tr>
+                        `;
+                        // <td style = "text-align : center;">
+                        //     <button class = "closeBtn" disabled>작성</button>
+                        // </td>
+                        // </tr>
+                    }
+                    if(bookingTemp.reviewState) {
+                        html += `
+                                <td style = "text-align : center;">
+                                    <button class = "closeBtn" disabled>작성</button>
+                                </td>
+                            </tr>
+                        `;
+                    } else {
+                        html += `
+                                <td style = "text-align : center;">
+                                    <button class = "cancelBtn" onclick = "writeReviewBox('${bookingTemp.roomCode}')">작성</button>
+                                </td>
+                            </tr>
                         `;
                     }
+                    count++;
                 }
             }
         }
-        count++;
         setSessionStorage("login", getLoginState);
         booking.innerHTML = html;
     }
@@ -238,8 +214,9 @@ function cancelBooking(bookingCode) {
             }
         }
     }
-    let checking = getSessionStorage("login");
-    printBookingList2(checking.customerCode);
+    checkLogin();
+    // let checking = getSessionStorage("login");
+    // printBookingList(checking.customerCode);
 }
 
 //회원정보를 탈퇴하는 함수
@@ -264,4 +241,48 @@ function deleteCustomer() {
         }
         location.href = "./index.html";
     }
+}
+
+// 후기 작성 박스 열고 닫는 함수
+function writeReviewBox(roomCode) {
+    let writeReviewBox = document.querySelector("#writeReviewBox");
+    let estimationNumber = document.querySelector("#checkEstimation > select");
+    let writeContent = document.querySelector("#writeContent > input");
+    let writeButton = document.querySelector("#writeButton");
+    console.dir(writeReviewBox.style.display);
+    if(writeReviewBox.style.display == "none") {
+        writeReviewBox.style.display = "block";
+        estimationNumber.value = "5";
+        writeContent.value = "";
+        writeState = true;
+    } else {
+        writeReviewBox.style.display = "none";
+        writeState = false;
+    }
+    writeButton.innerHTML = `<button class = "normalBtn" onclick = "writeReview('${roomCode}')">저장</button>`;
+}
+
+// 후기를 작성하는 함수
+function writeReview(roomCode) {
+    // roomCode = "C-3";
+    let now = new Date();
+    let year = now.getFullYear(); let month = now.getMonth() + 1; let day = now.getDate();
+    let getReviewList = getLocalStorage("review");
+    let getLoginState = getSessionStorage("login");
+    let checkEstimation = document.querySelector("#checkEstimation");
+    let estimationNumber = document.querySelector("#checkEstimation > select");
+    let writeContent = document.querySelector("#writeContent > input");
+    let reviewTemp = {
+        reviewCode: reviewCode, 
+        customerCode: getLoginState.customerCode, 
+        roomCode: roomCode, 
+        content: writeContent.value, 
+        date: `${year}-${month}-${day}`, 
+        estimation : `${estimationNumber.value}/5`,
+    };
+    console.log(reviewTemp);
+    getReviewList.push(reviewTemp);
+    console.log(getReviewList);
+    setLocalStorage("review", getReviewList);
+
 }

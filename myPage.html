@@ -76,6 +76,12 @@
 
                         </ul>
                     </li>
+                    <li id = "list7" class = "menuList" onmouseover = "onMenu(7)">
+                        <a href = "./reviewPage.html">후기</a>
+                        <ul class = "subMenu" onmouseout = "closeMenu()">
+
+                        </ul>
+                    </li>
                 </ul>
                 <div id = "loginButton"><a href = "#">Login</a></div>
             </div>
@@ -120,10 +126,10 @@
                                 <th width = "50" style = "text-align : center;">순번</th>
                                 <th width = "200" style = "text-align : center;">객실이름</th>
                                 <th width = "100" style = "text-align : center;">객실번호</th>
-                                <th width = "150" style = "text-align : center;">입실시간</th>
-                                <th width = "150" style = "text-align : center;">퇴실시간</th>
-                                <th width = "100" style = "text-align : center;">후기 작성</th>
+                                <th width = "150" style = "text-align : center;">입실일자</th>
+                                <th width = "150" style = "text-align : center;">퇴실일자</th>
                                 <th width = "100" style = "text-align : center;">예약 취소</th>
+                                <th width = "100" style = "text-align : center;">후기 작성</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -131,6 +137,30 @@
                         </tbody>
                     </table>
                 </div>
+            </div>
+            <div id = "reviewBox">
+                <fieldset id = "writeReviewBox" style = "display : none;">
+                    <legend><label>후기 작성</label></legend>
+                    <div id = "checkEstimation">
+                        <label>평점</label>
+                        <!-- <input type = "text" placeholder = "X/5 형식으로 작성해주세요."/> -->
+                        <select>
+                            <option value = "5"> 5 </option>
+                            <option value = "4"> 4 </option>
+                            <option value = "3"> 3 </option>
+                            <option value = "2"> 2 </option>
+                            <option value = "1"> 1 </option>
+                            <option value = "0"> 0 </option>
+                        </select>
+                    </div>
+                    <div id = "writeContent">
+                        <label>내용</label>
+                        <input type = "text" placeholder = "짧게 작성 부탁드립니다."/>
+                    </div>
+                    <div id = "writeButton">
+                        <!-- <button class = "normalBtn" onclick = "writeReview()">저장</button> -->
+                    </div>
+                </fieldset>
             </div>
             <div style = "margin : 10px auto; width : 1200px; text-align : end;">
                 <button id = "changeInfo" onclick = "changeInfo()">회원수정</button>
