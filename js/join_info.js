@@ -50,7 +50,7 @@ function join(){
         customerCode++;
     }
     // 변경한 코드 --> 위에있는 고객리스트 대신 로컬 스토리지에 있는 고객리스트값을 사용했습니다.
-    getCustomerList.push(info);
+    customerList.push(info);
     //
 
     // console.log(customerList);
