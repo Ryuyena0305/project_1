@@ -8,7 +8,6 @@
 
 
 let customerInfo = [];
-// let customerCode = 5;
 let customerCode;
 // 회원가입 함수
 function join(){
@@ -57,11 +56,9 @@ function join(){
     //
 
     // console.log(customerList);
-    // localStorage.setItem('customer', JSON.stringify(customerList));
-    // 추가한 코드 --> 회원가입한 고객을 로컬 스토리지에 저장했습니다.
-    setLocalStorage("customer", getCustomerList);
-    //
-    // location.href = "./index.html";
-    // // 인덱스로 돌아가면 로컬에 덮어쓰기 됨
+    localStorage.setItem('customer', JSON.stringify(customerList));
+    location.href = "./index.html";
+    // 인덱스로 넘어가면 로컬에 저장은 되지만 덮어쓰기 됨
+    
     return;
 } // func end
