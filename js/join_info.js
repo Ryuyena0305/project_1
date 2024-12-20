@@ -11,6 +11,10 @@ let customerInfo = [];
 let customerCode;
 // 회원가입 함수
 function join(){
+    let customerList = getLocalStorage("customer");
+    // setLocalStorage('customer', customerList);
+    let code = customerList[customerList.length-1].customerCode+1
+
     let name = document.querySelector('.name').value
     let birth = document.querySelector('.birth').value
     let phone = document.querySelector('.phone').value
@@ -19,7 +23,7 @@ function join(){
     let password = document.querySelector('.pw').value
 
     let info = {
-        customerCode : customerCode,
+        customerCode : code,
         id : id,
         password : password,
         name : name,
@@ -29,7 +33,7 @@ function join(){
         clause : true,
     }
     // console.log(info);
-    // let customerList = getLocalStorage();
+    
 
     if(name == "" || birth == "" || phone == "" || address == "" ||
         id == "" || password == ""){
