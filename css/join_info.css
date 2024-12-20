@@ -26,6 +26,7 @@
 /* 메인 상단 */
 #top > h3{
     font-size: 30px;
+    font-weight: bold;
     color: #81674e;
     margin-top: 70px;
     margin-bottom: 20px;
@@ -50,18 +51,20 @@
     font-weight: bold;
 }
 
-
-
 /* 메인 컨텐츠 */
 .info > h4{
     height: 40px;
     font-size: 18px;
     border-bottom: 3px solid #81674e;
     margin-top: 50px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #81674e;
 }
 
 .info > div > h5{
     margin: 30px 0px 10px 0px;
+    font-weight: bold;
 }
 .info > div > ul{
     border-top: 1px solid darkgray;
@@ -77,7 +80,6 @@
     background-color: #faf9f7;
     width: 200px;
     padding: 15px 0px 15px 30px;
-    font-weight: bold;
 }
 .info > div > ul > li > input{
     height: 35px;
