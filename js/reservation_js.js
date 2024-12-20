@@ -5,70 +5,40 @@ customerList = [
     { customerCode: 4, id: "test4", password: "1234", name: "홍길동", birth: "920505", phone: "010-4444-4444", address: "부산 해운대구", clause: false },
 ];
 
+bookingList = [
+	{bookingCode : 1, customerCode : 1, roomCode : "A-1", checkIn : "2024-02-14", checkOut : "2024-02-16"},
+	{bookingCode : 2, customerCode : 2, roomCode : "A-5", checkIn : "2024-03-15", checkOut : "2024-03-20"},
+	{bookingCode : 3, customerCode : 1, roomCode : "A-2", checkIn : "2024-03-17", checkOut : "2024-03-18"},
+	{bookingCode : 4, customerCode : 2, roomCode : "B-1", checkIn : "2024-03-20", checkOut : "2024-03-22"},
+	{bookingCode : 5, customerCode : 3, roomCode : "A-7", checkIn : "2024-03-25", checkOut : "2024-03-28"},
+	{bookingCode : 6, customerCode : 4, roomCode : "C-4", checkIn : "2024-03-27", checkOut : "2024-04-01"},
+	{bookingCode : 7, customerCode : 2, roomCode : "B-3", checkIn : "2024-05-17", checkOut : "2024-05-20"},
+	{bookingCode : 8, customerCode : 1, roomCode : "C-1", checkIn : "2024-06-06", checkOut : "2024-06-08"},
+	{bookingCode : 9, customerCode : 1, roomCode : "B-1", checkIn : "2024-06-06", checkOut : "2024-06-07"},
+	{bookingCode : 10, customerCode : 3, roomCode : "B-3", checkIn : "2024-10-10", checkOut : "2024-10-25"},
+	{bookingCode : 11, customerCode : 3, roomCode : "C-2", checkIn : "2024-12-01", checkOut : "2024-12-05"},
+];
 
-let room = [
-    {
-        roomCode: "A-1", roomName: "스탠다드 싱글", roomPrice: 210000,
-        headCount: 1, roomNumber: 101
-    },
-    {
-        roomCode: "A-2", roomName: "스탠다드 싱글", roomPrice: 210000,
-        headCount: 1, roomNumber: 102
-    },
-    {
-        roomCode: "A-3", roomName: "스탠다드 싱글", roomPrice: 210000,
-        headCount: 1, roomNumber: 103
-    },
-    {
-        roomCode: "A-4", roomName: "스탠다드 더블", roomPrice: 231000,
-        headCount: 2, roomNumber: 104
-    },
-    {
-        roomCode: "A-5", roomName: "스탠다드 싱글", roomPrice: 231000,
-        headCount: 2, roomNumber: 105
-    },
-    {
-        roomCode: "A-6", roomName: "스탠다드 트윈", roomPrice: 231000,
-        headCount: 2, roomNumber: 106
-    },
-    {
-        roomCode: "A-7", roomName: "스탠다드 트리플", roomPrice: 286000,
-        headCount: 3, roomNumber: 107
-    },
-    {
-        roomCode: "B-1", roomName: "디럭스 더블", roomPrice: 275000,
-        headCount: 2, roomNumber: 201
-    },
-    {
-        roomCode: "B-2", roomName: "디럭스 더블", roomPrice: 275000,
-        headCount: 2, roomNumber: 202
-    },
-    {
-        roomCode: "B-3", roomName: "디럭스 트리플", roomPrice: 330000,
-        headCount: 3, roomNumber: 203
-    },
-    {
-        roomCode: "B-4", roomName: "디럭스 트리플", roomPrice: 330000,
-        headCount: 3, roomNumber: 204
-    },
-    {
-        roomCode: "C-1", roomName: "주니어 스위트", roomPrice: 385000,
-        headCount: 2, roomNumber: 301
-    },
-    {
-        roomCode: "C-2", roomName: "프리미어 스위트", roomPrices: 473000,
-        headCount: 2, roomNumber: 302
-    },
-    {
-        roomCode: "C-3", roomName: "이그제큐티브 스위트", roomPrice: 572000,
-        headCount: 2, roomNumber: 303
-    },
-    {
-        roomCode: "C-4", roomName: "아미드 스위트", roomPrice: 660000,
-        headCount: 2, roomNumber: 304
-    },
 
-]
+roomList = [
+	{roomCode : "A-1", roomName : "스탠다드 싱글", roomPrice : 210000, headCount : 1, roomNumber : 101},
+	{roomCode : "A-2", roomName : "스탠다드 싱글", roomPrice : 210000, headCount : 1, roomNumber : 102},
+	{roomCode : "A-3", roomName : "스탠다드 싱글", roomPrice : 210000, headCount : 1, roomNumber : 103},
+	{roomCode : "A-4", roomName : "스탠다드 더블", roomPrice : 231000, headCount : 2, roomNumber : 104},
+	{roomCode : "A-5", roomName : "스탠다드 더블", roomPrice : 231000, headCount : 2, roomNumber : 105},
+	{roomCode : "A-6", roomName : "스탠다드 트윈", roomPrice : 231000, headCount : 2, roomNumber : 106},
+	{roomCode : "A-7", roomName : "스탠다드 트리플", roomPrice : 286000, headCount : 3, roomNumber : 107},
+	{roomCode : "B-1", roomName : "디럭스 더블", roomPrice : 275000, headCount : 2, roomNumber : 201},
+	{roomCode : "B-2", roomName : "디럭스 더블", roomPrice : 275000, headCount : 2, roomNumber : 202},
+	{roomCode : "B-3", roomName : "디럭스 트리플", roomPrice : 330000, headCount : 3, roomNumber : 203},
+	{roomCode : "B-4", roomName : "디럭스 트리플", roomPrice : 330000, headCount : 3, roomNumber : 204},
+	{roomCode : "C-1", roomName : "주니어 스위트", roomPrice : 385000, headCount : 2, roomNumber : 301},
+	{roomCode : "C-2", roomName : "프리미어 스위트", roomPrice : 473000, headCount : 2, roomNumber : 302},
+	{roomCode : "C-3", roomName : "이그제큐티브 스위트", roomPrice : 572000, headCount : 2, roomNumber : 303},
+	{roomCode : "C-4", roomName : "아미드 스위트", roomPrice : 660000, headCount : 2, roomNumber : 304},
+];
+
+
 /*객실예약 옆 roomlist 출력 */
 let check_roomcode = null;
 
@@ -104,7 +74,7 @@ function peopleNumPrint(){
  console.log(typeof html1);
 } 
 peopleNumPrint();
-/*성인 아동 객실별로 총인원수 넘지 않게*/
+/*성인 아동 인원수 조절*/
 
 function peopleNumPlus(changeNum ){ 
     if( peopleNum==3 ){   peopleNum==3;   }
@@ -145,31 +115,72 @@ function childNumMinus( changeNum ){
     return; 
     
 } 
-function maxNum(){
-    for(let i=0;i<room.length;i++){
-        if(Number(html1)+Number(html2)>room[i].headCount){
-            alert('객실정원을 확인하세요.')
-        }
-} 
-  
-
-}
+// function maxNum(){
+//     for(let i=0;i<room.length;i++){
+//         if(Number(html1)+Number(html2)>room[i].headCount){
+//             alert('객실정원을 확인하세요.')
+//         }
+// } 
+// }
+/*성인 아동 객실별로 총인원수 넘지 않게*/
 
 /*룸코드 선택하기*/
 
 /* 체크인 날짜,체크아웃 날짜,객실수,성인,아동 수 가져오기*/
-function 정보입력함수() {
-    // 1. [입력]
+// function 정보입력함수() {
+//     // 1. [입력]
+//     let checkin_time = document.querySelector('#input_date1').value;
+//     let checkout_time = document.querySelector('#input_date2').value;
+//     let number_con1 = document.querySelector('#number_con1').value;
+//     let number_con2 = document.querySelector('#number_con2').value;
+//     let number_con3 = document.querySelector('#number_con3').value;
+
+//     let infos = {
+//         'checkin_time': checkin_time, 'checkout_time': checkout_time,
+//         'number_con1': number_con1, 'number_con2': number_con2, 'number_con3': number_con3
+//     };
+
+//     let room = 회원정보목록반환함수();
+
+//     memberList.push(infos);
+//     sessionStorage.setItem('room', JSON.stringify(room))
+
+//     return;
+// } 
+
+/**localStorage에 객실정보 불러오기 함수 */
+
+function getRoomList() {
+    let roomList = localStorage.getItem("room");
+    if(roomList == null) {
+        roomList = [];
+    } else {
+        roomList = JSON.parse(roomList);
+    }
+    return roomList;
+}
+function getBookingList() {
+    let bookingList = localStorage.getItem("booking");
+    if(bookingList == null) {
+        bookingList = [];
+    } else {
+        bookingList = JSON.parse(bookingList);
+    }
+    return bookingList;
+}
+
+/*객실예약 */
+function infoInput(){
     let checkin_time = document.querySelector('#input_date1').value;
     let checkout_time = document.querySelector('#input_date2').value;
-    let number_con1 = document.querySelector('#number_con1').value;
-    let number_con2 = document.querySelector('#number_con2').value;
-    let number_con3 = document.querySelector('#number_con3').value;
+    let number_con2 = document.querySelector('#number_con2').value+document.querySelector('#number_con3').value;
+    let check_roomcode;
 
-    let infos = {
-        'checkin_time': checkin_time, 'checkout_time': checkout_time,
-        'number_con1': number_con1, 'number_con2': number_con2, 'number_con3': number_con3
-    };
+    for(let index;index<=bookingList.length-1;index++){
+        let infoBookingCode = bookingList[index].bookingCode 
+    }
+    bookingList = [
+        {bookingCode : infoBookingCode, customerCode : 1, roomCode : check_roomcode, checkIn : checkin_time, checkOut : checkout_time}]
 
     let room = 회원정보목록반환함수();
 
@@ -177,78 +188,24 @@ function 정보입력함수() {
     sessionStorage.setItem('room', JSON.stringify(room))
 
     return;
-} // f end 
 
-function 객실목록반환함수() {
-    let roomList = sessionStorage.getItem('room');
-    if (roomList == null) {
+}
+/**
+ * 
+ * bookingList = [
+	{bookingCode : 1, customerCode : 1, roomCode : "A-1", checkIn : "2024-02-14", checkOut : "2024-02-16"},
+ */
 
-        roomList = [];
-    } else {
-        roomList = JSON.parse(room);
+function 회원정보목록반환함수(){ 
+    let memberList = sessionStorage.getItem( 'memberList' );
+    console.log( memberList ); 
+ 
+    if( memberList == null ){
+       
+        memberList = []; 
+    }else{
+       
+        memberList = JSON.parse( memberList );
     }
-    return roomList;
+    return memberList; 
 }
-
-/**localStorage에 배열정보 불러오기 함수 */
-function getBoardList() {
-
-    let boardList = localStorage.getItem('boardList');
-    if (boardList == null) {
-        boardList = [];
-    } else {
-        boardList = JSON.parse(boardList);
-    }
-    return boardList;
-
-}
-
-
-function setBoardList(boardList) {
-    localStorage.setItem(
-        'boardList',//key
-        JSON.stringify(boardList));
-}
-
-function getBoard(bno) {
-    let boardList = getBoardList();
-
-    for (let index = 0; index <= boardList.length - 1; index++) {
-        if (boardList[index].bno == bno) {
-
-            return boardList[index];
-        }
-    }
-    return null;
-}
-function 등록함수() {
-    console.log('등록함수 실행');
-    let title = document.querySelector('.title').value;
-    let content = document.querySelector('.content').value;
-    let password = document.querySelector('.password').value;
-
-    let nowDate = new Date()
-    let nowYear = nowDate.getFullYear()
-    let nowMonth = nowDate.getMonth() + 1;
-    let nowDay = nowDate.getDate()
-    let date = `${nowYear}-${nowMonth}-${nowDay}`;
-    let view = 0;
-
-    let boardList = getBoardList();
-
-    let bno = boardList.length != 0 ?
-        boardList[boardList.length - 1].bno + 1 : 1
-
-    // 객체Object
-    let board = {
-        bno: bno, title: title, content: content,
-        password: password, date: date, view: view
-    };
-    boardList.push(board);
-
-    setBoardList(boardList);
-
-    alert('게시물 등록 성공');
-    location.href = "board.html";
-
-} // f end 
