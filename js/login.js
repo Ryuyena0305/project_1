@@ -40,7 +40,11 @@ function login(){
     } else{alert('아이디 또는 비밀번호를 확인해주세요')
         return;
     }
+    location.href = "./index.html";
+
     
+}
+
 
     // console.log(code);
     // 현재 로그인 상태( 0이면 비로그인, 0이상이면 로그인)
@@ -64,4 +68,3 @@ function login(){
     // sessionStorage.setItem('login', JSON.stringify(loginState));
 
     // location.href = "./index.html";
-}
