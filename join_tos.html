@@ -107,7 +107,7 @@
                     <div class="tos">
                         <h4>약관동의</h4>
                         <div class="checkAll">
-                            <input type="checkbox"> <span> 가입 약관 전체 동의</span>
+                            <input type="checkbox" class="all"> <span> 가입 약관 전체 동의</span>
                             <p>※ 전체동의는 선택사항(동의 내용을 확인한후 개별동의 가능)이며 전체동의 버튼을 체크하면 선택적 수집동의도 동시 진행됩니다.</p>
                         </div>
                         <div class="tosCont">
@@ -173,8 +173,8 @@
                                 </ul>
                             </div>
                             <div class="contBtn">
-                                <input type="radio" name="yn1" class="yn1yes"/> 동의함
-                                <input type="radio" name="yn1" class="yn1no"/> 동의하지 않음
+                                <input type="radio" name="yn1" class="yn1yes" value="true"/> 동의함
+                                <input type="radio" name="yn1" class="yn1no" value="false"/> 동의하지 않음
                             </div>
                         </div> 
                         <div class="tosCont">
@@ -297,13 +297,13 @@
                                 </ul>
                             </div>
                             <div class="contBtn">
-                                <input type="radio" class="yn2yes" name="yn2" /> 동의함
-                                <input type="radio" class="yn2no" name="yn2" /> 동의하지 않음
+                                <input type="radio" class="yn2yes" name="yn2" value="true"/> 동의함
+                                <input type="radio" class="yn2no" name="yn2" value="false"/> 동의하지 않음
                             </div>
                         </div> <!-- tosCont end -->
 
                         <div class="tosBtn">
-                            <button type="button" onclick="tos()">다음</button>
+                            <button type="button" onclick="allCheck()">다음</button>
                             <button type="button"><a href="./index.html">취소</a></button>
                         </div>
                     </div> <!-- tos end -->
