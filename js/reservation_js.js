@@ -1,26 +1,27 @@
-customerList = [
+let customerList = [
     { customerCode: 1, id: "test1", password: "1234", name: "유재석", birth: "831205", phone: "010-1111-1111", address: "인천 부평구", clause: true },
     { customerCode: 2, id: "test2", password: "4567", name: "강호동", birth: "800506", phone: "010-2222-2222", address: "인천 계양구", clause: false },
     { customerCode: 3, id: "test3", password: "7890", name: "신동엽", birth: "791125", phone: "010-3333-3333", address: "서울 종로구", clause: true },
     { customerCode: 4, id: "test4", password: "1234", name: "홍길동", birth: "920505", phone: "010-4444-4444", address: "부산 해운대구", clause: false },
 ];
 
-bookingList = [
-	{bookingCode : 1, customerCode : 1, roomCode : "A-1", checkIn : "2024-02-14", checkOut : "2024-02-16"},
-	{bookingCode : 2, customerCode : 2, roomCode : "A-5", checkIn : "2024-03-15", checkOut : "2024-03-20"},
-	{bookingCode : 3, customerCode : 1, roomCode : "A-2", checkIn : "2024-03-17", checkOut : "2024-03-18"},
-	{bookingCode : 4, customerCode : 2, roomCode : "B-1", checkIn : "2024-03-20", checkOut : "2024-03-22"},
-	{bookingCode : 5, customerCode : 3, roomCode : "A-7", checkIn : "2024-03-25", checkOut : "2024-03-28"},
-	{bookingCode : 6, customerCode : 4, roomCode : "C-4", checkIn : "2024-03-27", checkOut : "2024-04-01"},
-	{bookingCode : 7, customerCode : 2, roomCode : "B-3", checkIn : "2024-05-17", checkOut : "2024-05-20"},
-	{bookingCode : 8, customerCode : 1, roomCode : "C-1", checkIn : "2024-06-06", checkOut : "2024-06-08"},
-	{bookingCode : 9, customerCode : 1, roomCode : "B-1", checkIn : "2024-06-06", checkOut : "2024-06-07"},
-	{bookingCode : 10, customerCode : 3, roomCode : "B-3", checkIn : "2024-10-10", checkOut : "2024-10-25"},
-	{bookingCode : 11, customerCode : 3, roomCode : "C-2", checkIn : "2024-12-01", checkOut : "2024-12-05"},
-];
+let bookingList = [
+    {bookingCode : 1, customerCode : 1, roomCode : "A-1", headCount : 0, checkIn : "2024-02-14", checkOut : "2024-02-16", reviewState : true},
+    {bookingCode : 2, customerCode : 2, roomCode : "A-5", headCount : 0, checkIn : "2024-03-15", checkOut : "2024-03-20", reviewState : true},
+    {bookingCode : 3, customerCode : 1, roomCode : "A-2", headCount : 0, checkIn : "2024-03-17", checkOut : "2024-03-18", reviewState : false},
+    {bookingCode : 4, customerCode : 2, roomCode : "B-1", headCount : 0, checkIn : "2024-03-20", checkOut : "2024-03-22", reviewState : false},
+    {bookingCode : 5, customerCode : 3, roomCode : "A-7", headCount : 0, checkIn : "2024-03-25", checkOut : "2024-03-28", reviewState : false},
+    {bookingCode : 6, customerCode : 4, roomCode : "C-4", headCount : 0, checkIn : "2024-03-27", checkOut : "2024-04-01", reviewState : true},
+    {bookingCode : 7, customerCode : 2, roomCode : "B-3", headCount : 0, checkIn : "2024-05-17", checkOut : "2024-05-20", reviewState : true},
+    {bookingCode : 8, customerCode : 1, roomCode : "C-1", headCount : 0, checkIn : "2024-06-06", checkOut : "2024-06-08", reviewState : false},
+    {bookingCode : 9, customerCode : 4, roomCode : "B-1", headCount : 0, checkIn : "2024-06-06", checkOut : "2024-06-07", reviewState : true},
+    {bookingCode : 10, customerCode : 3, roomCode : "B-3", headCount : 0, checkIn : "2024-10-10", checkOut : "2024-10-25", reviewState : false},
+    {bookingCode : 11, customerCode : 3, roomCode : "C-2", headCount : 0, checkIn : "2024-12-01", checkOut : "2024-12-05", reviewState : true},
+    {bookingCode : 12, customerCode : 2, roomCode : "B-4", headCount : 0, checkIn : "2025-02-05", checkOut : "2025-02-08", reviewState : false}
+]
 
 
-roomList = [
+let roomList = [
 	{roomCode : "A-1", roomName : "스탠다드 싱글", roomPrice : 210000, headCount : 1, roomNumber : 101},
 	{roomCode : "A-2", roomName : "스탠다드 싱글", roomPrice : 210000, headCount : 1, roomNumber : 102},
 	{roomCode : "A-3", roomName : "스탠다드 싱글", roomPrice : 210000, headCount : 1, roomNumber : 103},
@@ -179,12 +180,12 @@ function infoInput(){
     for(let index;index<=bookingList.length-1;index++){
         let infoBookingCode = bookingList[index].bookingCode 
     }
-    bookingList = [
-        {bookingCode : infoBookingCode, customerCode : 1, roomCode : check_roomcode, checkIn : checkin_time, checkOut : checkout_time}]
+    infos = [
+        {bookingCode : infoBookingCode, customerCode : 1, roomCode : check_roomcode, headCount : number_con2, checkIn : checkin_time, checkOut :  checkout_time, reviewState : false}]
 
     let room = 회원정보목록반환함수();
 
-    memberList.push(infos);
+    bookingList.push(infos);
     sessionStorage.setItem('room', JSON.stringify(room))
 
     return;
@@ -197,7 +198,7 @@ function infoInput(){
  */
 
 function 회원정보목록반환함수(){ 
-    let memberList = sessionStorage.getItem( 'memberList' );
+    let memberList = sessionStorage.getItem( 'bookingList' );
     console.log( memberList ); 
  
     if( memberList == null ){

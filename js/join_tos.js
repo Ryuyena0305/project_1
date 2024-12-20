@@ -31,25 +31,6 @@ function tos(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // // 전체보기 팝업
 // let state = true;
 
