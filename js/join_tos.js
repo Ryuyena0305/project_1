@@ -8,17 +8,75 @@ let customerList = [
 
 // 약관동의 함수
 function tos(){
-    let contBtn = document.querySelector('.yn1').value
-    console.log(contBtn);
+    let contBtn1 = document.querySelector('.yn1yes')
+    let contBtn2 = document.querySelector('.yn1no')
+    let contBtn3 = document.querySelector('.yn2yes')
+    let contBtn4 = document.querySelector('.yn2no')
+
+    //console.log(contBtn1);
+    //console.log(contBtn2);
 
 
-    if(contBtn == "yes"){
-        
-    }else{
-        clause = false
+    if(contBtn1.checked){
+        contBtn1 = true;
+    }
+    if(contBtn2.checked){
+        contBtn2 = false;
+    }
+    if(contBtn3.checked){
+        contBtn3 = true;
+    }
+    if(contBtn4.checked){
+        contBtn4 = false;
+    }
+
+    /*
+    console.log("-----------------");
+    console.log(contBtn1);
+    console.log(contBtn2);
+    console.log(contBtn3);
+    console.log(contBtn4);
+    console.log("-----------------");
+    */
+
+    // 아무것도 체크하지 않으면 리턴
+    if(contBtn1 == null || contBtn2 == null || contBtn3 == null || contBtn4 == null){
+        alert('약관에 동의해주시기 바랍니다');
         return;
     }
+
+    if(contBtn1 == true && contBtn3 == true){
+        console.log('동의');
+    }else if(contBtn2 == false && contBtn4 == false){
+        alert('약관에 동의해주시기 바랍니다');
+        return;
+    }
+
+
+
+    if(contBtn1 == true && contBtn4 == false){
+        alert('약관에 동의해주시기 바랍니다');
+        return;
+    }
+    if(contBtn2 == false && contBtn3 == true){
+        alert('약관에 동의해주시기 바랍니다');
+        return;
+    }
+    
+  
+
+
 }
+
+
+function popup(){
+    
+}
+
+
+
+
+
 
 
 
