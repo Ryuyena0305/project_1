@@ -24,5 +24,3 @@
    document.getElementById('input_date2').min =checkinDate;
 
    }
-
-

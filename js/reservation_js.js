@@ -132,37 +132,33 @@ function getBookingList() {
 
 /*객실예약 */
 function infoInput(){
+    let loginList=getSessionStorage("login")
+    let bookingList1 = getLocalStorage("booking");
     let checkin_time = document.querySelector('#input_date1').value;
     let checkout_time = document.querySelector('#input_date2').value;
     let number_con2 = document.querySelector('#number_con2').value+document.querySelector('#number_con3').value;
     let check_roomcode;
 
-    for(let index;index<=bookingList.length-1;index++){
-        let infoBookingCode = bookingList[index].bookingCode 
-    }
-    infos = [
-        {bookingCode : infoBookingCode, customerCode : 1, roomCode : check_roomcode, headCount : number_con2, checkIn : checkin_time, checkOut :  checkout_time, reviewState : false}
-    ]
 
-    let room = 회원정보목록반환함수();
+        let infoBookingCode = bookingList1[bookingList1.length-1].bookingCode+1;
+  
+    let infos = 
+        {bookingCode : infoBookingCode, customerCode : loginList.customerCode, roomCode : check_roomcode, headCount : number_con2, checkIn : checkin_time, checkOut :  checkout_time, reviewState : false}
+    bookingList1.push(infos);
 
-    bookingList.push(infos);
-    sessionStorage.setItem('room', JSON.stringify(room))
-
-    return;
 
 }
 
-function 회원정보목록반환함수(){ 
-    let memberList = sessionStorage.getItem( 'bookingList' );
-    console.log( memberList ); 
+// function 회원정보목록반환함수(){ 
+//     let memberList = sessionStorage.getItem( 'bookingList' );
+//     console.log( memberList ); 
  
-    if( memberList == null ){
+//     if( memberList == null ){
        
-        memberList = []; 
-    }else{
+//         memberList = []; s
+//     }else{
        
-        memberList = JSON.parse( memberList );
-    }
-    return memberList; 
-}
+//         memberList = JSON.parse( memberList );
+//     }
+//     return memberList; 
+// }
