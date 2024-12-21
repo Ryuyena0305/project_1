@@ -35,7 +35,6 @@
     padding : 0px 10px;
     width : 200px;
     background-color : inherit;
-    /* border : solid 2px black; */
     border-width : 0px 0px 0px 0px;
     color : black;
     font-size : 24px;
@@ -54,7 +53,8 @@
     padding : 0px 10px;
     width : 200px;
     background-color : inherit;
-    font-size : 24px;text-align : center;
+    font-size : 24px;
+    /* text-align : center; */
 }
 /* #endregion .customerClassOpen */
 
@@ -103,11 +103,11 @@
     width : 500px;
 }
 #pInformation > #fInformation > #customerInfo > #customerBox > #customerAddress > label {
-    margin : 0px 54px 0px 0px; /* 0px 30px 0px 24px */
+    margin : 0px 54px 0px 0px;
     font-size : 24px;
 }
 #pInformation > #fInformation > #customerInfo > #customerBox > #customerName > label {
-    margin : 0px 54px 0px 0px; /* 0px 30px 0px 24px */
+    margin : 0px 54px 0px 0px;
     font-size : 24px;
 }
 #pInformation > #fInformation > #customerInfo > #customerBox > #customerName > input {
@@ -115,7 +115,7 @@
     width : 150px;
     background-color : inherit;
     font-size : 24px;
-    text-align : center;
+    /* text-align : center; */
 }
 #pInformation > #fInformation > #customerInfo > #customerBox > #customerPassword > input {
     padding : 0px 10px;
@@ -135,7 +135,6 @@
     border-radius : 10px;
 }
 #bookingFieldset > legend > #bHistory > p {
-    /* margin-bottom : 30px; */
     padding : 0px 10px;
     font-size : 30px;
     font-weight : bold;
@@ -178,7 +177,6 @@ th {
 #wcBtns {
     margin-top : 50px;
     display : flex;
-    /* margin-left : calc(100% - 100px); */
     justify-content : flex-end;
 }
 
