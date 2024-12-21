@@ -78,6 +78,12 @@
 
                         </ul>
                     </li>
+                    <li id = "list7" class = "menuList" onmouseover = "onMenu(7)">
+                        <a href = "./reviewPage.html">후기</a>
+                        <ul class = "subMenu" onmouseout = "closeMenu()">
+
+                        </ul>
+                    </li>
                 </ul>
                 <div id = "loginButton"><a href = "#">Login</a></div>
             </div>
@@ -351,7 +357,7 @@
                         <div class="roomNight">1박</div>
                         
                     </div>
-                    <button class="acodian_btn14" onclick="check('C-3'); choose_room('이그제큐티브 스위트(303)')">선택하기</button>
+                    <button class="acodian_btn14" onclick="check('C-3'); choose_room('이그제큐티브 스위트(303)');">선택하기</button>
                 </div>
                 <div id="main_list_detail15" onclick="">
                     <img src="images/amid_suite.jpg" class="roomImg">
@@ -382,9 +388,9 @@
             </div>
             <div id = "resev_btn">
                 <div id="check_roomcode">선택된 객실이 없습니다</div>
-                <button id = "resevation_btn" onclick="infoInput(); maxNum()">객실 예약</button>
+                <button id = "resevation_btn" onclick="maxNum(); infoInput()">객실 예약</button>
             </div>
-
+<!--infoInput();-->
             </div>
         </div>
         
@@ -415,8 +421,8 @@
  
     <script src = "./js/data.js"></script>
     <script src = "./js/index.js"></script>
-    <script src="/js/reservation.js"></script>
-    <script src="/js/reservation_js.js"></script>
+    <script src="./js/reservation.js"></script>
+    <script src="./js/reservation_js.js"></script>
    
 </body>
 </html>
