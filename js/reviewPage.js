@@ -69,13 +69,33 @@ function printDetail(code) {
     code = code.split("-");
     console.log("code");
     console.log(code);
+    let roomCodes = [];
+    for(let index = 0; index < getRoomList.length; index++) {
+        if(code == getRoomList[index].roomName) {
+            roomCodes.push(getRoomList[index].roomCode);
+        }
+    }
+    console.log("roomCodes");
+    console.log(roomCodes);
     for(let index = 0; index < getReviewList.length; index++) {
         let reviewTemp = getReviewList[index];
-        
+        for(let j = 0; j < roomCodes.length; j++) {
+            if(reviewTemp.roomCode == roomCodes[j]) {
+                console.log(reviewTemp.roomCode);
+                console.log(roomCodes[j]);
+                html += `
+                <tr>
+                    <td>${++count}</td>
+                    <td>${reviewTemp.content}</td>
+                    <td>${reviewTemp.date}</td>
+                    <td>${reviewTemp.estimation}</td>
+                </tr>
+                `;
+            }
+        }
     }
     tbody.innerHTML = html;
 }
-
 
 // 전체 Open Close 함수
 function totalCloseOpen() {
