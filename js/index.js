@@ -1,12 +1,9 @@
-
-
 paddingLeftList = [16, 5, 35, 35, 50, 58];
 imageList = [
     "main_slide_01.jpg", 
     "main_slide_02.jpg", 
     "main_slide_03.jpg"
 ];
-// currentIndex = 1;
 
 // 최초로 index.html파일이 열리면 작동하는 함수(data.js)
 totalStorage();
@@ -18,10 +15,8 @@ function checkLogin() {
     console.log(getLoginState);
     if(getLoginState.customerCode > 0) {
         let loginButton = document.querySelector("#loginButton");
-        // console.dir(loginButton);
         loginButton.onmouseover = openMyPageBtn;
         loginButton.onmouseleave = closeMyPageBtn;
-        // console.dir(loginButton);
         loginButton.innerHTML = `<a onclick = "logInOut(true)">Logout</a><div id = "hoverBox1" onmouseover = "openMyPageBtn()" onmouseleave = "closeMyPageBtn()"><a href = "./myPage.html">마이페이지</a></div>`;
     } else if(getLoginState.customerCode == 0) {
         loginButton.onmouseover = null;
