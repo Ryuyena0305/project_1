@@ -57,7 +57,7 @@ let room = [
         headCount: 2, roomNumber: 303
     },
     {
-        roomCode: "C-4", roomName: "아미드 스위트", roomPrice: 660000,
+        roomCode: "C-4", roomName: "더조은 스위트", roomPrice: 660000,
         headCount: 2, roomNumber: 304
     },
 
@@ -199,12 +199,21 @@ function infoInput(){
             }
             else{
                 bookingList1.push(infos);
+                setLocalStorage("bookingList",bookingList1);
+                // for(let index = 0; index < getBookingList.length; index++) {
+                //     if(getLoginState.customerCode == getBookingList[index].customerCode && roomCode == getBookingList[index].roomCode) {
+                //         getBookingList[index].reviewState = true;
+                //         setLocalStorage("booking", getBookingList);
+                //     }
+                // }
+                // writeReviewBox.style.display = "none";
+                // printBookingList(getLoginState.customerCode);
             break;
             }
         }
     }
 }
-     
+
 
 /* 체크인 날짜,체크아웃 날짜,객실수,성인,아동 수 가져오기*/
 // function 정보입력함수() {
