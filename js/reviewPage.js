@@ -16,7 +16,6 @@ function printReview() {
     let getReviewList = getLocalStorage("review");
     let tbody = document.querySelector("tbody");
     let html = ``;
-    // console.log(getReviewList);
     for(let index = 0; index < getReviewList.length; index++) {
         let reviewTemp = getReviewList[index];
         html += `
