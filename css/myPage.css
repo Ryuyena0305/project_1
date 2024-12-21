@@ -3,35 +3,35 @@
 }
 
 /* #region #pInformation */
-
-#pInformation > #fInformation {
+/* #pInformation >  */
+#fInformation {
     margin : 40px auto;
     padding : 0px 40px;
     width : 1200px;
     border-radius : 10px;
 }
-#pInformation > #fInformation > legend > #cName {
+#fInformation > legend > #cName {
     margin : 30px 0px;
 }
-#pInformation > #fInformation > legend > #cName > p {
+#fInformation > legend > #cName > p {
     margin-left : 0px;
     padding : 0px 10px;
     font-size : 30px;
     font-weight : bold;
 }
-#pInformation > #fInformation > #customerInfo {
+#fInformation > #customerInfo {
     margin-bottom : 50px;
 }
 
 /* #region .customerClassClose */
-#pInformation > #fInformation > #customerInfo > #customerBox > .customerClassClose {
+.customerClassClose {
     margin-bottom : 20px;
 }
-#pInformation > #fInformation > #customerInfo > #customerBox > .customerClassClose > label {
+.customerClassClose > label {
     margin-right : 10px;
     font-size : 24px;
 }
-#pInformation > #fInformation > #customerInfo > #customerBox > .customerClassClose > input {
+.customerClassClose > input {
     padding : 0px 10px;
     width : 200px;
     background-color : inherit;
@@ -42,14 +42,14 @@
 /* #endregion .customerClassClose */
 
 /* #region .customerClassOpen */
-#pInformation > #fInformation > #customerInfo > #customerBox > .customerClassOpen {
+.customerClassOpen {
     margin-bottom : 20px;
 }
-#pInformation > #fInformation > #customerInfo > #customerBox > .customerClassOpen > label {
+.customerClassOpen > label {
     margin-right : 10px;
     font-size : 24px;
 }
-#pInformation > #fInformation > #customerInfo > #customerBox > .customerClassOpen > input {
+.customerClassOpen > input {
     padding : 0px 10px;
     width : 200px;
     background-color : inherit;
@@ -59,15 +59,15 @@
 /* #endregion .customerClassOpen */
 
 /* #region .customerClassDisappear */
-#pInformation > #fInformation > #customerInfo > #customerBox > .customerClassDisappear {
+.customerClassDisappear {
     display : none;
     margin-bottom : 20px;
 }
-#pInformation > #fInformation > #customerInfo > #customerBox > .customerClassDisappear > label {
+.customerClassDisappear > label {
     margin-right : 10px;
     font-size : 24px;
 }
-#pInformation > #fInformation > #customerInfo > #customerBox > .customerClassDisappear > input {
+.customerClassDisappear > input {
     padding : 0px 10px;
     width : 200px;
     background-color : inherit;
@@ -76,16 +76,16 @@
 /* #endregion .customerClassDisappear */
 
 /* #region .customerClassAppear */
-#pInformation > #fInformation > #customerInfo > #customerBox > .customerClassAppear {
+.customerClassAppear {
     display : flex;
     align-items : center;
     margin-bottom : 20px;
 }
-#pInformation > #fInformation > #customerInfo > #customerBox > .customerClassAppear > label {
+.customerClassAppear > label {
     margin-right : 10px;
     font-size : 24px;
 }
-#pInformation > #fInformation > #customerInfo > #customerBox > .customerClassAppear > input {
+.customerClassAppear > input {
     padding : 0px 10px;
     width : 200px;
     background-color : inherit;
@@ -93,31 +93,31 @@
 }
 /* #endregion .customerClassAppear */
 
-#pInformation > #fInformation > #customerInfo > #customerBox > #customerPhone > input {
+#customerPhone > input {
     width : 190px;
 }
-#pInformation > #fInformation > #customerInfo > #customerBox > #customerBirth > input {
+#customerBirth > input {
     width : 110px;
 }
-#pInformation > #fInformation > #customerInfo > #customerBox > #customerAddress > input {
+#customerAddress > input {
     width : 500px;
 }
-#pInformation > #fInformation > #customerInfo > #customerBox > #customerAddress > label {
+#customerAddress > label {
     margin : 0px 54px 0px 0px;
     font-size : 24px;
 }
-#pInformation > #fInformation > #customerInfo > #customerBox > #customerName > label {
+#customerName > label {
     margin : 0px 54px 0px 0px;
     font-size : 24px;
 }
-#pInformation > #fInformation > #customerInfo > #customerBox > #customerName > input {
+#customerName > input {
     padding : 0px 10px;
     width : 150px;
     background-color : inherit;
     font-size : 24px;
     /* text-align : center; */
 }
-#pInformation > #fInformation > #customerInfo > #customerBox > #customerPassword > input {
+#customerPassword > input {
     padding : 0px 10px;
     width : 100px;
     background-color : inherit;
