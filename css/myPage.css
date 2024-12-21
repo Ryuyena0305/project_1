@@ -6,7 +6,7 @@
 
 #pInformation {
     margin : 0px auto;
-    padding : 20px 40px;
+    padding : 30px 40px;
     width : 1200px;
 }
 #pInformation > #cName {
@@ -32,8 +32,8 @@
     padding : 0px 10px;
     width : 200px;
     background-color : inherit;
-    border : solid 2px black;
-    border-width : 0px 0px 1px 0px;
+    /* border : solid 2px black; */
+    border-width : 0px 0px 0px 0px;
     color : black;
     font-size : 24px;
 }
@@ -51,7 +51,7 @@
     padding : 0px 10px;
     width : 200px;
     background-color : inherit;
-    font-size : 24px;
+    font-size : 24px;text-align : center;
 }
 /* #endregion .customerClassOpen */
 
@@ -74,7 +74,8 @@
 
 /* #region .customerClassAppear */
 #pInformation > #customerInfo > #customerBox > .customerClassAppear {
-    display : block;
+    display : flex;
+    align-items : center;
     margin-bottom : 20px;
 }
 #pInformation > #customerInfo > #customerBox > .customerClassAppear > label {
@@ -90,10 +91,10 @@
 /* #endregion .customerClassAppear */
 
 #pInformation > #customerInfo > #customerBox > #customerPhone > input {
-    width : 185px;
+    width : 190px;
 }
 #pInformation > #customerInfo > #customerBox > #customerBirth > input {
-    width : 100px;
+    width : 110px;
 }
 #pInformation > #customerInfo > #customerBox > #customerAddress > input {
     width : 500px;
@@ -106,6 +107,20 @@
     margin : 0px 54px 0px 0px; /* 0px 30px 0px 24px */
     font-size : 24px;
 }
+#pInformation > #customerInfo > #customerBox > #customerName > input {
+    padding : 0px 10px;
+    width : 150px;
+    background-color : inherit;
+    font-size : 24px;
+    text-align : center;
+}
+#pInformation > #customerInfo > #customerBox > #customerPassword > input {
+    padding : 0px 10px;
+    width : 100px;
+    background-color : inherit;
+    font-size : 24px;
+}
+
 /* #endregion #pInformation */
 
 /* #region #bookingHistory */
@@ -173,6 +188,7 @@ th {
     background-color : #81674e;
     border-radius : 10px;
     box-shadow : 0px 0px 6px #81674e;
+    text-align : center;
     cursor : pointer;
 }
 #deleteCustomer:hover, #changeInfo:hover, .cancelBtn:hover, .normalBtn:hover {
@@ -206,5 +222,14 @@ th {
     border-radius : 10px;
     box-shadow : 0px 0px 6px #81674e;
     text-align : center;
+    cursor : pointer;
+}
+#visibility {
+    margin-left : 5px;
+    display : inline-block; 
+    background : url(../images/visibility_off.svg) no-repeat;
+    background-size : contain;    
+    width : 30px;
+    height : 30px;
     cursor : pointer;
 }

@@ -1,8 +1,10 @@
- let changeState = true;
- let writeState = false;
+let changeState = true;
+let writeState = false;
+let visibilityState = false;
 
 checkLogin();
 
+// 로그인 여부를 체크하고 출력하는 함수
 function checkLogin() {
     let checking = getSessionStorage("login");
     // console.log(checking[0].customerCode);
@@ -22,13 +24,6 @@ function printBookingList(customerCode) {
     let getRoomList = getLocalStorage("room");
     let getReviewList = getLocalStorage("review");
     let getLoginState = getSessionStorage("login");
-    /*
-    console.log(getCustomerList);
-    console.log(getBookingList);
-    console.log(getRoomList);
-    console.log(getReviewList);
-    console.log(getLoginState);
-    */
     let now = new Date();
     let year = now.getFullYear();
     let month = now.getMonth() + 1;
@@ -152,7 +147,7 @@ function changeInfo() {
             customerAddress.className = "customerClassOpen";
             customerName.innerHTML = `<label>이름</label><input type = "text" value = "${getLoginState.name}"/>`;
             customerName.className = "customerClassAppear";
-            customerPassword.innerHTML = `<label>비밀번호</label><input type = "text"/>`;
+            customerPassword.innerHTML = `<label>비밀번호</label><input id = "pwInput" type = "password"/><span id = "visibility" onclick = "changeVisibility()"></span>`;
             customerPassword.className = "customerClassAppear";
             btn.innerHTML = "수정완료";
             // console.log("변경 후 : " + btn);
@@ -169,7 +164,7 @@ function changeInfo() {
             customerAddress.className = "customerClassClose";
             customerName.innerHTML = `<label>이름</label><input type = "text" value = ""/>`;
             customerName.className = "customerClassDisappear";
-            customerPassword.innerHTML = `<label>비밀번호</label><input type = "text"/>`;
+            customerPassword.innerHTML = `<label>비밀번호</label><input id = "pwInput" type = "password"/>`;
             customerPassword.className = "customerClassDisappear";
             cName.innerHTML = `<p>${nameValue}님 반갑습니다.</p>`;
             btn.innerHTML = "회원수정";
@@ -197,6 +192,35 @@ function changeInfo() {
             // console.log("변경 후 : " + btn);
             changeState = true;
         }
+    }
+}
+// 마이페이지에서 비밀번호 변경시 비밀번호 visible
+function changeVisibility() {
+    let pwInput = document.querySelector("#pwInput");
+    let visibility = document.querySelector("#visibility");
+    // console.log(`변경전 : ${pwInput.type}`);
+    if(visibilityState) {
+        pwInput.type = "password";
+        visibility.style.marginLeft = "5px";
+        visibility.style.display = "inline-block";
+        visibility.style.background = "url(../images/visibility_off.svg) no-repeat";
+        visibility.style.backgroundSize = "contain";
+        visibility.style.width = "30px";
+        visibility.style.height = "30px";
+        visibility.style.cursor = "pointer";
+        visibilityState = false;
+        // console.log(`변경후 : ${pwInput.type}`);
+    } else {
+        pwInput.type = "text";
+        visibility.style.marginLeft = "5px";
+        visibility.style.display = "inline-block";
+        visibility.style.background = "url(../images/visibility.svg) no-repeat";
+        visibility.style.backgroundSize = "contain";
+        visibility.style.width = "30px";
+        visibility.style.height = "30px";
+        visibility.style.cursor = "pointer";
+        visibilityState = true;
+        // console.log(`변경후 : ${pwInput.type}`);
     }
 }
 

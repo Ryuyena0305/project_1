@@ -112,7 +112,7 @@
                         </div>
                         <div id = "customerPassword" class = "customerClassDisappear">
                             <label>비밀번호</label>
-                            <input type = "text"/>
+                            <input type = "password"/>
                         </div>
                     </div>
                 </div>
@@ -136,31 +136,31 @@
 
                         </tbody>
                     </table>
+                    <div id = "reviewBox">
+                        <fieldset id = "writeReviewBox" style = "display : none;">
+                            <legend><label>후기 작성</label></legend>
+                            <div id = "checkEstimation">
+                                <label>평점</label>
+                                <!-- <input type = "text" placeholder = "X/5 형식으로 작성해주세요."/> -->
+                                <select>
+                                    <option value = "5"> 5 </option>
+                                    <option value = "4"> 4 </option>
+                                    <option value = "3"> 3 </option>
+                                    <option value = "2"> 2 </option>
+                                    <option value = "1"> 1 </option>
+                                    <option value = "0"> 0 </option>
+                                </select>
+                            </div>
+                            <div id = "writeContent">
+                                <label>내용</label>
+                                <input type = "text" placeholder = "짧게 작성 부탁드립니다."/>
+                            </div>
+                            <div id = "writeButton">
+                                <!-- <button class = "normalBtn" onclick = "writeReview()">저장</button> -->
+                            </div>
+                        </fieldset>
+                    </div>
                 </div>
-            </div>
-            <div id = "reviewBox">
-                <fieldset id = "writeReviewBox" style = "display : none;">
-                    <legend><label>후기 작성</label></legend>
-                    <div id = "checkEstimation">
-                        <label>평점</label>
-                        <!-- <input type = "text" placeholder = "X/5 형식으로 작성해주세요."/> -->
-                        <select>
-                            <option value = "5"> 5 </option>
-                            <option value = "4"> 4 </option>
-                            <option value = "3"> 3 </option>
-                            <option value = "2"> 2 </option>
-                            <option value = "1"> 1 </option>
-                            <option value = "0"> 0 </option>
-                        </select>
-                    </div>
-                    <div id = "writeContent">
-                        <label>내용</label>
-                        <input type = "text" placeholder = "짧게 작성 부탁드립니다."/>
-                    </div>
-                    <div id = "writeButton">
-                        <!-- <button class = "normalBtn" onclick = "writeReview()">저장</button> -->
-                    </div>
-                </fieldset>
             </div>
             <div style = "margin : 10px auto; width : 1200px; text-align : end;">
                 <button id = "changeInfo" onclick = "changeInfo()">회원수정</button>
