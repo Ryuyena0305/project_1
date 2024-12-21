@@ -38,6 +38,7 @@ button{
     color: #81674e;
     padding-bottom: 10px;
     border-bottom: 3px solid #81674e;
+    font-weight: bold;
 }
 
 
@@ -77,6 +78,7 @@ button{
     color: #81674e;
     margin-bottom: 10px;
     text-align: center;
+    font-weight: bold;
 }
 .hello > span{
     color: gray;
