@@ -1,6 +1,9 @@
 let changeState = true;
 let writeState = false;
+// true : 보임, false : 안보임, default : 안보임
 let visibilityState = false;
+// true : 보임, false : 안보임, default : 안보임
+let cancelReviewState = false;
 
 checkLogin();
 
@@ -35,33 +38,30 @@ function printBookingList(customerCode) {
     let customerAddress = document.querySelector("#customerAddress > input");
     let html = ``;
     let count = 1;
-    let myReviews = [];
-    for(let index = 0; index < getReviewList.length; index++) {
-        if(getReviewList[index].customerCode == customerCode) {
-            myReviews.push(getReviewList[index]);
-        }
-    }
+    // let myReviews = [];
+    // for(let index = 0; index < getReviewList.length; index++) {
+    //     if(getReviewList[index].customerCode == customerCode) {
+    //         myReviews.push(getReviewList[index]);
+    //     }
+    // }
     // 개인정보 출력부분
     if(customerCode != 0) {
-        customerName.innerHTML = `<p>${getLoginState.name}님 반갑습니다.</p>`;
+        customerName.innerHTML = `<p>[ ${getLoginState.name}님 반갑습니다. ]</p>`;
         customerPhone.value = getLoginState.phone;
         customerBirth.value = getLoginState.birth;
         customerAddress.value = getLoginState.address;
     } else {
-        customerName.innerHTML = `<p>OOO님 반갑습니다.</p>`;
+        customerName.innerHTML = `<p>[ OOO님 반갑습니다. ]</p>`;
     }
     // 예약내역 테이블로 출력부분
     for(let index = 0; index < getBookingList.length; index++) {
         let bookingTemp = getBookingList[index];
         if(customerCode == bookingTemp.customerCode) {
             let checkIn = bookingTemp.checkIn.split("-");
-            // let checkOut = bookingTemp.checkOut.split("-");
             let checkOut = new Date(bookingTemp.checkOut).getTime();
-            // console.log("testValue1 : " + testValue1);
             let nowTime = new Date(`${year}-${month}-${day}`).getTime();
-            // console.log("testValue2 : " + testValue2);
+            // 현재날짜 - 퇴실날짜
             let timeValue = nowTime - checkOut;
-            // console.log("testValue3 : " + testValue3);
             for(let j = 0; j < getRoomList.length; j++) {
                 if(bookingTemp.roomCode == getRoomList[j].roomCode) {
                     html += `
@@ -72,6 +72,7 @@ function printBookingList(customerCode) {
                         <td style = "text-align : center;">${bookingTemp.checkIn}</td>
                         <td style = "text-align : center;">${bookingTemp.checkOut}</td>
                     `;
+                    // #region 예약 취소 버튼 생성 부분
                     // if(checkOut[0] <= year && checkOut[1] <= month && checkOut[2] <= day) {      
                     if(timeValue > 0) {      
                         html += `
@@ -94,7 +95,18 @@ function printBookingList(customerCode) {
                         // </td>
                         // </tr>
                     }
+                    // #endregion 예약 취소 버튼 생성 부분
+
+                    // #region 후기 작성 버튼 생성 부분
                     if(bookingTemp.reviewState) {
+                        html += `
+                                <td style = "text-align : center;">
+                                    <button class = "closeBtn" disabled>작성</button>
+                                </td>
+                            </tr>
+                        `;
+                    } else if((checkOut - nowTime) > 0) {
+                        // 퇴실날짜 - 현재날짜
                         html += `
                                 <td style = "text-align : center;">
                                     <button class = "closeBtn" disabled>작성</button>
@@ -109,6 +121,7 @@ function printBookingList(customerCode) {
                             </tr>
                         `;
                     }
+                    // #endregion 후기 작성 버튼 생성 부분
                     count++;
                 }
             }
@@ -269,44 +282,85 @@ function deleteCustomer() {
 
 // 후기 작성 박스 열고 닫는 함수
 function writeReviewBox(roomCode) {
-    let writeReviewBox = document.querySelector("#writeReviewBox");
-    let estimationNumber = document.querySelector("#checkEstimation > select");
-    let writeContent = document.querySelector("#writeContent > input");
-    let writeButton = document.querySelector("#writeButton");
-    console.dir(writeReviewBox.style.display);
-    if(writeReviewBox.style.display == "none") {
-        writeReviewBox.style.display = "block";
-        estimationNumber.value = "5";
-        writeContent.value = "";
-        writeState = true;
-    } else {
-        writeReviewBox.style.display = "none";
-        writeState = false;
+    let state = confirm("후기를 작성하시겠습니까?");
+    if(state) {
+        let writeReviewBox = document.querySelector("#writeReviewBox");
+        let estimationNumber = document.querySelector("#checkEstimation > select");
+        let writeContent = document.querySelector("#writeContent > input");
+        let wcBtns = document.querySelector("#wcBtns");
+        console.dir(writeReviewBox.style.display);
+        if(writeReviewBox.style.display == "none") {
+            writeReviewBox.style.display = "block";
+            estimationNumber.value = "5";
+            writeContent.value = "";
+            writeState = true;
+        } else {
+            writeReviewBox.style.display = "none";
+            writeState = false;
+        }
+        wcBtns.innerHTML = `
+            <button class = "normalBtn" onclick = "writeReview('${roomCode}')">저장</button>
+            <button class = "normalBtn" onclick = "cancelReview()">취소</button>
+        `;
     }
-    writeButton.innerHTML = `<button class = "normalBtn" onclick = "writeReview('${roomCode}')">저장</button>`;
 }
 
 // 후기를 작성하는 함수
 function writeReview(roomCode) {
-    // roomCode = "C-3";
-    let now = new Date();
-    let year = now.getFullYear(); let month = now.getMonth() + 1; let day = now.getDate();
-    let getReviewList = getLocalStorage("review");
-    let getLoginState = getSessionStorage("login");
-    let checkEstimation = document.querySelector("#checkEstimation");
-    let estimationNumber = document.querySelector("#checkEstimation > select");
-    let writeContent = document.querySelector("#writeContent > input");
-    let reviewTemp = {
-        reviewCode: reviewCode, 
-        customerCode: getLoginState.customerCode, 
-        roomCode: roomCode, 
-        content: writeContent.value, 
-        date: `${year}-${month}-${day}`, 
-        estimation : `${estimationNumber.value}/5`,
-    };
-    console.log(reviewTemp);
-    getReviewList.push(reviewTemp);
-    console.log(getReviewList);
-    setLocalStorage("review", getReviewList);
+    let state = confirm("후기를 작성하시겠습니까?");
+    if(state) {
+        let now = new Date();
+        let year = now.getFullYear(); let month = now.getMonth() + 1; let day = now.getDate();
+        let getReviewList = getLocalStorage("review");
+        let getCustomerList = getLocalStorage("customer");
+        let getBookingList = getLocalStorage("booking");
+        let getLoginState = getSessionStorage("login");
+        let checkEstimation = document.querySelector("#checkEstimation");
+        let estimationNumber = document.querySelector("#checkEstimation > select");
+        let writeReviewBox = document.querySelector("#writeReviewBox");
+        let writeContent = document.querySelector("#writeContent > input");
+        // #region 작성한 내용이 공백일 경우 작성하지 못하게 하는 부분
+        let content = writeContent.value;
+        content = content.trim();
+        // #endregion 작성한 내용이 공백일 경우 작성하지 못하게 하는 부분
+        if(content != "") {
+            let reviewCode = getReviewList[getReviewList.length - 1].reviewCode + 1;
+            let reviewTemp = {
+                reviewCode: reviewCode, 
+                customerCode: getLoginState.customerCode, 
+                roomCode: roomCode, 
+                content: writeContent.value, 
+                date: `${year}-${month}-${day}`, 
+                estimation : `${estimationNumber.value}/5`,
+            };
+            console.log(reviewTemp);
+            getReviewList.push(reviewTemp);
+            console.log(getReviewList);
+            setLocalStorage("review", getReviewList);
+            for(let index = 0; index < getBookingList.length; index++) {
+                if(getLoginState.customerCode == getBookingList[index].customerCode && roomCode == getBookingList[index].roomCode) {
+                    getBookingList[index].reviewState = true;
+                    setLocalStorage("booking", getBookingList);
+                }
+            }
+            writeReviewBox.style.display = "none";
+            printBookingList(getLoginState.customerCode);
+        } else {
+            alert("내용을 입력해주세요 (공백 불가)");
+            writeContent.value = "";
+        }
+    }
+}
 
+// 후기 작성을 취소하는 함수
+function cancelReview() {
+    let state = confirm("정말 취소하시겠습니까?");
+    if(state) {
+        let writeReviewBox = document.querySelector("#writeReviewBox");
+        let estimationNumber = document.querySelector("#checkEstimation > select");
+        let writeContent = document.querySelector("#writeContent > input");
+        estimationNumber.value = "5";
+        writeContent.value = "";
+        writeReviewBox.style.display = "none";
+    }
 }

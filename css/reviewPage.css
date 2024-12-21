@@ -1,5 +1,5 @@
 #mainTitle {
-    margin : 30px auto;
+    margin : 60px auto 30px auto;
     width : 1200px;
 }
 #mainTitle > p {
@@ -168,6 +168,7 @@ table {
     /* border-collapse: collapse; */
     border-spacing : 0px;
     border : solid 2px black;
+    border-radius : 10px;
 }
 tr:nth-last-child(1) {
     border : none;

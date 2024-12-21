@@ -34,7 +34,7 @@ let roomList = [
     {roomCode : "C-1", roomName : "주니어 스위트", roomPrice : 385000, headCount : 2, roomNumber : 301},
     {roomCode : "C-2", roomName : "프리미어 스위트", roomPrice : 473000, headCount : 2, roomNumber : 302},
     {roomCode : "C-3", roomName : "이그제큐티브 스위트", roomPrice : 572000, headCount : 2, roomNumber : 303},
-    {roomCode : "C-4", roomName : "아미드 스위트", roomPrice : 660000, headCount : 2, roomNumber : 304},
+    {roomCode : "C-4", roomName : "더조은 스위트", roomPrice : 660000, headCount : 2, roomNumber : 304},
 ];
 let reviewList = [
     {reviewCode : 1, customerCode : 1, roomCode : "A-1", content : "방이 깔끔하고 좋아요", date : "2024-02-17", estimation : "5/5"},

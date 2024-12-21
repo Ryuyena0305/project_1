@@ -71,7 +71,7 @@
                         </ul>
                     </li>
                     <li id = "list6" class = "menuList" onmouseover = "onMenu(6)">
-                        <a href = "#">예약</a>
+                        <a href = "./reservation.html">예약</a>
                         <ul class = "subMenu" onmouseout = "closeMenu()">
 
                         </ul>
@@ -91,82 +91,90 @@
         </div>
         <div id = "main">
             <div id = "pInformation">
-                <div id = "cName"><p>OOO님 반갑습니다.</p></div>
-                <div id = "customerInfo">
-                    <div id = "customerBox">
-                        <div id = "customerPhone" class = "customerClassClose">
-                            <label>전화번호</label>
-                            <input type = "text" disabled/>
+                <fieldset id = "fInformation">
+                    <legend><div id = "cName"><p>[ OOO님 반갑습니다. ]</p></div></legend>
+                    <div id = "customerInfo">
+                        <div id = "customerBox">
+                            <div id = "customerPhone" class = "customerClassClose">
+                                <label>전화번호</label>
+                                <input type = "text" disabled/>
+                            </div>
+                            <div id = "customerBirth" class = "customerClassClose">
+                                <label>생년월일</label>
+                                <input type = "text" disabled/>
+                            </div>
+                            <div id = "customerAddress" class = "customerClassClose">
+                                <label>주소</label>
+                                <input type = "text" disabled/>
+                            </div>
+                            <div id = "customerName" class = "customerClassDisappear">
+                                <label>이름</label>
+                                <input type = "text"/>
+                            </div>
+                            <div id = "customerPassword" class = "customerClassDisappear">
+                                <label>비밀번호</label>
+                                <input type = "password"/>
+                            </div>
                         </div>
-                        <div id = "customerBirth" class = "customerClassClose">
-                            <label>생년월일</label>
-                            <input type = "text" disabled/>
-                        </div>
-                        <div id = "customerAddress" class = "customerClassClose">
-                            <label>주소</label>
-                            <input type = "text" disabled/>
-                        </div>
-                        <div id = "customerName" class = "customerClassDisappear">
-                            <label>이름</label>
-                            <input type = "text"/>
-                        </div>
-                        <div id = "customerPassword" class = "customerClassDisappear">
-                            <label>비밀번호</label>
-                            <input type = "password"/>
+                    </div>
+                </fieldset>
+            </div>
+            <fieldset id = "bookingFieldset">
+                <legend><div id = "bHistory"><p>[ 예약 내역 ]</p></div></legend>
+                <div id = "bookingHistory">
+                    <div>
+                        <table id = "HistoryTable">
+                            <thead>
+                                <tr>
+                                    <th width = "50" style = "text-align : center;">순번</th>
+                                    <th width = "200" style = "text-align : center;">객실이름</th>
+                                    <th width = "100" style = "text-align : center;">객실번호</th>
+                                    <th width = "150" style = "text-align : center;">입실일자</th>
+                                    <th width = "150" style = "text-align : center;">퇴실일자</th>
+                                    <th width = "100" style = "text-align : center;">예약 취소</th>
+                                    <th width = "100" style = "text-align : center;">후기 작성</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+    
+                            </tbody>
+                        </table>
+                        <div id = "reviewBox">
+                            <fieldset id = "writeReviewBox" style = "display : none;">
+                                <legend><label>후기 작성</label></legend>
+                                <div id = "checkEstimation">
+                                    <label>평점</label>
+                                    <!-- <input type = "text" placeholder = "X/5 형식으로 작성해주세요."/> -->
+                                    <select>
+                                        <option value = "5"> 5 </option>
+                                        <option value = "4"> 4 </option>
+                                        <option value = "3"> 3 </option>
+                                        <option value = "2"> 2 </option>
+                                        <option value = "1"> 1 </option>
+                                        <option value = "0"> 0 </option>
+                                    </select>
+                                </div>
+                                <div id = "writeContent">
+                                    <label>내용</label>
+                                    <input type = "text" placeholder = "짧게 작성 부탁드립니다."/>
+                                </div>
+                                <div id = "wcBtns">
+                                    <!-- <button class = "normalBtn" onclick = "writeReview()">저장</button> -->
+                                    <!-- <button class = "normalBtn" onclick = "cancelReview()">취소</button> -->
+                                </div>
+                            </fieldset>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div id = "bookingHistory">
-                <div id = "bHistory"><p>예약 내역</p></div>
-                <div>
-                    <table id = "HistoryTable">
-                        <thead>
-                            <tr>
-                                <th width = "50" style = "text-align : center;">순번</th>
-                                <th width = "200" style = "text-align : center;">객실이름</th>
-                                <th width = "100" style = "text-align : center;">객실번호</th>
-                                <th width = "150" style = "text-align : center;">입실일자</th>
-                                <th width = "150" style = "text-align : center;">퇴실일자</th>
-                                <th width = "100" style = "text-align : center;">예약 취소</th>
-                                <th width = "100" style = "text-align : center;">후기 작성</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                        </tbody>
-                    </table>
-                    <div id = "reviewBox">
-                        <fieldset id = "writeReviewBox" style = "display : none;">
-                            <legend><label>후기 작성</label></legend>
-                            <div id = "checkEstimation">
-                                <label>평점</label>
-                                <!-- <input type = "text" placeholder = "X/5 형식으로 작성해주세요."/> -->
-                                <select>
-                                    <option value = "5"> 5 </option>
-                                    <option value = "4"> 4 </option>
-                                    <option value = "3"> 3 </option>
-                                    <option value = "2"> 2 </option>
-                                    <option value = "1"> 1 </option>
-                                    <option value = "0"> 0 </option>
-                                </select>
-                            </div>
-                            <div id = "writeContent">
-                                <label>내용</label>
-                                <input type = "text" placeholder = "짧게 작성 부탁드립니다."/>
-                            </div>
-                            <div id = "writeButton">
-                                <!-- <button class = "normalBtn" onclick = "writeReview()">저장</button> -->
-                            </div>
-                        </fieldset>
-                    </div>
-                </div>
-            </div>
+            </fieldset>
             <div style = "margin : 10px auto; width : 1200px; text-align : end;">
                 <button id = "changeInfo" onclick = "changeInfo()">회원수정</button>
                 <button id = "deleteCustomer" onclick = "deleteCustomer()">회원탈퇴</button>
             </div>
         </div>
+        <a href = "./reservation.html" id = "floatingButton">
+            <img src = "./images/booking-img2.png"/>
+        </a>
         <div id = "footer">
             <div id ="logoLine">
                 <div id = "footerLogo"></div>
