@@ -18,11 +18,11 @@ function checkLogin() {
     console.log(getLoginState);
     if(getLoginState.customerCode > 0) {
         let loginButton = document.querySelector("#loginButton");
-        console.dir(loginButton);
-        loginButton.onmouseover = test;
-        loginButton.onmouseleave = test2;
-        console.dir(loginButton);
-        loginButton.innerHTML = `<a onclick = "logInOut(true)">Logout</a><div id = "hoverBox1" onmouseover = "test()" onmouseleave = "test2()"><a href = "./myPage.html">마이페이지</a></div>`;
+        // console.dir(loginButton);
+        loginButton.onmouseover = openMyPageBtn;
+        loginButton.onmouseleave = closeMyPageBtn;
+        // console.dir(loginButton);
+        loginButton.innerHTML = `<a onclick = "logInOut(true)">Logout</a><div id = "hoverBox1" onmouseover = "openMyPageBtn()" onmouseleave = "closeMyPageBtn()"><a href = "./myPage.html">마이페이지</a></div>`;
     } else if(getLoginState.customerCode == 0) {
         loginButton.onmouseover = null;
         loginButton.onmouseleave = null;
@@ -63,14 +63,11 @@ function closeMenu() {
     let getLoginState = getSessionStorage("#login");
     header.style.backgroundColor = "white";
     sBox.style.display = "none";
-    // loginButton.style.backgroundColor = "white";
-    // loginButton.style.color = "#2E2E2E";
-    // loginButton.style.border = "solid 2px #2E2E2E";
     loginButton.style.backgroundColor = "";
     loginButton.style.color = "";
     loginButton.style.border = "";
     if(getLoginState.customerCode > 0) {
-        loginButton.innerHTML = `<a onclick = "logInOut(true)">Logout</a><div id = "hoverBox1" onmouseover = "test()" onmouseleave = "test2()"><a href = "./myPage.html">마이페이지</a></div>`;    
+        loginButton.innerHTML = `<a onclick = "logInOut(true)">Logout</a><div id = "hoverBox1" onmouseover = "openMyPageBtn()" onmouseleave = "closeMyPageBtn()"><a href = "./myPage.html">마이페이지</a></div>`;    
     } else if(getLoginState.customerCode == 0) {
         loginButton.innerHTML = `<a onclick = "logInOut(false)">Login</a>`;
     }
@@ -103,12 +100,12 @@ function logInOut(loginState) {
     }
 }
 
-function test() {
+function openMyPageBtn() {
     console.log("실행1");
     let hoverBox = document.querySelector("#hoverBox1");
     hoverBox.style.display = "block";
 }
-function test2() {
+function closeMyPageBtn() {
     console.log("실행2");
     let hoverBox = document.querySelector("#hoverBox1");
     hoverBox.style.display = "none";

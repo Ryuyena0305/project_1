@@ -6,18 +6,18 @@ let customerList = [
     {customerCode : 4, id : "test4", password : "1234", name : "홍길동", birth : "920505", phone : "010-4444-4444", address : "부산 해운대구", clause : false},
 ];
 let bookingList = [
-    {bookingCode : 1, customerCode : 1, roomCode : "A-1", headCount : 0, checkIn : "2024-02-14", checkOut : "2024-02-16", reviewState : true},
-    {bookingCode : 2, customerCode : 2, roomCode : "A-5", headCount : 0, checkIn : "2024-03-15", checkOut : "2024-03-20", reviewState : true},
-    {bookingCode : 3, customerCode : 1, roomCode : "A-2", headCount : 0, checkIn : "2024-03-17", checkOut : "2024-03-18", reviewState : false},
-    {bookingCode : 4, customerCode : 2, roomCode : "B-1", headCount : 0, checkIn : "2024-03-20", checkOut : "2024-03-22", reviewState : false},
-    {bookingCode : 5, customerCode : 3, roomCode : "A-7", headCount : 0, checkIn : "2024-03-25", checkOut : "2024-03-28", reviewState : false},
-    {bookingCode : 6, customerCode : 4, roomCode : "C-4", headCount : 0, checkIn : "2024-03-27", checkOut : "2024-04-01", reviewState : true},
-    {bookingCode : 7, customerCode : 2, roomCode : "B-3", headCount : 0, checkIn : "2024-05-17", checkOut : "2024-05-20", reviewState : true},
-    {bookingCode : 8, customerCode : 1, roomCode : "C-1", headCount : 0, checkIn : "2024-06-06", checkOut : "2024-06-08", reviewState : false},
-    {bookingCode : 9, customerCode : 4, roomCode : "B-1", headCount : 0, checkIn : "2024-06-06", checkOut : "2024-06-07", reviewState : true},
-    {bookingCode : 10, customerCode : 3, roomCode : "B-3", headCount : 0, checkIn : "2024-10-10", checkOut : "2024-10-25", reviewState : false},
-    {bookingCode : 11, customerCode : 3, roomCode : "C-2", headCount : 0, checkIn : "2024-12-01", checkOut : "2024-12-05", reviewState : true},
-    {bookingCode : 12, customerCode : 2, roomCode : "B-4", headCount : 0, checkIn : "2025-02-05", checkOut : "2025-02-08", reviewState : false}
+    {bookingCode : 1, customerCode : 1, roomCode : "A-1", headCount :0, checkIn : "2024-02-14", checkOut : "2024-02-16", reviewState : true},
+    {bookingCode : 2, customerCode : 2, roomCode : "A-5", headCount :0, checkIn : "2024-03-15", checkOut : "2024-03-20", reviewState : true},
+    {bookingCode : 3, customerCode : 1, roomCode : "A-2", headCount :0, checkIn : "2024-03-17", checkOut : "2024-03-18", reviewState : false},
+    {bookingCode : 4, customerCode : 2, roomCode : "B-1", headCount :0, checkIn : "2024-03-20", checkOut : "2024-03-22", reviewState : false},
+    {bookingCode : 5, customerCode : 3, roomCode : "A-7", headCount :0, checkIn : "2024-03-25", checkOut : "2024-03-28", reviewState : false},
+    {bookingCode : 6, customerCode : 4, roomCode : "C-4", headCount :0, checkIn : "2024-03-27", checkOut : "2024-04-01", reviewState : true},
+    {bookingCode : 7, customerCode : 2, roomCode : "B-3", headCount :0, checkIn : "2024-05-17", checkOut : "2024-05-20", reviewState : true},
+    {bookingCode : 8, customerCode : 1, roomCode : "C-1", headCount :0, checkIn : "2024-06-06", checkOut : "2024-06-08", reviewState : false},
+    {bookingCode : 9, customerCode : 4, roomCode : "B-1", headCount :0, checkIn : "2024-06-06", checkOut : "2024-06-07", reviewState : true},
+    {bookingCode : 10, customerCode : 3, roomCode : "B-3", headCount :0, checkIn : "2024-10-10", checkOut : "2024-10-25", reviewState : false},
+    {bookingCode : 11, customerCode : 3, roomCode : "C-2", headCount :0, checkIn : "2024-12-01", checkOut : "2024-12-05", reviewState : true},
+    {bookingCode : 12, customerCode : 2, roomCode : "B-4", headCount :0, checkIn : "2025-02-05", checkOut : "2025-02-08", reviewState : false}
 ]; 
 let roomList = [
     {roomCode : "A-1", roomName : "스탠다드 싱글", roomPrice : 210000, headCount : 1, roomNumber : 101},
@@ -34,7 +34,7 @@ let roomList = [
     {roomCode : "C-1", roomName : "주니어 스위트", roomPrice : 385000, headCount : 2, roomNumber : 301},
     {roomCode : "C-2", roomName : "프리미어 스위트", roomPrice : 473000, headCount : 2, roomNumber : 302},
     {roomCode : "C-3", roomName : "이그제큐티브 스위트", roomPrice : 572000, headCount : 2, roomNumber : 303},
-    {roomCode : "C-4", roomName : "아미드 스위트", roomPrice : 660000, headCount : 2, roomNumber : 304},
+    {roomCode : "C-4", roomName : "더조은 스위트", roomPrice : 660000, headCount : 2, roomNumber : 304},
 ];
 let reviewList = [
     {reviewCode : 1, customerCode : 1, roomCode : "A-1", content : "방이 깔끔하고 좋아요", date : "2024-02-17", estimation : "5/5"},

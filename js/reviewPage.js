@@ -9,6 +9,74 @@ let standardArrowState = false;
 let deluxeArrowState = false;
 let suiteArrowState = false;
 
+
+printReview();
+// 후기목록 출력 (전체 출력)
+function printReview() {
+    let getReviewList = getLocalStorage("review");
+    let tbody = document.querySelector("tbody");
+    let html = ``;
+    // console.log(getReviewList);
+    for(let index = 0; index < getReviewList.length; index++) {
+        let reviewTemp = getReviewList[index];
+        html += `
+        <tr>
+            <td>${index + 1}</td>
+            <td>${reviewTemp.content}</td>
+            <td>${reviewTemp.date}</td>
+            <td>${reviewTemp.estimation}</td>
+        </tr>
+        `;
+    }
+    tbody.innerHTML = html;
+}
+// 후기목록 출력(그룹)
+function printSDS(code) {
+    if(code == "A") {console.log("스탠다드 전체 출력!");}
+    else if(code == "B") {console.log("디럭스 전체 출력!");}
+    else if(code == "c") {console.log("스위트 전체 출력!");}
+    let getReviewList = getLocalStorage("review");
+    let tbody = document.querySelector("tbody");
+    let html = ``;
+    let count = 0;
+    for(let index = 0; index < getReviewList.length; index++) {
+        let reviewTemp = getReviewList[index];
+        let temp = reviewTemp.roomCode;
+        temp = temp.split("-");
+        console.log(temp);
+        if(code == temp[0]) {
+            html += `
+            <tr>
+                <td>${++count}</td>
+                <td>${reviewTemp.content}</td>
+                <td>${reviewTemp.date}</td>
+                <td>${reviewTemp.estimation}</td>
+            </tr>
+            `;
+        }
+    }
+    tbody.innerHTML = html;
+}
+
+// 후기목록 출력(세부)
+function printDetail(code) {
+    let getReviewList = getLocalStorage("review");
+    let getRoomList = getLocalStorage("room");
+    let tbody = document.querySelector("tbody");
+    let html = ``;
+    let count = 0;
+    console.log(getReviewList);
+    code = code.split("-");
+    console.log("code");
+    console.log(code);
+    for(let index = 0; index < getReviewList.length; index++) {
+        let reviewTemp = getReviewList[index];
+        
+    }
+    tbody.innerHTML = html;
+}
+
+
 // 전체 Open Close 함수
 function totalCloseOpen() {
     let standardRoom = document.querySelector("#standardRoom");
@@ -176,25 +244,4 @@ function changeSuiteArrow() {
         suiteArrowState = true;
         suiteCloseOpen();
     }
-}
-
-printReview();
-// 후기목록 출력
-function printReview() {
-    let getReviewList = getLocalStorage("review");
-    let tbody = document.querySelector("tbody");
-    let html = ``;
-    console.log(getReviewList);
-    for(let index = 0; index < getReviewList.length; index++) {
-        let reviewTemp = getReviewList[index];
-        html += `
-        <tr>
-            <td>${index + 1}</td>
-            <td>${reviewTemp.content}</td>
-            <td>${reviewTemp.date}</td>
-            <td>${reviewTemp.estimation}</td>
-        </tr>
-        `;
-    }
-    tbody.innerHTML = html;
 }

@@ -71,7 +71,7 @@
                             </ul>
                         </li>
                         <li id = "list6" class = "menuList" onmouseover = "onMenu(6)">
-                            <a href = "#">예약</a>
+                            <a href = "./reservation.html">예약</a>
                             <ul class = "subMenu" onmouseout = "closeMenu()">
     
                             </ul>
@@ -88,33 +88,32 @@
                 <div id = "sBox" onmouseout = "closeMenu()">
     
                 </div>
-            </div>
-    
+            </div>    
             <div id = "main">
                 <div id = "mainTitle"><p>후기 게시판</p></div>
                 <div id = "mainBox">
                     <div id = "sideBar">
                         <div class = "box">
                             <div id = "totalArrowBox" onclick = "changeTotalArrow()"><img id = "totalArrow" src = "./images/arrow_drop_down.svg"/></div>
-                            <div id = "treeRoot" class = "customCard" onclick = ""><label>전체</label></div>
+                            <div id = "treeRoot" class = "customCard" onclick = "printReview()"><label>전체</label></div>
                         </div>
                         <div class = "box">
                             <div id = "standardArrowBox" onclick = "changeStandardArrow()"><img id = "standardArrow" src = "./images/arrow_drop_down.svg"/></div>
-                            <div id = "standardRoom" class = "customCard" onclick = ""><label>스탠다드</label></div>
+                            <div id = "standardRoom" class = "customCard" onclick = "printSDS('A')"><label>스탠다드</label></div>
                         </div>
-                        <div id = "standardSingle" class= "customCard"><label>스탠다드 싱글</label></div>
-                        <div id = "standardDouble" class= "customCard"><label>스탠다드 더블</label></div>
-                        <div id = "standardTwin" class= "customCard"><label>스탠다드 트윈</label></div>
-                        <div id = "standardTriple" class= "customCard"><label>스탠다드 트리플</label></div>
+                        <div id = "standardSingle" class= "customCard" onclick = "printDetail('스탠다드 싱글')"><label>스탠다드 싱글</label></div>
+                        <div id = "standardDouble" class= "customCard" onclick = "printDetail('A-4')"><label>스탠다드 더블</label></div>
+                        <div id = "standardTwin" class= "customCard" onclick = "printDetail('A-6')"><label>스탠다드 트윈</label></div>
+                        <div id = "standardTriple" class= "customCard" onclick = "printDetail('A-7')"><label>스탠다드 트리플</label></div>
                         <div class = "box">
                             <div id = "deluxeArrowBox" onclick = "changeDeluxeArrow()"><img id = "deluxeArrow" src = "./images/arrow_drop_down.svg"/></div>
-                            <div id = "deluxeRoom" class = "customCard" onclick = ""><label>디럭스</label></div>
+                            <div id = "deluxeRoom" class = "customCard" onclick = "printSDS('B')"><label>디럭스</label></div>
                         </div>
-                        <div id = "deluxeDouble" class = "customCard"><label>디럭스 더블</label></div>
-                        <div id = "deluxeTriple" class = "customCard"><label>디럭스 트리플</label></div>
+                        <div id = "deluxeDouble" class = "customCard" onclick = "printDetail('B-1')"><label>디럭스 더블</label></div>
+                        <div id = "deluxeTriple" class = "customCard" onclick = "printDetail('B-3')"><label>디럭스 트리플</label></div>
                         <div class = "box">
                             <div id = "suiteArrowBox" onclick = "changeSuiteArrow()"><img id = "suiteArrow" src = "./images/arrow_drop_down.svg"/></div>
-                            <div id = "suiteRoom" class = "customCard" onclick = ""><label>스위트</label></div>
+                            <div id = "suiteRoom" class = "customCard" onclick = "printSDS('C')"><label>스위트</label></div>
                         </div>
                         <div id = "suiteJunior" class = "customCard"><label>주니어 스위트</label></div>
                         <div id = "suitePremier" class = "customCard"><label>프리미어 스위트</label></div>
@@ -138,7 +137,9 @@
                     </div>
                 </div>
             </div>
-    
+            <a href = "./reservation.html" id = "floatingButton">
+                <img src = "./images/booking-img2.png"/>
+            </a>
             <div id = "footer">
                 <div id ="logoLine">
                     <div id = "footerLogo"></div>
