@@ -9,6 +9,10 @@
     margin: 0px;
     padding: 0px;
 }
+button{
+    cursor: pointer;
+}
+
 /* 전체구역 */
 #mainBox{
     width: 1200px;   

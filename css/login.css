@@ -9,7 +9,9 @@
     margin: 0px;
     padding: 0px;
 }
-
+button{
+    cursor: pointer;
+}
 /* 전체 구역 */
 
 #main{
