@@ -195,9 +195,10 @@ function infoInput(){
                 let doublecheck = confirm(`${check_roomcode}, ${headcount}명으로 예약하시겠습니까?`);
                 if(doublecheck==true){
                     bookingList1.push(infos);
-                    setLocalStorage("bookingList",bookingList1);
+                    setLocalStorage("booking", bookingList1);
                   
-                    alert(`객실예약이 완료되었습니다`)
+                    alert(`객실예약이 완료되었습니다`);
+                    location.href = "./index.html";
 
                 }
                 else{
