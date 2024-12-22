@@ -25,6 +25,9 @@ function checkLogin() {
     }
 }
 
+// #region 헤더 관련 부분
+
+// 헤더 호버시 작동
 function onMenu(index) {
     let header = document.querySelector("#header");
     let sBox = document.querySelector("#sBox");
@@ -48,7 +51,7 @@ function onMenu(index) {
         }
     }
 }
-
+// 헤더 기본 상태
 function closeMenu() {
     let header = document.querySelector("#header");
     let sBox = document.querySelector("#sBox");
@@ -71,6 +74,10 @@ function closeMenu() {
         subMenu[i].style.display = "none";
     }
 }
+
+// #endregion 헤더 관련 부분
+
+// #region 로그인 관련 함수
 
 function logInOut(loginState) {
     if(loginState) {
@@ -95,6 +102,10 @@ function logInOut(loginState) {
     }
 }
 
+// #endregion 로그인 관련 함수
+
+// #region 마이페이지 관련 함수
+
 function openMyPageBtn() {
     console.log("실행1");
     let hoverBox = document.querySelector("#hoverBox1");
@@ -105,3 +116,20 @@ function closeMyPageBtn() {
     let hoverBox = document.querySelector("#hoverBox1");
     hoverBox.style.display = "none";
 }
+
+// #endregion 마이페이지 관련 함수
+
+// #region 예약페이지 관련 함수
+
+// 로그인상태에 따른 예약페이지
+function nextBookingPage() {
+    let getLoginState = getSessionStorage("login");
+    if(getLoginState.customerCode == 0) {
+        alert("로그인 후 예약이 가능합니다.");
+        location.href = "./login.html";
+    } else if(getLoginState.customerCode > 0) {
+        location.href = "./reservation.html";
+    }
+}
+
+// #endregion 예약 페이지 관련 함수

@@ -472,6 +472,7 @@ li {
     height : 100px;
     border-radius : 50%;
     background-color : #81674e;
+    cursor : pointer;
 }
 #floatingButton > img {
     position : absolute;
