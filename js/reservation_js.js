@@ -148,12 +148,6 @@ function childNumMinus( changeNum ){
 } 
 
 
-function maxNum() {
-    
-}
-
-
-
 /**localStorage에 객실정보 불러오기 함수 */
 
 function getRoomList() {
@@ -182,11 +176,11 @@ function infoInput(){
     let bookingList1 = getLocalStorage("booking");
     let checkin_time = document.querySelector('#input_date1').value;
     let checkout_time = document.querySelector('#input_date2').value;
-    let number_con2 = document.querySelector('#number_con2').value+document.querySelector('#number_con3').value;
-    let check_roomcode;
+    // let number_con2 = document.querySelector('#number_con2').value+document.querySelector('#number_con3').value;
+    let headcount = childNum+peopleNum;
     let infoBookingCode = bookingList1[bookingList1.length-1].bookingCode+1;
     let infos = 
-    {bookingCode : infoBookingCode, customerCode : loginList.customerCode, roomCode : check_roomcode, headCount : number_con2, checkIn : checkin_time, checkOut :  checkout_time, reviewState : false}
+    {bookingCode : infoBookingCode, customerCode : loginList.customerCode, roomCode : roomcode_trans, headCount : headcount, checkIn : checkin_time, checkOut :  checkout_time, reviewState : false}
 
 
 
@@ -198,57 +192,20 @@ function infoInput(){
                 break;
             }
             else{
-                bookingList1.push(infos);
-                setLocalStorage("bookingList",bookingList1);
-                // for(let index = 0; index < getBookingList.length; index++) {
-                //     if(getLoginState.customerCode == getBookingList[index].customerCode && roomCode == getBookingList[index].roomCode) {
-                //         getBookingList[index].reviewState = true;
-                //         setLocalStorage("booking", getBookingList);
-                //     }
-                // }
-                // writeReviewBox.style.display = "none";
-                // printBookingList(getLoginState.customerCode);
+                let doublecheck = confirm(`${check_roomcode}, ${headcount}명으로 예약하시겠습니까?`);
+                if(doublecheck==true){
+                    bookingList1.push(infos);
+                    setLocalStorage("bookingList",bookingList1);
+                  
+                    alert(`객실예약이 완료되었습니다`)
+
+                }
+                else{
+                    break;
+                }
+               
             break;
             }
         }
     }
 }
-
-
-/* 체크인 날짜,체크아웃 날짜,객실수,성인,아동 수 가져오기*/
-// function 정보입력함수() {
-//     // 1. [입력]
-//     let checkin_time = document.querySelector('#input_date1').value;
-//     let checkout_time = document.querySelector('#input_date2').value;
-//     let number_con1 = document.querySelector('#number_con1').value;
-//     let number_con2 = document.querySelector('#number_con2').value;
-//     let number_con3 = document.querySelector('#number_con3').value;
-
-//     let infos = {
-//         'checkin_time': checkin_time, 'checkout_time': checkout_time,
-//         'number_con1': number_con1, 'number_con2': number_con2, 'number_con3': number_con3
-//     };
-
-//     let room = 회원정보목록반환함수();
-
-//     memberList.push(infos);
-//     sessionStorage.setItem('room', JSON.stringify(room))
-
-//     return;
-// } 
-
-
-
-// function 회원정보목록반환함수(){ 
-//     let memberList = sessionStorage.getItem( 'bookingList' );
-//     console.log( memberList ); 
- 
-//     if( memberList == null ){
-       
-//         memberList = []; s
-//     }else{
-       
-//         memberList = JSON.parse( memberList );
-//     }
-//     return memberList; 
-// }

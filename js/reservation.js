@@ -5,15 +5,18 @@
    let month = today.getMonth() + 1; 
    let day = today.getDate();
 
+
    if (month < 10) month = '0' + month;
    if (day < 10) day = '0' + day;
 
    let currentDate = `${year}-${month}-${day}`;
-   let currentDate1 = `${year}-${month}-${day+1}`;
-
 
    document.getElementById('input_date1').min = currentDate;
+
+
+   document.getElementById('input_date2').min = currentDate;
    console.log(document.getElementById('input_date1').min);
+   console.log(document.getElementById('input_date2').min);
 
    function 날짜선택(){
    let checkinDate =document.getElementById('input_date1').value;
