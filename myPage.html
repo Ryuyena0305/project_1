@@ -71,7 +71,7 @@
                         </ul>
                     </li>
                     <li id = "list6" class = "menuList" onmouseover = "onMenu(6)">
-                        <a href = "./reservation.html">예약</a>
+                        <a style = "cursor : pointer;" onclick = "nextBookingPage()">예약</a>
                         <ul class = "subMenu" onmouseout = "closeMenu()">
 
                         </ul>
@@ -172,7 +172,7 @@
                 <button id = "deleteCustomer" onclick = "deleteCustomer()">회원탈퇴</button>
             </div>
         </div>
-        <a href = "./reservation.html" id = "floatingButton">
+        <a id = "floatingButton" onclick = "nextBookingPage()">
             <img src = "./images/booking-img2.png"/>
         </a>
         <div id = "footer">

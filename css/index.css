@@ -1,16 +1,12 @@
 /* Noto Sans KR */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
-/* 폰트 적용 테스트용(Bagel Fat One) */
-@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap');
 * {
     margin : 0px;
     padding : 0px;
-    /* font-family : "Bagel Fat One"; */
     font-family : "Noto Sans KR", "Sans-serif", sans-serif;
     font-weight : normal;
     font-size : 16px;
     box-sizing : border-box;
-    /* border : solid 1px red; */
     text-align : left;
 }
 body {
@@ -39,7 +35,7 @@ li {
 }
 #hBox > #logo {
     margin-right : 50px;
-    display :inline-block;
+    display : block;
     float : left;
     width : 107px;
     height : 81px;
@@ -178,7 +174,6 @@ li {
 #main > #mainSlide > #moveImage {
     width : 100%;
     height : 100%;
-    /* display : flex; */
     overflow : hidden;
 }
 #main > #mainSlide > #moveImage > img {
@@ -296,9 +291,6 @@ li {
     width : 100%;
     height : 450px;
 }
-#middleSlide > #slideBox > #slideList  {
-
-}
 
 /* #region middleSlide > slideBox > slideList > #slideCard */
 
@@ -401,7 +393,6 @@ li {
     display : flex;
     width : 1200px;
     height : 280px;
-    /* overflow : hidden; */
 }
 #facilities > #fBox > #fImage > #commImage {
     display : table;
@@ -481,6 +472,7 @@ li {
     height : 100px;
     border-radius : 50%;
     background-color : #81674e;
+    cursor : pointer;
 }
 #floatingButton > img {
     position : absolute;
@@ -520,7 +512,6 @@ li {
     z-index: -1;
 }
 #footer > #footerMenu {
-    /* margin : 0px auto; */
     width : 100%;
     text-align: center;
 }

@@ -10,13 +10,14 @@ checkLogin();
 // 로그인 여부를 체크하고 출력하는 함수
 function checkLogin() {
     let checking = getSessionStorage("login");
-    // console.log(checking[0].customerCode);
     if(checking.customerCode > 0) {
         console.log("로그인");
         printBookingList(checking.customerCode);
     } else {
         console.log("비로그인");
-        printBookingList(checking.customerCode);
+        // printBookingList(checking.customerCode);
+        alert("로그인부터 해주세요");
+        location.href = "../login.html";
     }
 }
 
@@ -38,12 +39,6 @@ function printBookingList(customerCode) {
     let customerAddress = document.querySelector("#customerAddress > input");
     let html = ``;
     let count = 1;
-    // let myReviews = [];
-    // for(let index = 0; index < getReviewList.length; index++) {
-    //     if(getReviewList[index].customerCode == customerCode) {
-    //         myReviews.push(getReviewList[index]);
-    //     }
-    // }
     // 개인정보 출력부분
     if(customerCode != 0) {
         customerName.innerHTML = `<p>[ ${getLoginState.name}님 반갑습니다. ]</p>`;
@@ -72,28 +67,19 @@ function printBookingList(customerCode) {
                         <td style = "text-align : center;">${bookingTemp.checkIn}</td>
                         <td style = "text-align : center;">${bookingTemp.checkOut}</td>
                     `;
-                    // #region 예약 취소 버튼 생성 부분
-                    // if(checkOut[0] <= year && checkOut[1] <= month && checkOut[2] <= day) {      
+                    // #region 예약 취소 버튼 생성 부분   
                     if(timeValue > 0) {      
                         html += `
                             <td style = "text-align : center;">
                                 <button class = "closeBtn" disabled>취소</button>
                             </td>
                         `;
-                    //     <td style = "text-align : center;">
-                    //         <button class = "cancelBtn">작성</button>
-                    //     </td>
-                    // </tr>
                     } else {
                         html += `
                             <td style = "text-align : center;">
                                 <button class = "cancelBtn" onclick = "cancelBooking(${bookingTemp.bookingCode})">취소</button>
                             </td>
                         `;
-                        // <td style = "text-align : center;">
-                        //     <button class = "closeBtn" disabled>작성</button>
-                        // </td>
-                        // </tr>
                     }
                     // #endregion 예약 취소 버튼 생성 부분
 
@@ -147,71 +133,76 @@ function changeInfo() {
     let btn = document.querySelector("#changeInfo");
     let getCustomerList = getLocalStorage("customer");
     let getLoginState = getSessionStorage("login");
-    // console.log(btn);
-    // console.log("변경 전 : " + btn.innerHTML);
     if(changeState) {
         let state = confirm("회원정보를 수정하시겠습니까?");
         if(state) {
-            customerPhone.innerHTML = `<label>전화번호</label><input type = "text" value = "${phoneValue}"/>`;
+            customerPhone.innerHTML = `<label>전화번호</label><input type = "text" placeholder = "${phoneValue}" value = "${phoneValue}"/>`;
             customerPhone.className = "customerClassOpen";
-            customerBirth.innerHTML = `<label>생년월일</label><input type = "text" value = "${birthValue}"/>`;
+            customerBirth.innerHTML = `<label>생년월일</label><input type = "text" placeholder = "${birthValue}" value = "${birthValue}"/>`;
             customerBirth.className = "customerClassOpen";
-            customerAddress.innerHTML = `<label>주소</label><input type = "text" value = "${addressValue}"/>`;
+            customerAddress.innerHTML = `<label>주소</label><input type = "text" placeholder = "${addressValue}" value = "${addressValue}"/>`;
             customerAddress.className = "customerClassOpen";
-            customerName.innerHTML = `<label>이름</label><input type = "text" value = "${getLoginState.name}"/>`;
+            customerName.innerHTML = `<label>이름</label><input type = "text" placeholder = "${getLoginState.name}" value = "${getLoginState.name}"/>`;
             customerName.className = "customerClassAppear";
             customerPassword.innerHTML = `<label>비밀번호</label><input id = "pwInput" type = "password"/><span id = "visibility" onclick = "changeVisibility()"></span>`;
             customerPassword.className = "customerClassAppear";
             btn.innerHTML = "수정완료";
-            // console.log("변경 후 : " + btn);
             changeState = false;
         }
     } else {
         let state = confirm("수정된 정보를 저장하시겠습니까?");
         if(state) {
-            customerPhone.innerHTML = `<label>전화번호</label><input type = "text" value = "${phoneValue}" disabled/>`;
-            customerPhone.className = "customerClassClose";
-            customerBirth.innerHTML = `<label>생년월일</label><input type = "text" value = "${birthValue}" disabled/>`;
-            customerBirth.className = "customerClassClose";
-            customerAddress.innerHTML = `<label>주소</label><input type = "text" value = "${addressValue}" disabled/>`;
-            customerAddress.className = "customerClassClose";
-            customerName.innerHTML = `<label>이름</label><input type = "text" value = ""/>`;
-            customerName.className = "customerClassDisappear";
-            customerPassword.innerHTML = `<label>비밀번호</label><input id = "pwInput" type = "password"/>`;
-            customerPassword.className = "customerClassDisappear";
-            cName.innerHTML = `<p>${nameValue}님 반갑습니다.</p>`;
-            btn.innerHTML = "회원수정";
-            for(let index = 0; index < getCustomerList.length; index++) {
-                // 이후 작성 : 회원정보수정을 하면 수정한 값을 로컬스토리지에 넣기
-                let customer = getCustomerList[index];
-                if(getLoginState.customerCode == customer.customerCode) {
-                    customer.phone = phoneValue;
-                    customer.birth = birthValue;
-                    customer.address = addressValue;
-                    customer.name = nameValue;
-                    getLoginState.name = nameValue;
-                    // 회원수정이 완료되면 로그아웃 시키고 메인페이지로 넘어가기 구현
-                    if(passwordValue != "" && passwordValue != customer.password) {
-                        customer.password = passwordValue;
-                        setSessionStorage("login", {customerCode : 0, id : "", password : "", name : "", birth : "", phone : "", address : "", clause : false});
-                        setLocalStorage("customer", getCustomerList);
-                        location.href = "./index.html";
-                    } else {
-                        setSessionStorage("login", getLoginState);
-                        setLocalStorage("customer", getCustomerList);
+            let newPhone = phoneValue.trim();
+            let newBirth = birthValue.trim();
+            let newAddress = addressValue.trim();
+            let newName = nameValue.trim();
+            let newPassword = passwordValue.trim();
+            if(newPhone != "" && newBirth != "" && newAddress != "" && newName != "") {
+                customerPhone.innerHTML = `<label>전화번호</label><input type = "text" value = "${newPhone}" disabled/>`;
+                customerPhone.className = "customerClassClose";
+                customerBirth.innerHTML = `<label>생년월일</label><input type = "text" value = "${newBirth}" disabled/>`;
+                customerBirth.className = "customerClassClose";
+                customerAddress.innerHTML = `<label>주소</label><input type = "text" value = "${newAddress}" disabled/>`;
+                customerAddress.className = "customerClassClose";
+                customerName.innerHTML = `<label>이름</label><input type = "text" value = ""/>`;
+                customerName.className = "customerClassDisappear";
+                customerPassword.innerHTML = `<label>비밀번호</label><input id = "pwInput" type = "password"/>`;
+                customerPassword.className = "customerClassDisappear";
+                cName.innerHTML = `<p>[ ${nameValue}님 반갑습니다. ]</p>`;
+                btn.innerHTML = "회원수정";
+                for(let index = 0; index < getCustomerList.length; index++) {
+                    // 이후 작성 : 회원정보수정을 하면 수정한 값을 로컬스토리지에 넣기
+                    let customer = getCustomerList[index];
+                    if(getLoginState.customerCode == customer.customerCode) {
+                        customer.phone = newPhone;
+                        customer.birth = newBirth;
+                        customer.address = newAddress;
+                        customer.name = newName;
+                        getLoginState.name = newName;
+                        // 회원수정이 완료되면 로그아웃 시키고 메인페이지로 넘어가기 구현
+                        if(newPassword != "" && newPassword != customer.password) {
+                            customer.password = newPassword;
+                            setSessionStorage("login", {customerCode : 0, id : "", password : "", name : "", birth : "", phone : "", address : "", clause : false});
+                            setLocalStorage("customer", getCustomerList);
+                            location.href = "./index.html";
+                        } else {
+                            setSessionStorage("login", getLoginState);
+                            setLocalStorage("customer", getCustomerList);
+                        }
                     }
                 }
+                changeState = true;
+            } else {
+                alert("비밀번호를 제외하고 전부 값을 입력해주세요.");
             }
-            // console.log("변경 후 : " + btn);
-            changeState = true;
         }
     }
 }
+
 // 마이페이지에서 비밀번호 변경시 비밀번호 visible
 function changeVisibility() {
     let pwInput = document.querySelector("#pwInput");
     let visibility = document.querySelector("#visibility");
-    // console.log(`변경전 : ${pwInput.type}`);
     if(visibilityState) {
         pwInput.type = "password";
         visibility.style.marginLeft = "5px";
@@ -222,7 +213,6 @@ function changeVisibility() {
         visibility.style.height = "30px";
         visibility.style.cursor = "pointer";
         visibilityState = false;
-        // console.log(`변경후 : ${pwInput.type}`);
     } else {
         pwInput.type = "text";
         visibility.style.marginLeft = "5px";
@@ -233,7 +223,6 @@ function changeVisibility() {
         visibility.style.height = "30px";
         visibility.style.cursor = "pointer";
         visibilityState = true;
-        // console.log(`변경후 : ${pwInput.type}`);
     }
 }
 
@@ -252,8 +241,6 @@ function cancelBooking(bookingCode) {
         }
     }
     checkLogin();
-    // let checking = getSessionStorage("login");
-    // printBookingList(checking.customerCode);
 }
 
 //회원정보를 탈퇴하는 함수
@@ -312,10 +299,8 @@ function writeReview(roomCode) {
         let now = new Date();
         let year = now.getFullYear(); let month = now.getMonth() + 1; let day = now.getDate();
         let getReviewList = getLocalStorage("review");
-        let getCustomerList = getLocalStorage("customer");
         let getBookingList = getLocalStorage("booking");
         let getLoginState = getSessionStorage("login");
-        let checkEstimation = document.querySelector("#checkEstimation");
         let estimationNumber = document.querySelector("#checkEstimation > select");
         let writeReviewBox = document.querySelector("#writeReviewBox");
         let writeContent = document.querySelector("#writeContent > input");
