@@ -197,7 +197,8 @@ function infoInput(){
                     bookingList1.push(infos);
                     setLocalStorage("bookingList",bookingList1);
                   
-                    alert(`객실예약이 완료되었습니다`)
+                    alert(`객실예약이 완료되었습니다`);
+                    location.href = "./index.html";
 
                 }
                 else{
