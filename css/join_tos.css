@@ -3,7 +3,6 @@
     font-family: "Noto Sans KR", sans-serif;
     font-size: 16px;
     text-decoration: none;
-    /* color: black; */
     list-style: none;
     box-sizing: border-box;
     margin: 0px;
@@ -150,39 +149,4 @@ button{
 .tosBtn > button > a{
     color: #ffff;
 }
-
-
-
-/* 전체보기 팝업 */
-#popupBox{
-    display: none;
-    background-color: #81674e;
-    width: 100%;
-    height: 100%;
-    border: 5px solid #81674e;
-    z-index: 999;
-}
-.popupTop{
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 30px;
-}
-.popupTop > h2{
-    color: #ffff;
-    font-size: 23px;
-    font-weight: normal;
-}
-.popupTop > button{
-    width: 40px;
-    background-color: #81674e;
-    border: none;
-    color: #ffff;
-    font-size: 25px;
-}
-.popupTxt{
-    background-color: #ffff;
-    overflow: hidden;
-    height: auto;
-}
-
 
