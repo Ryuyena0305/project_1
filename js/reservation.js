@@ -12,8 +12,6 @@
    let currentDate = `${year}-${month}-${day}`;
 
    document.getElementById('input_date1').min = currentDate;
-
-
    document.getElementById('input_date2').min = currentDate;
    console.log(document.getElementById('input_date1').min);
    console.log(document.getElementById('input_date2').min);
