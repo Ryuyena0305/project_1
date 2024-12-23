@@ -194,11 +194,11 @@ function standardCloseOpen() {
 function changeStandardArrow() {
     let standardArrow = document.querySelector("#standardArrow");
     if(standardArrowState) {
-        standardArrow.src = "../images/arrow_drop_down.svg";
+        standardArrow.src = "./images/arrow_drop_down.svg";
         standardArrowState = false;
         standardCloseOpen();
     } else {
-        standardArrow.src = "../images/arrow_drop_up.svg";
+        standardArrow.src = "./images/arrow_drop_up.svg";
         standardArrowState = true;
         standardCloseOpen();
     }
@@ -223,11 +223,11 @@ function deluxeCloseOpen() {
 function changeDeluxeArrow() {
     let deluxeArrow = document.querySelector("#deluxeArrow");
     if(deluxeArrowState) {
-        deluxeArrow.src = "../images/arrow_drop_down.svg";
+        deluxeArrow.src = "./images/arrow_drop_down.svg";
         deluxeArrowState = false;
         deluxeCloseOpen();
     } else {
-        deluxeArrow.src = "../images/arrow_drop_up.svg";
+        deluxeArrow.src = "./images/arrow_drop_up.svg";
         deluxeArrowState = true;
         deluxeCloseOpen();
     }
@@ -255,11 +255,11 @@ function suiteCloseOpen() {
 function changeSuiteArrow() {
     let suiteArrow = document.querySelector("#suiteArrow");
     if(suiteArrowState) {
-        suiteArrow.src = "../images/arrow_drop_down.svg";
+        suiteArrow.src = "./images/arrow_drop_down.svg";
         suiteArrowState = false;
         suiteCloseOpen();
     } else {
-        suiteArrow.src = "../images/arrow_drop_up.svg";
+        suiteArrow.src = "./images/arrow_drop_up.svg";
         suiteArrowState = true;
         suiteCloseOpen();
     }
