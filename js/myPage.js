@@ -178,14 +178,15 @@ function changeInfo() {
                         customer.birth = newBirth;
                         customer.address = newAddress;
                         customer.name = newName;
-                        getLoginState.name = newName;
                         // 회원수정이 완료되면 로그아웃 시키고 메인페이지로 넘어가기 구현
                         if(newPassword != "" && newPassword != customer.password) {
                             customer.password = newPassword;
+                            getLoginState = customer;
                             setSessionStorage("login", {customerCode : 0, id : "", password : "", name : "", birth : "", phone : "", address : "", clause : false});
                             setLocalStorage("customer", getCustomerList);
                             location.href = "./index.html";
                         } else {
+                            getLoginState = customer;
                             setSessionStorage("login", getLoginState);
                             setLocalStorage("customer", getCustomerList);
                         }
