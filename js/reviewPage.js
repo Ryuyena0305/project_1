@@ -162,11 +162,11 @@ function totalCloseOpen() {
 function changeTotalArrow() {
     let totalArrow = document.querySelector("#totalArrow");
     if(totalArrowState) {
-        totalArrow.src = "../images/arrow_drop_down.svg";
+        totalArrow.src = "./images/arrow_drop_down.svg";
         totalArrowState = false;
         totalCloseOpen();
     } else {
-        totalArrow.src = "../images/arrow_drop_up.svg";
+        totalArrow.src = "./images/arrow_drop_up.svg";
         totalArrowState = true;
         totalCloseOpen();
     }
